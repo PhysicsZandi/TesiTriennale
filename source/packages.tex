@@ -1,0 +1,62 @@
+\usepackage{newlfont} 
+\usepackage{color} 
+
+%   Reduce the margin of the summary:
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+%   Generate the environment for the abstract:
+\newcommand\summaryname{Abstract}
+\newenvironment{Abstract}%
+    {\small\begin{center}%
+    \bfseries{\summaryname} \end{center}}
+
+\usepackage[a4paper, top = 4cm, bottom = 4cm, left = 2.5cm, right = 2.5cm]{geometry}
+\usepackage{etoc}
+
+\usepackage{emptypage}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{indentfirst}
+
+\usepackage{epigraph}
+\usepackage{amssymb}
+
+
+\usepackage{hyperref}
+%\hypersetup{colorlinks, linkcolor={black}, citecolor={black}, urlcolor={black}}
+
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\addbibresource{../bibliography.bib}
+\usepackage{csquotes}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{cancel}
+\usepackage{mathtools}
+\usepackage{bbm}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{principle}{Principio}
+\newtheorem{definition}{Definizione}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{example}{Esempio}
+\renewcommand\qedsymbol{q.e.d.}
+
+\theoremstyle{remark}
+\newtheorem{case}{Case}
+
+\newcommand{\dv}[2]{\frac{d#1}{d#2}}
+\newcommand{\dvd}[2]{\frac{d^2#1}{d#2^2}}
+\newcommand{\dvf}[2]{\frac{\delta #1}{\delta #2}}
+\newcommand{\pdv}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\pdvd}[3]{\frac{\partial^2 #1}{\partial#2 \partial#3}}
+\newcommand{\integ}[3]{\int_{#1}^{#2}d#3~}
+\newcommand{\poi}[2]{\{#1, ~#2\}}
+\newcommand{\poiexp}[2]{\pdv{#1}{q^i} \pdv{#2}{p_i} - \pdv{#2}{q^i} \pdv{#1}{p_i}}
+
+\usepackage{tikz}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
