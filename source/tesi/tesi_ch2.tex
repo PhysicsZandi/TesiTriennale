@@ -1,177 +1,99 @@
 \chapter{Il primo teorema in teoria classica dei campi}
 
     Il secondo sistema fisico che prendiamo in considerazione è un sistema continuo che presenta un'infinità di gradi di libertà, a differenza dai sistemi studiati nel precedente capitolo. 
-    Il nostro oggetto di indagine sarà quindi un'entità estesa nello spazio che rappresenteremo da una funzione delle coordinate e del tempo. I campi scalari sono semplici funzioni che forniscono un numero per ogni punto, come ad esempio la temperatura, la pressione o la densità. Campi vettoriali invece associano vettori ad ogni punto, come ad esempio il campo elettrico o quello gravitazionale. Prendiamo il primo caso più semplice e definiamo il campo scalare attraverso la funzione 
-\begin{equation*}
-    \phi(t,~x)
-\end{equation*}
-    Tuttavia non rimarremo nell'ambito della fisica newtoniana, ma useremo la formulazione relativistica einsteniana. Lo spazio matematico che utilizzeremo sarà lo spaziotempo di Minkowski $\mathcal M$, ovvero uno spazio euclideo con l'aggiunta della coordinata temporale, in cui però è stata definita una distanza differente: non sarà più valido il teorema di Pitagora 
-\begin{equation*}
-    ds^2 = dx^2 + dy^2 + dz^2
-\end{equation*}
+    Il nostro oggetto di indagine sarà quindi un'entità estesa nello spazio che rappresenteremo da una funzione delle coordinate e del tempo. I campi scalari sono semplici funzioni che forniscono un numero per ogni punto, come ad esempio la temperatura, la pressione o la densità. Campi vettoriali invece associano vettori ad ogni punto, come ad esempio il campo elettrico o quello gravitazionale.
+
+\section{Introduzione alla relatività}
+    Non rimarremo nell'ambito della fisica newtoniana, ma useremo la formulazione relativistica einsteniana. Lo spazio matematico che utilizzeremo è lo spaziotempo di Minkowski $\mathcal M$, ovvero uno spazio euclideo con l'aggiunta della coordinata temporale, in cui però è stata definita una distanza differente: non sarà più valido il teorema di Pitagora 
+    \begin{equation*}
+        ds^2 = dx^2 + dy^2 + dz^2
+    \end{equation*}
     ma le distanze verranno misurate nel seguente modo
-\begin{equation*}
-    ds^2 = g_{\mu\nu} dx^\mu dx^\nu = c^2 dt^2 - dx^2 - dy^2 - dz^2
-\end{equation*}
+    \begin{equation*}
+        ds^2 = g_{\mu\nu} dx^\mu dx^\nu = c^2 dt^2 - dx^2 - dy^2 - dz^2
+    \end{equation*}
     dove abbiamo utilizzato la metrica $g_{\mu\nu} = diag(1,~-1,~-1,~-1)$ e il quadrivettore $x^\mu$, definito come 
-\begin{equation*}
-    x^\mu = (ct,~x,~y,~z)
-\end{equation*}
-   
-    Dunque il campo relativistico che studieremo sarà della forma 
-\begin{equation*}
-    \phi(x^\mu)
-\end{equation*}
-    e le rispettive derivate dei campi rispetto alle coordinate saranno
-\begin{equation*}
-    \partial_\mu \phi =  \phi,_\mu = \dv{\phi}{x^\mu}
-\end{equation*}
+    \begin{equation*}
+        x^\mu = (ct,~x,~y,~z)
+    \end{equation*}
 
-    Analogamente al caso discreto, la dinamica del campo è descritta da equazioni differenziali alle derivate parziali sul tempo e sulle coordinate che ne determinano l'evoluzione. Le equazioni del moto saranno dunque conseguenza di un principio di Hamilton che ci porterà nel prossimo paragrafo ad equivalenti equazioni di Eulero-Lagrange. I riferimenti bibliografici sono \cite{goldstein} \cite{banados} \cite{barone} \cite{landaucampi}.
+\section{Formalismo lagrangiano}    
 
-\section{Formalismo lagrangiano}
+    Analogamente al caso discreto, la dinamica del campo è descritta da equazioni differenziali alle derivate parziali sul tempo e sulle coordinate che ne determinano l'evoluzione. Le equazioni del moto saranno dunque conseguenza di un principio di Hamilton che ci porterà ad equivalenti equazioni di Eulero-Lagrange. Trattiamo solamente il caso di un campo scalare, ovvero definito attraverso una singola funzione $\phi(x^\mu)$, mentre per campi vettoriali (o tensoriali) si generalizza immediatamente. Definiamo le rispettive derivate dei campi rispetto alle coordinate come
+    \begin{equation*}
+        \partial_\mu \phi =  \phi,_\mu = \dv{\phi}{x^\mu}
+    \end{equation*}
 
-    Nel applicare il formalismo lagrangiano, introduciamo la densità di lagrangiana $\mathcal L$, funzione del campo $\phi$, delle sue derivate $\phi,_\mu$ ed eventualmente delle coordinate $x^\mu$
-\begin{equation} \label{lagrangianacampi}
-    \mathcal L = \mathcal L (\phi,~\phi,_\mu,~x^\mu)
-\end{equation}
+    Introduciamo la densità di lagrangiana $\mathcal L$, funzione del campo $\phi$, delle sue derivate $\phi,_\mu$ ed eventualmente delle coordinate $x^\mu$
+    \begin{equation} \label{lagrangianacampi}
+        \mathcal L = \mathcal L (\phi,~\phi,_\mu,~x^\mu)
+    \end{equation}
     che integrata sullo spazio tridimensionale permette di ottenere la lagrangiana $L$ associata al sistema
-\begin{equation*}
-    L = \int d^3 x \mathcal L
-\end{equation*}
-    In questo modo possiamo definire il funzionale di azione $S$ in funzione della densità di lagrangiana
-\begin{equation} \label{azionecampi}
-    S[\phi] = \int d^4 x \mathcal L (\phi,~\phi,_\mu,~x^\mu)
-\end{equation}
+    \begin{equation*}
+        L = \int d^3 x ~ \mathcal L
+    \end{equation*}
+    In questo modo possiamo definire l'azione in funzione della densità di lagrangiana
+    \begin{equation} \label{azionecampi}
+        S[\phi] = \int d^4 x ~ \mathcal L (\phi,~\phi,_\mu,~x^\mu)
+    \end{equation}
 
-\subsection{Equazioni di Eulero-Lagrange per campi}
+\subsection{Equazioni di Eulero-Lagrange}
 
-    Seguendo le stesse linee guida che abbiamo utilizzato per sistemi discreti, è intuitivo pensare che il principio di Hamilton ci permetterà di trovare le equazioni del moto per la configurazione del campo $\phi$ che rende stazionario il suo funzionale di azione \eqref{azionecampi}
-\begin{equation} \label{azionestazionariacampi}
-    \delta S [\phi] = 0
-\end{equation}
-    Supponiamo che il campo $\phi(x^\mu)$ sia quella cercato, ovvero quella che rende stazionario il funzionale d'azione \eqref{azionestazionariacampi}, e prendiamo una sua variazione $\delta \phi(x^\mu)$. Introduciamo ora una famiglia di funzioni $\phi(x^mu, ~\epsilon)$ dipendenti da un parametro $\epsilon$ definita nel seguente modo 
-\begin{equation} \label{famigliacurvecampi}
-    \phi(x^\mu, ~\epsilon) = \phi(x^\mu, ~0) + \epsilon \delta \phi(x^\mu)
-\end{equation}
-    tale che quando il parametro si annulla $\epsilon=0$, la famiglia di funzioni si riduce a quella cercata
-\begin{equation*}
-    \phi(x^\mu, ~ 0) = \phi(x^\mu)
-\end{equation*}
-    Sostituiamo nel funzionale di azione \eqref{azione} la famiglia di curve \eqref{famigliacurve} e lo rendiamo dipendente da $\epsilon$
-\begin{equation*}
-    S(\epsilon) = \int d^4 x \mathcal L (\phi(x,~\epsilon),~\phi,_\mu(x, ~\epsilon),~x^\mu)
-\end{equation*}
+    Seguendo le stesse linee guida che abbiamo utilizzato per sistemi discreti, è intuitivo pensare che il principio di Hamilton ci permetterà di trovare le equazioni del moto per la configurazione del campo $\phi$ che rende stazionario il suo funzionale di azione~\eqref{azionecampi}
+    \begin{equation} \label{azionestazionariacampi}
+        \delta S [\phi] = 0
+    \end{equation}
+
+    Supponiamo che il campo $\phi(x^\mu)$ sia quella cercato, ovvero quella che rende stazionario il funzionale d'azione~\eqref{azionestazionariacampi}, e prendiamo una sua variazione $\delta \phi(x^\mu)$. Introduciamo una famiglia di funzioni $\phi(x^\mu, ~\epsilon)$ dipendenti da un parametro $\epsilon$ definita nel seguente modo 
+    \begin{equation} \label{famigliacurvecampi}
+        \phi(x^\mu, ~\epsilon) = \phi(x^\mu, ~0) + \epsilon \delta \phi(x^\mu)
+    \end{equation}
+    ovvero tale che, quando il parametro si annulla $\epsilon=0$, si riduce al campo cercato
+    \begin{equation*}
+        \phi(x^\mu, ~ 0) = \phi(x^\mu)
+    \end{equation*}
+    Sostituiamo nell'azione \eqref{azione} la famiglia di curve \eqref{famigliacurve} e lo parametrizziamo con il parametro reale $\epsilon$
+    \begin{equation*}
+        S(\epsilon) = \int d^4 x \mathcal L (\phi(x,~\epsilon),~\phi,_\mu(x, ~\epsilon),~x^\mu)
+    \end{equation*}
     Definiamo anche in questo caso la variazione del funzionale d'azione nel campo $\phi$ come la derivata rispetto al parametro $\epsilon$ calcolata nel punto in cui $\epsilon = 0$
-\begin{equation} \label{variazioneazionecampi}
-    \delta S[\phi, ~ \delta \phi] = \dv{}{\epsilon} S(\epsilon) \Big \vert_{\epsilon = 0} = \dv{}{\epsilon} S[\phi(x^\mu) + \epsilon \delta \phi(x^\mu)] \Big \vert_{\epsilon = 0}
-\end{equation}
-    e calcolando esplicitamente la derivata, differenziando sotto il segno di integrale, troviamo che 
+    \begin{equation} \label{variazioneazionecampi}
+        \delta S[\phi, ~ \delta \phi] = \dv{}{\epsilon} S(\epsilon) \Big \vert_{\epsilon = 0} = \dv{}{\epsilon} S[\phi(x^\mu) + \epsilon \delta \phi(x^\mu)] \Big \vert_{\epsilon = 0}
+    \end{equation}
+    e calcoliamo esplicitamente la derivata, differenziando sotto il segno di integrale
 \begin{equation*}
     \dv{S}{\epsilon} = \int d^4 x \Big (\pdv{L}{\phi} \pdv{\phi}{\epsilon} + \pdv{L}{\phi,_\mu} \pdv{\phi,_\mu}{\epsilon} \Big)
 \end{equation*}\label{prova1campi}
-    Integrando per integrare per parti il secondo termine, otteniamo
+    Integrando per parti il secondo termine, otteniamo
 \begin{equation}
     \dv{S}{\epsilon} = \int d^4 x \Big (\pdv{L}{\phi} \pdv{\phi}{\epsilon} - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \pdv{\phi}{\epsilon} \Big) + \int d^4 x \dv{}{x^\mu} \Big ( \pdv{L}{\phi,_\mu} \pdv{\phi}{\epsilon} \Big )
 \end{equation}
-    Calcolando esplicitamente le quattro componenti dell'ultimo termine, è possibile mostrare che si annulla a causa delle condizioni agli estremi. Osservando che 
+    Calcolando esplicitamente le quattro componenti dell'ultimo termine, è possibile mostrare che si annulla a causa delle condizioni agli estremi, analoga al caso discreto. Osservando che 
 \begin{equation}
     \pdv{\phi}{\epsilon} = \delta \phi
 \end{equation}
-    sostituiamo nell avariazione dell'azione e troviamo
+    sostituiamo nella variazione dell'azione e troviamo
 \begin{equation*}
-    \dv{S}{\epsilon} = \int d^4 x \Big (\pdv{L}{\phi} \delta \phi - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \delta \phi \Big) 
+    \dv{S}{\epsilon} = \int d^4 x \Big (\pdv{L}{\phi} \delta \phi - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \delta \phi \Big) = \int d^4 x \delta \phi \Big (\pdv{L}{\phi} - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \Big) 
 \end{equation*}
-    Raccogliendo un fattore $\delta q^i$ comune, otteniamo la relazione finale
-\begin{equation}
-    \dv{S}{\epsilon} = \int d^4 x \delta \phi \Big (\pdv{L}{\phi} - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \Big) 
-\end{equation}
-    Dato che ondizione necessaria affinchè il campo $\phi$ renda il funzionale d'azione \eqref{azionecampi} stazionario è che la variazione di quest'ultimo si annulli, qualunque sia la variazione del campo $\delta \phi$
+    dove abbiamo raccolto un fattore $\delta \phi$ comune nell'ultimo passaggio.
+
+    Dato che condizione necessaria affinchè il campo $\phi$ renda il funzionale d'azione~\eqref{azionecampi} stazionario è che la variazione di quest'ultimo si annulli, qualunque sia la variazione del campo $\delta \phi$
 \begin{equation}
     \delta S[\phi, ~ \delta \phi] = 0 \qquad \forall ~ \delta \phi
 \end{equation}
-    Mettendo insieme e ricordando \eqref{variazioneazionecampi}, otteniamo
+    Mettendo insieme e ricordando~\eqref{variazioneazionecampi}, otteniamo
 \begin{equation*}
     \delta S = \int d^4 x \delta \phi \Big (\pdv{L}{\phi} - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \Big)  = 0
 \end{equation*}
-    Data l'arbitrarietà della variazione $\delta \phi$, l'integranda deve annullarsi e abbiamo
+    Per la generalizzazione del lemma fondamentale del calcolo delle variazioni, e dunque per l'arbitrarietà della variazione $\delta \phi$, l'integranda deve annullarsi
 \begin{equation} \label{eullagcampi}
     \dvf{S}{\phi} = \pdv{L}{\phi} - \partial_\mu \pdv{L}{\phi,_\mu} = 0
 \end{equation}
-    Queste sono le equazioni del moto che stavamo cercando, una sola equazione differenziale alle derivate parziali. Ne caso di sistemi discreti a $d$ gradi di libertà, avevamo ottenuto $d$ equazioni differenziali mentre per sistemi continui a infiniti gradi di libertà, soltanto una equazione è apparsa. Tuttavia notiamo che sono presenti anche le derivate parziali spaziali a differenza del caso precedente.
+    Questa è l'equazione del moto che stavamo cercando, una sola equazione differenziale alle derivate parziali. Ne caso di sistemi discreti a $d$ gradi di libertà, avevamo ottenuto $d$ equazioni differenziali mentre per sistemi continui a infiniti gradi di libertà, soltanto una equazione è apparsa. Tuttavia sono presenti anche le derivate parziali spaziali a differenza del caso precedente.
 
 \subsection{Simmetrie}
-    Indaghiamo ora le simmetrie, generalizzando lo stesso concetto espresso per il caso discreto. Le simmetrie agiscono sui campi e non sulle coordinate, allo stesso modo in cui le simmetrie nel caso discreto interessavano le coordinate e non il tempo. Ciò può sempre essere visto notando che le coordinate $x^\mu$ sono variabile di integrazione e quindi muta. Vediamo dunque come trovare la deformazione dei campi in seguito a trasformazioni spaziotemporali. Consideriamo prima il caso di traslazioni spaziotemporali
-\begin{equation*}
-    x'^\mu = x^\mu + \epsilon^\mu
-\end{equation*} 
-    dove $\epsilon^\mu$ è un quadrivettore dalle componenti costanti. Dato un campo $\phi(\mu)$, costruiamo il campo traslato $\phi'(x^\mu)$, espandendo in serie e tenendo solo i termini lineari al primo ordine in $\epsilon$
-\begin{equation*}
-    \phi'(x^\mu) = \phi(x - \epsilon) \simeq \phi(x) - \epsilon^\mu \partial_\mu \phi(x)
-\end{equation*}
-    Abbiamo dunque ricavato la deformazione del campo in seguito alla traslazione spaziotemporale 
-\begin{equation*}
-    \delta \phi(x) = \phi'(x) - \phi(x) = -\epsilon^\mu \partial_\mu \phi (x)
-\end{equation*}
-    
-    Sorge a questo punto spontaneo domandarsi come invece si deforma il campo sotto altri tipi di trasformazioni, come rotazioni o dilatazioni, dato che anche le coordinate spaziali sono considerate mute. 
-
-    Finora abbiamo studiato solamente campi scalari, ma in natura esistono altri tipi di campi, come quelli vettoriali o tensoriali. Vengono definiti solitamente in base a come si comportano sotto l'effetto di leggi di trasformazione. Mostriamo 4 esempi di come campi scalari, vettoriali, tensoriali di rango $(0,~1)$ vengono trasformati in seguito all'applicazione di un cambio di coordinate:
-\begin{enumerate}
-    \item per campi scalari
-\begin{equation}
-    \phi'(x') = \phi(x)
-\end{equation}
-    \item per campi vettoriali
-\begin{equation}
-    V'^\mu(x') = \pdv{x'^\mu}{x^\nu} V^\nu(x)
-\end{equation}
-    \item per campi tensoriali di rango $(0,~1)$
-\begin{equation}
-    A'_\mu(x') = \pdv{x^\nu}{x'^\mu} A_\nu(x)
-\end{equation}
-\end{enumerate} 
-    Siccome avremo bisogno di trasformazioni infinitesime, rendiamo il cambio di coordinate tale 
-\begin{equation}
-    x'^\mu = x^\mu + \xi^\mu(x)
-\end{equation}
-    Quindi la versione infinitesima dello jacobiano precedentemente utilizzato è 
-\begin{equation}
-    \pdv{x'^\mu}{x^\mu} = \delta^{\mu}_{\phantom \mu \nu} + \partial_\nu \xi^\mu(x)
-\end{equation}
-    mentre per l'inverso è 
-\begin{equation}
-    \pdv{x^\mu}{x'^\mu} = \delta^{\mu}_{\phantom \mu \nu} - \partial_\nu \xi^\mu(x)
-\end{equation}
-    A questo punto applichiamo ai casi precedenti e troviamo le variazioni dei campi
-\begin{enumerate}
-    \item Per campi scalari, espandiamo al primo ordine
-\begin{equation}
-    \phi'(x) = \phi(x - \xi) = \phi(x) - \xi^\mu(x) \partial_\mu \phi(x)
-\end{equation}  
-    e otteniamo la variazione
-\begin{equation}\label{variazionescalare}
-    \delta \phi(x) = - \xi^\mu(x) \partial_\mu \phi(x)
-\end{equation} 
-    \item Per campi vettoriali, espandiamo al primo ordine sia il lato destro che sinistro
-\begin{equation}
-    V'^\mu(x) + \xi^\nu(x) \partial_\mu V^\mu (x) = V^\mu(x) + (\partial_\nu \xi^\mu(x)) V^\nu(x)
-\end{equation}
-    e otteniamo la variazione
-\begin{equation}\label{variazionevett}
-    \delta V^\mu(x) = V'^\mu(x) - V^\mu(x) = (\partial_\nu \xi^\mu(x)) V^\nu(x) - \xi^\nu (x)\partial_\mu V^\mu(x)
-\end{equation}
-    \item Per campi tensoriali di rango $(0,~1)$, espandiamo entrambi i membtri 
-\begin{equation}
-    A'_\mu(x) + \xi^\nu(x) \partial_\mu A_\mu (x) = A_\mu(x) - A_\nu(x) \partial_\mu \xi^\nu(x)
-\end{equation}
-    e otteniamo la variazione
-\begin{equation}\label{variazione10}
-    \delta A_\mu(x) = A'_\mu(x) - A_\mu(x) = - \xi^\nu(x) \partial_\mu A_\mu (x) = A_\mu(x) - A_\nu(x) \partial_\mu \xi^\nu(x)
-\end{equation}
-\end{enumerate}
-
-    A seguito di questa digressione che sarà utile negli esempi, studiamo le due variazioni già introdotte. Una variazione di simmetria del funzionale di azione è una funzione infinitesima $\delta_s \phi$ vincolata a risolvere l'equazione per ogni arbitraria $\phi(x)$
+    Indaghiamo ora le simmetrie, generalizzando lo stesso concetto espresso per il capitolo precedente. Le simmetrie sono sempre classi speciali di trasformazioni del campo che lasciano l'azione invariata a meno di un termine al bordo. Quindi definiamo una variazione di simmetria dell'azione come una funzione infinitesima $\delta_s \phi$ vincolata a risolvere l'equazione per ogni arbitraria $\phi(x)$
 \begin{equation} \label{invazionecampi}
     \delta S[\phi, ~\delta_s \phi] = S[\phi + \delta_s \phi] - S[\phi] = \int d^4 x \partial_\mu K^\mu \qquad \forall \phi
 \end{equation}  
@@ -185,6 +107,8 @@
 \begin{equation} \label{invonshellcampi}
     \delta S[\phi, ~\delta_s \phi] = \int d^4 x \partial_\mu \Big ( \pdv{L}{\phi,_\mu}  \delta \phi \Big)
 \end{equation}
+
+\section{Equazione di continuità}
 
 \section{Il primo teorema di Noether in teoria dei campi}
     A questo punto abbiamo tutti gli strumenti per enunciare e dimostrare il primo teorema di Noether nell'ambito della teoria dei campi relativistici.
@@ -254,6 +178,77 @@
 \end{equation*}
 
     Nel prossimo paragrafo studiamo le simmetrie spaziotemporali e come ci portano a definire il tensore energia-impulso, la cui fondamentale applicazione è data dalla relatività generale. 
+
+
+\subsection{simmetrie di campi}
+
+Inoltre le simmetrie agiscono sui campi e non sulle coordinate, allo stesso modo in cui le simmetrie nel caso discreto interessavano le coordinate e non il tempo. Ciò può sempre essere visto notando che le coordinate $x^\mu$ sono variabili di integrazione e quindi mute. Vediamo dunque come trovare la deformazione dei campi in seguito a trasformazioni spaziotemporali. Consideriamo prima il caso di traslazioni spaziotemporali
+\begin{equation*}
+    x'^\mu = x^\mu + \epsilon^\mu
+\end{equation*} 
+    dove $\epsilon^\mu$ è un quadrivettore dalle componenti costanti. Dato un campo $\phi(\mu)$, costruiamo il campo traslato $\phi'(x^\mu)$, espandendo in serie e tenendo solo i termini lineari al primo ordine in $\epsilon$
+\begin{equation*}
+    \phi'(x^\mu) = \phi(x - \epsilon) \simeq \phi(x) - \epsilon^\mu \partial_\mu \phi(x)
+\end{equation*}
+    Abbiamo dunque ricavato la deformazione del campo in seguito alla traslazione spaziotemporale 
+\begin{equation*}
+    \delta \phi(x) = \phi'(x) - \phi(x) = -\epsilon^\mu \partial_\mu \phi (x)
+\end{equation*}
+
+Finora abbiamo studiato solamente campi scalari, ma in natura esistono altri tipi di campi, come quelli vettoriali o tensoriali. Vengono definiti solitamente in base a come si comportano sotto l'effetto di leggi di trasformazione. Mostriamo 4 esempi di come campi scalari, vettoriali, tensoriali di rango $(0,~1)$ vengono trasformati in seguito all'applicazione di un cambio di coordinate:
+\begin{enumerate}
+    \item per campi scalari
+\begin{equation}
+    \phi'(x') = \phi(x)
+\end{equation}
+    \item per campi vettoriali
+\begin{equation}
+    V'^\mu(x') = \pdv{x'^\mu}{x^\nu} V^\nu(x)
+\end{equation}
+    \item per campi tensoriali di rango $(0,~1)$
+\begin{equation}
+    A'_\mu(x') = \pdv{x^\nu}{x'^\mu} A_\nu(x)
+\end{equation}
+\end{enumerate} 
+    Siccome avremo bisogno di trasformazioni infinitesime, rendiamo il cambio di coordinate tale 
+\begin{equation}
+    x'^\mu = x^\mu + \xi^\mu(x)
+\end{equation}
+    Quindi la versione infinitesima dello jacobiano precedentemente utilizzato è 
+\begin{equation}
+    \pdv{x'^\mu}{x^\mu} = \delta^{\mu}_{\phantom \mu \nu} + \partial_\nu \xi^\mu(x)
+\end{equation}
+    mentre per l'inverso è 
+\begin{equation}
+    \pdv{x^\mu}{x'^\mu} = \delta^{\mu}_{\phantom \mu \nu} - \partial_\nu \xi^\mu(x)
+\end{equation}
+    A questo punto applichiamo ai casi precedenti e troviamo le variazioni dei campi
+\begin{enumerate}
+    \item Per campi scalari, espandiamo al primo ordine
+\begin{equation}
+    \phi'(x) = \phi(x - \xi) = \phi(x) - \xi^\mu(x) \partial_\mu \phi(x)
+\end{equation}  
+    e otteniamo la variazione
+\begin{equation}\label{variazionescalare}
+    \delta \phi(x) = - \xi^\mu(x) \partial_\mu \phi(x)
+\end{equation} 
+    \item Per campi vettoriali, espandiamo al primo ordine sia il lato destro che sinistro
+\begin{equation}
+    V'^\mu(x) + \xi^\nu(x) \partial_\mu V^\mu (x) = V^\mu(x) + (\partial_\nu \xi^\mu(x)) V^\nu(x)
+\end{equation}
+    e otteniamo la variazione
+\begin{equation}\label{variazionevett}
+    \delta V^\mu(x) = V'^\mu(x) - V^\mu(x) = (\partial_\nu \xi^\mu(x)) V^\nu(x) - \xi^\nu (x)\partial_\mu V^\mu(x)
+\end{equation}
+    \item Per campi tensoriali di rango $(0,~1)$, espandiamo entrambi i membtri 
+\begin{equation}
+    A'_\mu(x) + \xi^\nu(x) \partial_\mu A_\mu (x) = A_\mu(x) - A_\nu(x) \partial_\mu \xi^\nu(x)
+\end{equation}
+    e otteniamo la variazione
+\begin{equation}\label{variazione10}
+    \delta A_\mu(x) = A'_\mu(x) - A_\mu(x) = - \xi^\nu(x) \partial_\mu A_\mu (x) = A_\mu(x) - A_\nu(x) \partial_\mu \xi^\nu(x)
+\end{equation}
+\end{enumerate}
 
 \subsection{Tensore energia-impulso}
     Definiamo $T^\mu_\nu$ tensore energia-impulso come la corrente di Noether associata alle 4 traslazioni temporali
@@ -447,3 +442,6 @@
     Q = \int d^3 r \psi^* \psi
 \end{equation*}
     che normalmente si pone $Q = 1$ per avere la condizione di normalizzazione. 
+
+\subsubsection{Riferimenti bibliografici}
+    I riferimenti bibliografici per questo capitolo sono~\cite{landaucampi},~\cite{barone},~\cite{banados} e~\cite{weinberg}.

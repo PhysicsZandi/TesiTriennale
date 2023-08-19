@@ -14,6 +14,8 @@
 \usepackage[a4paper, top = 4cm, bottom = 4cm, left = 2.5cm, right = 2.5cm]{geometry}
 \usepackage{etoc}
 
+\usepackage{array}
+
 \usepackage{emptypage}
 
 \usepackage[utf8]{inputenc}
@@ -22,6 +24,8 @@
 
 \usepackage{epigraph}
 \usepackage{amssymb}
+
+\usepackage{fancyhdr}
 
 
 \usepackage{hyperref}
@@ -38,12 +42,12 @@
 \usepackage{mathtools}
 \usepackage{bbm}
 
-\newtheorem{theorem}{Teorema}
-\newtheorem{principle}{Principio}
-\newtheorem{definition}{Definizione}
-\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Teorema}[subsection]
+\newtheorem{principle}{Principio}[subsection]
+\newtheorem{definition}{Definizione}[subsection]
+\newtheorem{lemma}{Lemma}[subsection]
 \theoremstyle{definition}
-\newtheorem{example}{Esempio}
+\newtheorem{example}{Esempio}[subsection]
 \renewcommand\qedsymbol{q.e.d.}
 
 \theoremstyle{remark}
@@ -55,7 +59,7 @@
 \newcommand{\pdv}[2]{\frac{\partial#1}{\partial#2}}
 \newcommand{\pdvd}[3]{\frac{\partial^2 #1}{\partial#2 \partial#3}}
 \newcommand{\integ}[3]{\int_{#1}^{#2}d#3~}
-\newcommand{\poi}[2]{\{#1, ~#2\}}
+\newcommand{\poi}[2]{[#1, ~#2]}
 \newcommand{\poiexp}[2]{\pdv{#1}{q^i} \pdv{#2}{p_i} - \pdv{#2}{q^i} \pdv{#1}{p_i}}
 
 \usepackage{tikz}
