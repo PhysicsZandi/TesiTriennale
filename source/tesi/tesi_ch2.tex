@@ -1,10 +1,9 @@
-\chapter{Il primo teorema in teoria classica dei campi}
+\chapter{Il primo teorema in teoria relativistica dei campi}
 
-    Il secondo sistema fisico che prendiamo in considerazione è un sistema continuo che presenta un'infinità di gradi di libertà, a differenza dai sistemi studiati nel precedente capitolo. 
-    Il nostro oggetto di indagine sarà quindi un'entità estesa nello spazio che rappresenteremo da una funzione delle coordinate e del tempo. I campi scalari sono semplici funzioni che forniscono un numero per ogni punto, come ad esempio la temperatura, la pressione o la densità. Campi vettoriali invece associano vettori ad ogni punto, come ad esempio il campo elettrico o quello gravitazionale.
+    Il secondo sistema fisico che prendiamo in considerazione è un sistema continuo che presenta un'infinità di gradi di libertà, a differenza dai sistemi studiati nel precedente capitolo. Il nostro oggetto di indagine sarà quindi un'entità estesa nello spazio che rappresenteremo da una funzione delle coordinate e del tempo. I campi scalari sono semplici funzioni che forniscono un numero per ogni punto, come ad esempio la temperatura, la pressione o la densità. Campi vettoriali (o tensoriali) invece associano vettori ad ogni punto, come ad esempio il campo elettrico o quello gravitazionale.
 
-\section{Introduzione alla relatività}
-    Non rimarremo nell'ambito della fisica newtoniana, ma useremo la formulazione relativistica einsteniana. Lo spazio matematico che utilizzeremo è lo spaziotempo di Minkowski $\mathcal M$, ovvero uno spazio euclideo con l'aggiunta della coordinata temporale, in cui però è stata definita una distanza differente: non sarà più valido il teorema di Pitagora 
+\section{Cenni di relatività speciale}
+    In questo capitolo, non ci limiteremo all'ambito della fisica newtoniana, ma useremo la formulazione relativistica einsteniana. I principi su cui si basa sono il principio di relatività, ovvero che le leggi della fisica sono le stesse in tutti i sistemi di riferimento inerziali, e la costanza della velocità della luce, ovvero che le onde elettromagnetiche viaggiano ad una velocità costante che nessun corpo massivo può superare. Lo spazio matematico che utilizzeremo è lo spaziotempo di Minkowski $\mathcal M$, ovvero uno spazio euclideo con l'aggiunta della coordinata temporale, in cui però è stata definita una distanza differente: non sarà più valido il teorema di Pitagora 
     \begin{equation*}
         ds^2 = dx^2 + dy^2 + dz^2
     \end{equation*}
@@ -16,19 +15,23 @@
     \begin{equation*}
         x^\mu = (ct,~x,~y,~z)
     \end{equation*}
+    
+    Analogamente al caso discreto, la dinamica del campo è descritta da equazioni differenziali che ne determinano l'evoluzione. Trattiamo solamente il caso di un campo scalare, ovvero definito attraverso una singola funzione $\phi(x^\mu)$, mentre per campi vettoriali (o tensoriali) si generalizza immediatamente. Definiamo le rispettive derivate dei campi rispetto alle coordinate come
+    \begin{equation*}
+        \partial_\mu \phi =  \phi,_\mu = \dv{\phi}{x^\mu} = (\frac{1}{c} \pdv{\phi}{t}, ~ \nabla \phi)
+    \end{equation*}
+    Conseguentemente, le equazioni del moto sono equazioni dipendenti dal campo, dalle sue derivate e dal quadrivettore posizione
+    \begin{equation} \label{motocampi}
+        f_j(x^\mu, ~\phi(x^\mu), ~\phi,_\nu(x^\mu)) = 0
+    \end{equation}
 
 \section{Formalismo lagrangiano}    
 
-    Analogamente al caso discreto, la dinamica del campo è descritta da equazioni differenziali alle derivate parziali sul tempo e sulle coordinate che ne determinano l'evoluzione. Le equazioni del moto saranno dunque conseguenza di un principio di Hamilton che ci porterà ad equivalenti equazioni di Eulero-Lagrange. Trattiamo solamente il caso di un campo scalare, ovvero definito attraverso una singola funzione $\phi(x^\mu)$, mentre per campi vettoriali (o tensoriali) si generalizza immediatamente. Definiamo le rispettive derivate dei campi rispetto alle coordinate come
-    \begin{equation*}
-        \partial_\mu \phi =  \phi,_\mu = \dv{\phi}{x^\mu}
-    \end{equation*}
-
-    Introduciamo la densità di lagrangiana $\mathcal L$, funzione del campo $\phi$, delle sue derivate $\phi,_\mu$ ed eventualmente delle coordinate $x^\mu$
+    Il formalismo lagrangiano si basa sulla densità di lagrangiana $\mathcal L$, funzione del campo $\phi$, delle sue derivate $\phi,_\mu$ ed eventualmente delle coordinate $x^\mu$
     \begin{equation} \label{lagrangianacampi}
         \mathcal L = \mathcal L (\phi,~\phi,_\mu,~x^\mu)
     \end{equation}
-    che integrata sullo spazio tridimensionale permette di ottenere la lagrangiana $L$ associata al sistema
+    che integrata sullo spazio tridimensionale permette di ottenere la lagrangiana associata al sistema
     \begin{equation*}
         L = \int d^3 x ~ \mathcal L
     \end{equation*}
@@ -36,279 +39,265 @@
     \begin{equation} \label{azionecampi}
         S[\phi] = \int d^4 x ~ \mathcal L (\phi,~\phi,_\mu,~x^\mu)
     \end{equation}
+    È importante osservare che l'azione è Lorentz-invariante, e quindi non dipende dal sistema di riferimento inerziale scelto.
 
 \subsection{Equazioni di Eulero-Lagrange}
 
-    Seguendo le stesse linee guida che abbiamo utilizzato per sistemi discreti, è intuitivo pensare che il principio di Hamilton ci permetterà di trovare le equazioni del moto per la configurazione del campo $\phi$ che rende stazionario il suo funzionale di azione~\eqref{azionecampi}
+    Seguendo le stesse linee guida che abbiamo utilizzato per sistemi discreti, è intuitivo pensare che il principio di azione stazionaria ci permetterà di trovare le equazioni del moto per la configurazione del campo $\phi$ che rende stazionario il suo funzionale di azione~\eqref{azionecampi}
     \begin{equation} \label{azionestazionariacampi}
-        \delta S [\phi] = 0
+        \delta S [\phi(x^\mu)] = 0
     \end{equation}
 
-    Supponiamo che il campo $\phi(x^\mu)$ sia quella cercato, ovvero quella che rende stazionario il funzionale d'azione~\eqref{azionestazionariacampi}, e prendiamo una sua variazione $\delta \phi(x^\mu)$. Introduciamo una famiglia di funzioni $\phi(x^\mu, ~\epsilon)$ dipendenti da un parametro $\epsilon$ definita nel seguente modo 
-    \begin{equation} \label{famigliacurvecampi}
-        \phi(x^\mu, ~\epsilon) = \phi(x^\mu, ~0) + \epsilon \delta \phi(x^\mu)
-    \end{equation}
-    ovvero tale che, quando il parametro si annulla $\epsilon=0$, si riduce al campo cercato
+    Calcoliamo la variazione dell'azione
     \begin{equation*}
-        \phi(x^\mu, ~ 0) = \phi(x^\mu)
+    \begin{aligned}
+        \delta S & = \delta \int d^4 x ~ \mathcal L = \int d^4 x ~ \Big (\pdv{L}{\phi} \delta \phi + \pdv{L}{\phi,_\mu} \delta \phi,_\mu \Big) \\ & = \int d^4 x \Big (\pdv{L}{\phi} \delta \phi - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \delta \phi \Big) + \int d^4 x \dv{}{x^\mu} \Big ( \pdv{L}{\phi,_\mu} \delta \phi \Big ) = 
+    \end{aligned}
     \end{equation*}
-    Sostituiamo nell'azione \eqref{azione} la famiglia di curve \eqref{famigliacurve} e lo parametrizziamo con il parametro reale $\epsilon$
+    dove abbiamo integrato per parti e nell'ultimo passaggio posto uguale a zero le quattro componenti dell'ultimo termine, a causa delle condizioni agli estremi, analoga al caso discreto, e raccolto un termine comune $\delta \phi$. Imponendo la~\eqref{azionecampi}, otteniamo
     \begin{equation*}
-        S(\epsilon) = \int d^4 x \mathcal L (\phi(x,~\epsilon),~\phi,_\mu(x, ~\epsilon),~x^\mu)
+        \delta S = \int d^4 x \delta \phi \Big (\pdv{L}{\phi} - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \Big)  = 0
     \end{equation*}
-    Definiamo anche in questo caso la variazione del funzionale d'azione nel campo $\phi$ come la derivata rispetto al parametro $\epsilon$ calcolata nel punto in cui $\epsilon = 0$
-    \begin{equation} \label{variazioneazionecampi}
-        \delta S[\phi, ~ \delta \phi] = \dv{}{\epsilon} S(\epsilon) \Big \vert_{\epsilon = 0} = \dv{}{\epsilon} S[\phi(x^\mu) + \epsilon \delta \phi(x^\mu)] \Big \vert_{\epsilon = 0}
-    \end{equation}
-    e calcoliamo esplicitamente la derivata, differenziando sotto il segno di integrale
-\begin{equation*}
-    \dv{S}{\epsilon} = \int d^4 x \Big (\pdv{L}{\phi} \pdv{\phi}{\epsilon} + \pdv{L}{\phi,_\mu} \pdv{\phi,_\mu}{\epsilon} \Big)
-\end{equation*}\label{prova1campi}
-    Integrando per parti il secondo termine, otteniamo
-\begin{equation}
-    \dv{S}{\epsilon} = \int d^4 x \Big (\pdv{L}{\phi} \pdv{\phi}{\epsilon} - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \pdv{\phi}{\epsilon} \Big) + \int d^4 x \dv{}{x^\mu} \Big ( \pdv{L}{\phi,_\mu} \pdv{\phi}{\epsilon} \Big )
-\end{equation}
-    Calcolando esplicitamente le quattro componenti dell'ultimo termine, è possibile mostrare che si annulla a causa delle condizioni agli estremi, analoga al caso discreto. Osservando che 
-\begin{equation}
-    \pdv{\phi}{\epsilon} = \delta \phi
-\end{equation}
-    sostituiamo nella variazione dell'azione e troviamo
-\begin{equation*}
-    \dv{S}{\epsilon} = \int d^4 x \Big (\pdv{L}{\phi} \delta \phi - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \delta \phi \Big) = \int d^4 x \delta \phi \Big (\pdv{L}{\phi} - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \Big) 
-\end{equation*}
-    dove abbiamo raccolto un fattore $\delta \phi$ comune nell'ultimo passaggio.
-
-    Dato che condizione necessaria affinchè il campo $\phi$ renda il funzionale d'azione~\eqref{azionecampi} stazionario è che la variazione di quest'ultimo si annulli, qualunque sia la variazione del campo $\delta \phi$
-\begin{equation}
-    \delta S[\phi, ~ \delta \phi] = 0 \qquad \forall ~ \delta \phi
-\end{equation}
-    Mettendo insieme e ricordando~\eqref{variazioneazionecampi}, otteniamo
-\begin{equation*}
-    \delta S = \int d^4 x \delta \phi \Big (\pdv{L}{\phi} - \dv{}{x^\mu} \Big (\pdv{L}{\phi,_\mu} \Big) \Big)  = 0
-\end{equation*}
     Per la generalizzazione del lemma fondamentale del calcolo delle variazioni, e dunque per l'arbitrarietà della variazione $\delta \phi$, l'integranda deve annullarsi
-\begin{equation} \label{eullagcampi}
-    \dvf{S}{\phi} = \pdv{L}{\phi} - \partial_\mu \pdv{L}{\phi,_\mu} = 0
-\end{equation}
-    Questa è l'equazione del moto che stavamo cercando, una sola equazione differenziale alle derivate parziali. Ne caso di sistemi discreti a $d$ gradi di libertà, avevamo ottenuto $d$ equazioni differenziali mentre per sistemi continui a infiniti gradi di libertà, soltanto una equazione è apparsa. Tuttavia sono presenti anche le derivate parziali spaziali a differenza del caso precedente.
+    \begin{equation} \label{eullagcampi}
+        \pdv{L}{\phi} - \partial_\mu \pdv{L}{\phi,_\mu} = 0
+    \end{equation}
+    Questa è l'equazione del moto che stavamo cercando, una sola equazione differenziale alle derivate parziali. Dunque inerendo esplicitamente la densità di lagrangiana, le~\eqref{eullagcampi} diventano le~\eqref{motocampi}. Nel caso di sistemi discreti a $d$ gradi di libertà, avevamo ottenuto $d$ equazioni differenziali mentre per sistemi continui a infiniti gradi di libertà, soltanto una equazione è apparsa. Tuttavia sono presenti anche le derivate parziali spaziali a differenza del caso precedente. 
 
-\subsection{Simmetrie}
-    Indaghiamo ora le simmetrie, generalizzando lo stesso concetto espresso per il capitolo precedente. Le simmetrie sono sempre classi speciali di trasformazioni del campo che lasciano l'azione invariata a meno di un termine al bordo. Quindi definiamo una variazione di simmetria dell'azione come una funzione infinitesima $\delta_s \phi$ vincolata a risolvere l'equazione per ogni arbitraria $\phi(x)$
-\begin{equation} \label{invazionecampi}
-    \delta S[\phi, ~\delta_s \phi] = S[\phi + \delta_s \phi] - S[\phi] = \int d^4 x \partial_\mu K^\mu \qquad \forall \phi
-\end{equation}  
-    dove $K^\mu$ è un termine al bordo. Anche in questo caso non chiediamo che sia strettamente invariante ma che la variazione sia nulla a meno di una quadridivergenza. Ciò deriva dalla possibilità di aggiungere una quadridivergenza alla densità della lagrangiana senza che le equazioni del moto cambino. Definiamo inoltre che una variazione on-shell, ovvero tale che le $\phi$ devono soddisfare le equazioni del moto \eqref{eullagcampi}, un'arbitraria variaione infinitesima $\delta \phi$ tale che la variazione dell'azione sia una quadridivergenza
-\begin{equation}
-\begin{aligned}
-    \delta S[\overline \phi, ~\delta \phi] & = \int d^4 x \Big(\pdvd{L}{\phi} \delta \phi + \pdv{L}{\phi,_\mu} \delta \phi,-\mu \Big) \\ & = \int d^4 x \Big ( \delta \phi \Big (\pdv{L}{\phi} - \partial_\mu \pdv{L}{\phi,_\mu} \Big ) Big) + \int d^4 x \partial_\mu \Big ( \pdv{L}{\phi,_\mu}  \delta \phi \Big)
-\end{aligned}
-\end{equation}
-    e applicando le equazioni di Eulero-Lagrange, il primo integrale si annulla e otteniamo 
-\begin{equation} \label{invonshellcampi}
-    \delta S[\phi, ~\delta_s \phi] = \int d^4 x \partial_\mu \Big ( \pdv{L}{\phi,_\mu}  \delta \phi \Big)
-\end{equation}
+\section{Simmetrie}
+    
+    Indaghiamo ora le simmetrie, generalizzando lo stesso concetto espresso per il capitolo precedente. Le simmetrie sono sempre classi speciali di trasformazioni del campo che lasciano l'azione invariata a meno di un termine al bordo. Quindi definiamo una variazione di simmetria dell'azione come una funzione infinitesima $\delta_s \phi$ vincolata a risolvere l'equazione, per ogni arbitraria $\phi(x)$
+    \begin{equation} \label{invazionecampi}
+        \delta S[\phi, ~\delta_s \phi] = S[\phi + \delta_s \phi] - S[\phi] = \int d^4 x \partial_\mu K^\mu \qquad \forall \phi
+    \end{equation}  
+    dove $K^\mu$ è un termine al bordo. Anche in questo caso non chiediamo che sia strettamente invariante ma che la variazione sia nulla a meno di una quadridivergenza. Ciò deriva dalla possibilità di aggiungere una quadridivergenza alla densità della lagrangiana senza che le equazioni del moto cambino. Definiamo inoltre una variazione on-shell, ovvero tale che le $\phi$ devono soddisfare le equazioni del moto~\eqref{eullagcampi}, come un'arbitraria variazione infinitesima $\delta \phi$ tale che la variazione dell'azione sia una quadridivergenza
+    \begin{equation*}
+    \begin{aligned}
+        \delta S[\overline \phi, ~\delta \phi] & = \int d^4 x \Big(\pdvd{L}{\phi} \delta \phi + \pdv{L}{\phi,_\mu} \delta \phi,-\mu \Big) \\ & = \int d^4 x \Big ( \delta \phi \Big (\pdv{L}{\phi} - \partial_\mu \pdv{L}{\phi,_\mu} \Big ) Big) + \int d^4 x \partial_\mu \Big ( \pdv{L}{\phi,_\mu}  \delta \phi \Big)
+    \end{aligned}
+    \end{equation*}
+    Applicando le equazioni di Eulero-Lagrange~\eqref{eullagcampi}, il primo integrale si annulla e otteniamo 
+    \begin{equation} \label{invonshellcampi}
+        \delta S[\phi, ~\delta_s \phi] = \int d^4 x \partial_\mu \Big ( \pdv{L}{\phi,_\mu}  \delta \phi \Big)
+    \end{equation}
 
-\section{Equazione di continuità}
+\subsection{Trasformazioni spaziotemporali come deformazioni dei campi}
 
-\section{Il primo teorema di Noether in teoria dei campi}
-    A questo punto abbiamo tutti gli strumenti per enunciare e dimostrare il primo teorema di Noether nell'ambito della teoria dei campi relativistici.
+    Nel precedente paragrafo, abbiamo imposto che le simmetrie agiscano sui campi e non sulle coordinate, allo stesso modo in cui le simmetrie nel caso discreto interessavano le coordinate e non il tempo. Ciò può sempre essere mostrato notando che le coordinate $x^\mu$ sono variabili di integrazione e quindi mute. Vediamo dunque come trovare la deformazione dei campi in seguito a trasformazioni spaziotemporali. Consideriamo prima il caso di traslazioni spaziotemporali
+    \begin{equation*}
+        x'^\mu = x^\mu + \epsilon^\mu
+    \end{equation*} 
+        dove $\epsilon^\mu$ è un quadrivettore dalle componenti costanti. Dato un campo $\phi(\mu)$, costruiamo il campo traslato $\phi'(x^\mu)$, espandendo in serie e tenendo solo i termini lineari al primo ordine in $\epsilon$
+    \begin{equation*}
+        \phi'(x^\mu) = \phi(x - \epsilon) \simeq \phi(x) - \epsilon^\mu \partial_\mu \phi(x)
+    \end{equation*}
+        Abbiamo dunque ricavato la deformazione del campo in seguito alla traslazione spaziotemporale 
+    \begin{equation*}
+        \delta \phi(x) = \phi'(x) - \phi(x) = -\epsilon^\mu \partial_\mu \phi (x)
+    \end{equation*}
 
-\begin{theorem}[Primo teorema di Noether in teoria dei campi]
-    Sia $\mathcal L(\phi)$ la densità di lagrangiana di un sistema fisico con relativo funzionale di azione
-\begin{equation*}
-    S[\phi] = \int d^4 x \mathcal L(\phi,~\phi,_\mu)
-\end{equation*}
-    Sia $\delta_s \phi(x)$ una trasformazione del campo che individua una variazione di simmetria del sistema \eqref{invazionecampi}, ovvero che lascia invariate le equazioni di Eulero-Lagrange \eqref{eullagcampi}. Allora esiste una quantità $J^\mu$, definita come
-\begin{equation}\label{caricacampi}
-    J^\mu = \pdv{\mathcal L}{\phi,_\mu} \delta \phi - K^\mu 
-\end{equation}
-    tale che soddisfi la legge di continuità
-\begin{equation} \label{thcampi}
-    \partial_\mu J^\mu = 0
-\end{equation}
-\end{theorem}
+    Finora abbiamo studiato solamente campi scalari, generalizziamo ora per quelli vettoriali o tensoriali. Solitamente, vengono definiti solitamente in base a come si comportano sotto l'effetto di leggi di trasformazione. Vediamo dunque esempi di come campi scalari, vettoriali, tensoriali di rango $(0,~1)$ si trasformino in seguito all'applicazione di un cambio di coordinate:
+    \begin{enumerate}
+        \item Per campi scalari
+    \begin{equation*}
+        \phi'(x') = \phi(x)
+    \end{equation*}
+        \item Per campi vettoriali
+    \begin{equation*}
+        V'^\mu(x') = \pdv{x'^\mu}{x^\nu} V^\nu(x)
+    \end{equation*}
+        \item Per campi tensoriali di rango $(0,~1)$
+    \begin{equation*}
+        A'_\mu(x') = \pdv{x^\nu}{x'^\mu} A_\nu(x)
+    \end{equation*}
+    \end{enumerate} 
+        Siccome avremo bisogno di trasformazioni infinitesime, rendiamo il cambio di coordinate tale 
+    \begin{equation*}
+        x'^\mu = x^\mu + \xi^\mu(x)
+    \end{equation*}
+        Quindi la versione infinitesima dello jacobiano precedentemente utilizzato è 
+    \begin{equation*}
+        \pdv{x'^\mu}{x^\mu} = \delta^{\mu}_{\phantom \mu \nu} + \partial_\nu \xi^\mu(x)
+    \end{equation*}
+        mentre per l'inverso è 
+    \begin{equation*}
+        \pdv{x^\mu}{x'^\mu} = \delta^{\mu}_{\phantom \mu \nu} - \partial_\nu \xi^\mu(x)
+    \end{equation*}
+        A questo punto applichiamo ai casi precedenti e troviamo le variazioni dei campi
+    \begin{enumerate}
+        \item Per campi scalari, espandiamo al primo ordine
+    \begin{equation*}
+        \phi'(x) = \phi(x - \xi) = \phi(x) - \xi^\mu(x) \partial_\mu \phi(x)
+    \end{equation*}  
+        e otteniamo la variazione
+    \begin{equation}\label{variazionescalare}
+        \delta \phi(x) = - \xi^\mu(x) \partial_\mu \phi(x)
+    \end{equation} 
+        \item Per campi vettoriali, espandiamo al primo ordine sia il lato destro che sinistro
+    \begin{equation*}
+        V'^\mu(x) + \xi^\nu(x) \partial_\mu V^\mu (x) = V^\mu(x) + (\partial_\nu \xi^\mu(x)) V^\nu(x)
+    \end{equation*}
+        e otteniamo la variazione
+    \begin{equation}\label{variazionevett}
+        \delta V^\mu(x) = V'^\mu(x) - V^\mu(x) = (\partial_\nu \xi^\mu(x)) V^\nu(x) - \xi^\nu (x)\partial_\mu V^\mu(x)
+    \end{equation}
+        \item Per campi tensoriali di rango $(0,~1)$, espandiamo entrambi i membtri 
+    \begin{equation*}
+        A'_\mu(x) + \xi^\nu(x) \partial_\mu A_\mu (x) = A_\mu(x) - A_\nu(x) \partial_\mu \xi^\nu(x)
+    \end{equation*}
+        e otteniamo la variazione
+    \begin{equation}\label{variazione10}
+        \delta A_\mu(x) = A'_\mu(x) - A_\mu(x) = - \xi^\nu(x) \partial_\mu A_\mu (x) = A_\mu(x) - A_\nu(x) \partial_\mu \xi^\nu(x)
+    \end{equation}
+    \end{enumerate}
 
-\begin{proof}
-    Inserendo $\phi = \overline \phi$ nella \eqref{invazionecampi}, ovvero vincolando che $\phi$ soddisfi le equazioni del moto, otteniamo 
-\begin{equation}\label{prova6campi}
-    \delta S[\overline \phi, ~\delta_s \phi] = \int d^4 x \partial_\mu K^\mu
-\end{equation}
-    Dall'altra parte, inserendo $\delta \phi = \delta_s \phi$ in \eqref{invonshellcampi}, ovvero vincolando le variazioni on-shell siano anche di simmetria, abbiamo
-\begin{equation}\label{prova7campi}
-    \delta S[\overline \phi,~\delta_s \phi] = \int d^4 x \partial_\mu \Big ( \pdv{L}{\phi,_\mu}  \delta \phi \Big)
-\end{equation}
-    Notando che i membri sinistri delle \eqref{prova6campi} e \eqref{prova7campi} sono identici, abbiamo
-\begin{equation}
-    \delta S[\overline \phi, ~\delta_s \phi] = \int d^4 x \partial_\mu K^\mu = \int d^4 x \partial_\mu \Big ( \pdv{L}{\phi,_\mu}  \delta \phi \Big)
-\end{equation}
-    A questo punto sottraiamo il secondo con il terzo membro, ottenendo la sottrazione nulla
-\begin{equation}
-    \int d^4 x \partial_\mu \Big ( K^\mu - \pdv{L}{\phi,_\mu}  \delta \phi \Big)
-\end{equation}
-    Infine avremo che l'integranda si annulla e, riconoscendi la definizione di corrente \eqref{caricacampi}, otteniamo la tesi
-\begin{equation}
-    \partial_\mu \Big ( K^\mu - \pdv{L}{\phi,_\mu}  \delta \phi \Big) = \partial_\mu J^\mu = 0
-\end{equation}
-\end{proof}
+\section{Enunciato e dimostrazione}
+    Il teorema è del tutto analogo alla versione discreta, con l'unica differenza che la legge di conservazione è espressa tramite un'equazione di continuità.
+
+    \begin{theorem}[Primo teorema di Noether in teoria dei campi]
+        Sia $\mathcal L(\phi)$ la densità di lagrangiana di un sistema fisico con relativo funzionale di azione
+    \begin{equation*}
+        S[\phi] = \int d^4 x \mathcal L(\phi,~\phi,_\mu)
+    \end{equation*}
+        Sia $\delta_s \phi(x)$ una trasformazione del campo che individua una variazione di simmetria del sistema~\eqref{invazionecampi}, ovvero che lascia invariate le equazioni di Eulero-Lagrange~\eqref{eullagcampi}. Allora esiste una quantità $J^\mu$, definita come
+    \begin{equation}\label{caricacampi}
+        J^\mu = \pdv{\mathcal L}{\phi,_\mu} \delta \phi - K^\mu 
+    \end{equation}
+        tale che soddisfi l'equazione di continuità
+    \begin{equation} \label{thcampi}
+        \partial_\mu J^\mu = 0
+    \end{equation}
+    \end{theorem}
+
+    \begin{proof}
+        Inserendo $\phi = \overline \phi$ nella~\eqref{invazionecampi}, ovvero vincolando che $\phi$ soddisfi le equazioni del moto, otteniamo 
+    \begin{equation}\label{prova6campi}
+        \delta S[\overline \phi, ~\delta_s \phi] = \int d^4 x \partial_\mu K^\mu
+    \end{equation}
+        Dall'altra parte, inserendo $\delta \phi = \delta_s \phi$ in~\eqref{invonshellcampi}, ovvero vincolando le variazioni on-shell siano anche di simmetria, abbiamo
+    \begin{equation}\label{prova7campi}
+        \delta S[\overline \phi,~\delta_s \phi] = \int d^4 x \partial_\mu \Big ( \pdv{L}{\phi,_\mu}  \delta \phi \Big)
+    \end{equation}
+        Notando che i membri sinistri delle~\eqref{prova6campi} e~\eqref{prova7campi} sono identici, abbiamo
+    \begin{equation}
+        \delta S[\overline \phi, ~\delta_s \phi] = \int d^4 x \partial_\mu K^\mu = \int d^4 x \partial_\mu \Big ( \pdv{L}{\phi,_\mu}  \delta \phi \Big)
+    \end{equation}
+        A questo punto sottraiamo il secondo con il terzo membro, ottenendo la sottrazione nulla
+    \begin{equation}
+        \int d^4 x \partial_\mu \Big ( K^\mu - \pdv{L}{\phi,_\mu}  \delta \phi \Big)
+    \end{equation}
+        Infine avremo che l'integranda si annulla e, riconoscendi la definizione di corrente~\eqref{caricacampi}, otteniamo la tesi
+    \begin{equation}
+        \partial_\mu \Big ( K^\mu - \pdv{L}{\phi,_\mu}  \delta \phi \Big) = \partial_\mu J^\mu = 0
+    \end{equation}
+    \end{proof}
+
     Chiameremo d'ora in poi la quantità $J^\mu$ corrente di Noether associata alla simmetria. 
 
-    L'equazione di continuità esprime la conservazione di una quantità fisica asserendo che la variazione di questa quantità sarà uguale al suo flusso attraversante una superficia chiusa. Per vedere ciò, scriviamo esplicitamente la \eqref{thcampi}
-\begin{equation}
-    0 = \partial_\mu J^\mu = \partial_0 J^0 + \nabla \cdot \mathbf J
-\end{equation}
+\subsection{Equazione di continuità}
+    Soffermiamoci ora sulla nozione di legge di conservazione. L'equazione di continuità esprime la conservazione di una quantità fisica asserendo che la variazione di questa quantità sarà uguale al suo flusso attraversante una superficia chiusa. Per vedere ciò, scriviamo esplicitamente la~\eqref{thcampi}
+    \begin{equation}
+        0 = \partial_\mu J^\mu = \partial_0 J^0 + \nabla \cdot \mathbf J
+    \end{equation}
     Troviamo che l'equazione di continuità può essere riscritta come 
-\begin{equation*}
-    \pdv{J^0}= - \nabla \cdot \mathbf J
-\end{equation*}
-    Integrando entrambi i membri su un volume $V$ abbastanza grande da permettere che $J$ vada a azero più velocemente della crestica dell'area si superficie
-\begin{equation*}
-    \int_V d^3 x \pdv{J^0}{t} = - \int_V d^3 x \nabla \cdot \mathbf J
-\end{equation*} 
+    \begin{equation*}
+        \pdv{J^0}{t} = - \nabla \cdot \mathbf J
+    \end{equation*}
+    Integrando entrambi i membri su un volume $V$ abbastanza grande da permettere che $J$ vada a zero più velocemente della crescita dell'area di superficie
+    \begin{equation*}
+        \int_V d^3 x \pdv{J^0}{t} = - \int_V d^3 x \nabla \cdot \mathbf J
+    \end{equation*} 
     Utilizziamo il teorema della divergenza e riscriviamo il secondo termine 
-\begin{equation*}
-    \int_V d^3 x \pdv{J^0}{t} = - \int_{\partial V} d \mathbf A \cdot \mathbf J
-\end{equation*} 
+    \begin{equation*}
+        \int_V d^3 x \pdv{J^0}{t} = - \int_{\partial V} d \mathbf A \cdot \mathbf J
+    \end{equation*} 
     Dalle ipotesi fatte su $J$ e su $V$, il secondo membro si annulla e troviamo la carica che si conserva 
-\begin{equation*}
-    Q = \int_V d^3 x J^0(x)
-\end{equation*} 
+    \begin{equation*}
+        Q = \int_V d^3 x J^0(x)
+    \end{equation*} 
     che soddisfa la legge di conservazione
-\begin{equation*}
-    \dv{}{t} Q = 0 
-\end{equation*}
-
-    Nel prossimo paragrafo studiamo le simmetrie spaziotemporali e come ci portano a definire il tensore energia-impulso, la cui fondamentale applicazione è data dalla relatività generale. 
-
-
-\subsection{simmetrie di campi}
-
-Inoltre le simmetrie agiscono sui campi e non sulle coordinate, allo stesso modo in cui le simmetrie nel caso discreto interessavano le coordinate e non il tempo. Ciò può sempre essere visto notando che le coordinate $x^\mu$ sono variabili di integrazione e quindi mute. Vediamo dunque come trovare la deformazione dei campi in seguito a trasformazioni spaziotemporali. Consideriamo prima il caso di traslazioni spaziotemporali
-\begin{equation*}
-    x'^\mu = x^\mu + \epsilon^\mu
-\end{equation*} 
-    dove $\epsilon^\mu$ è un quadrivettore dalle componenti costanti. Dato un campo $\phi(\mu)$, costruiamo il campo traslato $\phi'(x^\mu)$, espandendo in serie e tenendo solo i termini lineari al primo ordine in $\epsilon$
-\begin{equation*}
-    \phi'(x^\mu) = \phi(x - \epsilon) \simeq \phi(x) - \epsilon^\mu \partial_\mu \phi(x)
-\end{equation*}
-    Abbiamo dunque ricavato la deformazione del campo in seguito alla traslazione spaziotemporale 
-\begin{equation*}
-    \delta \phi(x) = \phi'(x) - \phi(x) = -\epsilon^\mu \partial_\mu \phi (x)
-\end{equation*}
-
-Finora abbiamo studiato solamente campi scalari, ma in natura esistono altri tipi di campi, come quelli vettoriali o tensoriali. Vengono definiti solitamente in base a come si comportano sotto l'effetto di leggi di trasformazione. Mostriamo 4 esempi di come campi scalari, vettoriali, tensoriali di rango $(0,~1)$ vengono trasformati in seguito all'applicazione di un cambio di coordinate:
-\begin{enumerate}
-    \item per campi scalari
-\begin{equation}
-    \phi'(x') = \phi(x)
-\end{equation}
-    \item per campi vettoriali
-\begin{equation}
-    V'^\mu(x') = \pdv{x'^\mu}{x^\nu} V^\nu(x)
-\end{equation}
-    \item per campi tensoriali di rango $(0,~1)$
-\begin{equation}
-    A'_\mu(x') = \pdv{x^\nu}{x'^\mu} A_\nu(x)
-\end{equation}
-\end{enumerate} 
-    Siccome avremo bisogno di trasformazioni infinitesime, rendiamo il cambio di coordinate tale 
-\begin{equation}
-    x'^\mu = x^\mu + \xi^\mu(x)
-\end{equation}
-    Quindi la versione infinitesima dello jacobiano precedentemente utilizzato è 
-\begin{equation}
-    \pdv{x'^\mu}{x^\mu} = \delta^{\mu}_{\phantom \mu \nu} + \partial_\nu \xi^\mu(x)
-\end{equation}
-    mentre per l'inverso è 
-\begin{equation}
-    \pdv{x^\mu}{x'^\mu} = \delta^{\mu}_{\phantom \mu \nu} - \partial_\nu \xi^\mu(x)
-\end{equation}
-    A questo punto applichiamo ai casi precedenti e troviamo le variazioni dei campi
-\begin{enumerate}
-    \item Per campi scalari, espandiamo al primo ordine
-\begin{equation}
-    \phi'(x) = \phi(x - \xi) = \phi(x) - \xi^\mu(x) \partial_\mu \phi(x)
-\end{equation}  
-    e otteniamo la variazione
-\begin{equation}\label{variazionescalare}
-    \delta \phi(x) = - \xi^\mu(x) \partial_\mu \phi(x)
-\end{equation} 
-    \item Per campi vettoriali, espandiamo al primo ordine sia il lato destro che sinistro
-\begin{equation}
-    V'^\mu(x) + \xi^\nu(x) \partial_\mu V^\mu (x) = V^\mu(x) + (\partial_\nu \xi^\mu(x)) V^\nu(x)
-\end{equation}
-    e otteniamo la variazione
-\begin{equation}\label{variazionevett}
-    \delta V^\mu(x) = V'^\mu(x) - V^\mu(x) = (\partial_\nu \xi^\mu(x)) V^\nu(x) - \xi^\nu (x)\partial_\mu V^\mu(x)
-\end{equation}
-    \item Per campi tensoriali di rango $(0,~1)$, espandiamo entrambi i membtri 
-\begin{equation}
-    A'_\mu(x) + \xi^\nu(x) \partial_\mu A_\mu (x) = A_\mu(x) - A_\nu(x) \partial_\mu \xi^\nu(x)
-\end{equation}
-    e otteniamo la variazione
-\begin{equation}\label{variazione10}
-    \delta A_\mu(x) = A'_\mu(x) - A_\mu(x) = - \xi^\nu(x) \partial_\mu A_\mu (x) = A_\mu(x) - A_\nu(x) \partial_\mu \xi^\nu(x)
-\end{equation}
-\end{enumerate}
+    \begin{equation*}
+        \dv{}{t} Q = 0 
+    \end{equation*}
 
 \subsection{Tensore energia-impulso}
-    Definiamo $T^\mu_\nu$ tensore energia-impulso come la corrente di Noether associata alle 4 traslazioni temporali
-\begin{equation}
-    x'^\mu = x^\mu + \epsilon^\mu
-\end{equation}
-    che possono essere decomposte nelle varie componenti: per $\mu=0$ abbiamo una traslazione temporale $t' = t + \epsilon^0$ mentre per $\mu=i=1,~2,~3$ abbiamo una traslazione spaziale $x'^i = x^i + \epsilon^i$. Dunque insieme ci sono 4 correnti di Noether che si conservano, che possiamo scrivere senza separarle come $J^\mu = T^\mu_\nu \epsilon^\nu$, una per ogni indice $\mu$. La conservazione di $J^\mu$, ovvero l'equazione $\partial_\mu J^\mu$ implica anche che si conservi  $\partial_\mu T^\mu_\nu$.
+
+    Speciale interesse poniamo sulle traslazioni spaziotemporali, poichè ci conducono alla definizione del tensore energia-impulso, la cui fondamentale applicazione è data dalle equazioni di campo di Einstein in relatività generale. 
+    Definiamo il tensore energia-impulso $T^\mu_\nu$ come le correnti di Noether associate alle 4 traslazioni spaziotemporali
+    \begin{equation*}
+        x'^\mu = x^\mu + \epsilon^\mu
+    \end{equation*}
+    che possono essere decomposte nelle varie componenti: per $\mu=0$ abbiamo una traslazione temporale $t' = t + \epsilon^0$ mentre per $\mu=i=1,~2,~3$ abbiamo una traslazione spaziale $x'^i = x^i + \epsilon^i$. Dunque insieme ci sono 4 correnti di Noether che si conservano, che possiamo scrivere senza separarle come 
+    \begin{equation} \label{tensenimp}
+        J^\mu = T^\mu_\nu \epsilon^\nu
+    \end{equation}
+    una per ogni indice $\mu$. La conservazione di $J^\mu$, ovvero l'equazione $\partial_\mu J^\mu = 0 $ implica anche che si conservi $\partial_\mu T^\mu_\nu = 0$, essendo $\epsilon^\nu$ una costante.
 
     Il significato fisico delle componenti del tensore energia-impulso è il seguente: 
-\begin{enumerate}
-    \item $T^{00}$ è la densità di energia
-    \item $T^{0j}$ è il flusso di energia lungo la j-esima direzione
-    \item $T^{i0}$ è la densità di quantità di moto lungo la i-esima direzione
-    \item $T^{ij}$ è il tensore degli sforzi
-\end{enumerate}
-
-    Vediamo ora due esempi di campi differenti, uno scalare e uno vettoriale, che ci permettono di trovare esplicitamente il tensore energia-impulso.
+    \begin{enumerate}
+        \item $T^{00}$ è la densità di energia,
+        \item $T^{0j}$ è il flusso di energia lungo la j-esima direzione,
+        \item $T^{i0}$ è la densità di quantità di moto lungo la i-esima direzione,
+        \item $T^{ij}$ è il tensore degli sforzi.
+    \end{enumerate}
 
 \section{Campo scalare}
-    Consideriamo un densità di lagrangiana per un campo scalare $\phi$, che avrà la forma $\mathcal L(\phi,~\phi,_\mu)$. Dato che la lagrangiana non dipende esplicitamente dalle coordinate $x^\mu$, sarà invariante per la variazione \eqref{variazionescalare}, dove poniamo $\xi^\mu = \epsilon^\mu$
-\begin{equation}
-    \delta \phi(x) 0 - \epsilon^\mu \partial_\mu \phi(x)
-\end{equation}
-    Calcoliamo dunque il termine al bordo $K^\mu$ associato a questa simmetria \eqref{invazionecampi}
-\begin{equation*}
-\begin{aligned}
-    \delta S & = \int d^4 x \delta \mathcal L = \int d^4 x \Big ( \pdv{L}{\phi} \delta \phi + \pdv{L}{\phi,_\rho} \delta \phi,_\rho \Big) = - \int d^4 x \epsilon^\sigma \Big ( \pdv{L}{\phi} \phi,_\sigma + \pdv{L}{\phi,_\rho} \phi,_{\rho\sigma} \Big) \\ & = \int d^4 x \partial_\sigma (\epsilon^\sigma \mathcal L)
-\end{aligned}
-\end{equation*}
-    Quindi abbiamo trovato che 
-\begin{equation*}
-    K^\mu = - \epsilon^\mu \mathcal L
-\end{equation*}
-    Ora applichiamo il primo teorema di Noether e troviamo la corrente \eqref{caricacampi} generata dalle traslazione spaziotemporali
-\begin{equation*}
-    J^\mu = \pdv{\mathcal L}{\phi,_\mu} \delta \phi - K^\mu = \pdv{\mathcal L}{\phi,_\mu} (- \epsilon^\sigma \phi,_\sigma) + \epsilon^\mu \mathcal L = - epsilon^\sigma \Big ( \pdv{\mathcal L}{\phi,_\mu} \phi,_\sigma - \delta^\mu_{\phantom \mu \sigma} \mathcal L \Big)
-\end{equation*}
-    Quindi il tensore energia-impulso, definito come $J^\mu = \epsilon^\sigma T^\mu_{\phantom \mu \sigma}$ è
-\begin{equation}
-    T^\mu_{\phantom \mu \sigma} = \pdv{\mathcal L}{\phi,_\mu} \phi,_\sigma - \delta^\mu_{\phantom \mu \sigma} \mathcal L
-\end{equation}
+    Consideriamo una densità di lagrangiana per un campo scalare $\phi$, che avrà la forma $\mathcal L(\phi,~\phi,_\mu)$. Dato che la lagrangiana non dipende esplicitamente dalle coordinate $x^\mu$, sarà invariante per la variazione~\eqref{variazionescalare}, dove poniamo $\xi^\mu = \epsilon^\mu$
+    \begin{equation}
+        \delta \phi(x) = - \epsilon^\mu \partial_\mu \phi(x)
+    \end{equation}
+    Calcoliamo la variazione dell'azione
+    \begin{equation*}
+    \begin{aligned}
+        \delta S & = \int d^4 x ~ \delta \mathcal L = \int d^4 x ~ \Big ( \pdv{L}{\phi} \delta \phi + \pdv{L}{\phi,_\rho} \delta \phi,_\rho \Big) \\ & = - \int d^4 x ~ \epsilon^\sigma \Big ( \pdv{L}{\phi} \phi,_\sigma + \pdv{L}{\phi,_\rho} \phi,_{\rho\sigma} \Big) = \int d^4 x ~ \partial_\sigma (\epsilon^\sigma \mathcal L)
+    \end{aligned}
+    \end{equation*}
+    Quindi, secondo la~\eqref{invazionecampi}, abbiamo trovato che il termine al bordo è
+    \begin{equation*}
+        K^\mu = - \epsilon^\mu \mathcal L
+    \end{equation*}
+    Ora applichiamo il primo teorema di Noether e troviamo la corrente~\eqref{caricacampi} generata dalle traslazione spaziotemporali
+    \begin{equation*}
+        J^\mu = \pdv{\mathcal L}{\phi,_\mu} \delta \phi - K^\mu = \pdv{\mathcal L}{\phi,_\mu} (- \epsilon^\sigma \phi,_\sigma) + \epsilon^\mu \mathcal L = - \epsilon^\sigma \Big ( \pdv{\mathcal L}{\phi,_\mu} \phi,_\sigma - \delta^\mu_{\phantom \mu \sigma} \mathcal L \Big)
+    \end{equation*}
+    Quindi il tensore energia-impulso, definito dalla~\eqref{tensenimp}, è
+    \begin{equation}
+        T^\mu_{\phantom \mu \sigma} = \pdv{\mathcal L}{\phi,_\mu} \phi,_\sigma - \delta^\mu_{\phantom \mu \sigma} \mathcal L
+    \end{equation}
 
-    Prendendo la lagrangiana più semplice per un campo scalare 
-\begin{equation}
-    \mathcal L = \frac{1}{2} \partial_\mu \phi \partial^\mu \phi
-\end{equation}
-    possiamo calcolare il suo tensore energia-impulso
-\begin{equation}
-    T_{\mu\nu} = \partial_\mu \phi \partial_\nu \phi - \frac{1}{2} g_{\mu\nu} \partial_\sigma \phi \partial^\sigma \phi
-\end{equation}
+    \hfill
+
+    Proponiamo un esempio concreto, in cui prendiamo la lagrangiana più semplice.
+
+    \begin{example}
+    Sia la densità di lagrangiana per un campo scalare nella forma
+    \begin{equation*}
+        \mathcal L = \frac{1}{2} \partial_\mu \phi \partial^\mu \phi
+    \end{equation*}
+    Il suo tensore energia-impulso è
+    \begin{equation*}
+        T_{\mu\nu} = \partial_\mu \phi \partial_\nu \phi - \frac{1}{2} g_{\mu\nu} \partial_\sigma \phi \partial^\sigma \phi
+    \end{equation*}
+    \end{example}
 
 \section{Campo elettromagnetico}
-    I fenomeni elettromagnetici sono interamente caratterizzati classicamente dalle equazioni di maxwell, che possono essere derivate dal principio di Hamilton a partire da un funzionale di azione 
+    I fenomeni elettromagnetici sono interamente caratterizzati dalle equazioni di Maxwell, che possono essere derivate dal principio di Hamilton a partire dall'azioned di Maxwell
 \begin{equation} \label{azionemaxwell}
     S[A_\mu] = - \frac{1}{4} \int d^4 x ~ F_{\mu\nu} F^{\mu\nu}
 \end{equation}
-    dove $A_\mu$ è il tensore $(0, 1)$ definito attraverso il potenziale vettore e scalare, e $F^{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$ è il tensore di Maxwell. 
+    dove $A_\mu$ è il tensore $(0, 1)$ definito attraverso il potenziale vettore e scalare, e $F^{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$ è il tensore di Maxwell. Calcoliamo le equazioni del moto attraverso le equazioni di Eulero-Lagrange~\eqref{eullagcampi}
+\begin{equation*}
+    0 = \pdv{\mathcal L}{A_\nu} - \partial_\mu \pdv{\mathcal L}{A_{\nu,\mu}} = \partial_\mu (\partial^\nu A^\mu - \partial^\mu A^\nu) = \partial_\mu F^{\mu\nu}
+\end{equation*}
+    che sono proprio le equazioni di Maxwell in assenza di sorgenti\footnote{in realtà ci sarebbe un'altra equazione $\partial_\mu F*^{\mu\nu} = 0$, dove $F*^{\mu\nu}$ è il tensore duale.}
+\begin{equation}\label{eqmax}
+    \partial_\mu F^{\mu\nu} = 0
+\end{equation}
+
+    Indaghiamo ora le simmetrie che l'elettrodinamica presenta.
 
 \subsection{Simmetria spaziotemporale}
-    La prima simmetria che indaghiamo è una traslazione spaziotemporale, che porta come abbiamo precedentemente visto al tensore energia-impulso. Inoltre, sappiamo che l'elettrodinamica è invariante per trasformazioni di gauge 
+    La prima simmetria che indaghiamo è una traslazione spaziotemporale, che porta come abbiamo precedentemente visto al tensore energia-impulso. Sappiamo che l'elettrodinamica è invariante per trasformazioni di gauge 
 \begin{equation*}
     \delta A_\mu = \partial_\mu \lambda(x)
 \end{equation*}
