@@ -19,13 +19,15 @@
         \ddot r^i = \dvd{r^i}{t} = (\ddot x, ~\ddot y, ~\ddot z)
     \end{equation*}
     
-    Se per una singola particella abbiamo definito 3 coordinate, per un sistema di N particelle libere sono necessarie 3N coordinate, 3N velocità, 3N accelerazioni per descriverlo. Il sistema cartesiano non è l'unico disponibile. Infatti è possibile utilizzare un generico sistema di assi coordinati purchè siano di numero pari al numero di gradi di libertà $d$, che corrisponde al numero di quantità indipendenti necessarie per definire univocamente la posizione di un sistema fisico. Una particella libera ha $d = 3$, mentre un sistema di N particelle ha $d = 3N$. Chiameremo queste quantità coordinate generalizzate $q^i$ e, analogamente, chiameremo velocità generalizzate $\dot q^i$ e accelerazioni generalizzate $\ddot q^i$ le rispettive derivate prime e seconde. La configurazione istantanea del sistema, cioè ad un tempo fissato, può quindi essere rappresentata da un punto in uno spazio $\mathcal C$, chiamato spazio delle configurazioni, di dimensione pari al numero di gradi di libertà ed i cui assi coordinati sono le coordinate generalizzate. Come precedentemente indicato, nel caso di una particella, lo spazio delle configurazioni è lo spazio tridimensionale euclideo $\mathbb R^3$, mentre per un sistema di N particelle libere sarà il prodotto cartesiano $\mathbb R^{3N}$.
+    Se per una singola particella definiamo $3$ coordinate, per un sistema di N particelle libere sono necessarie $3N$ coordinate, $3N$ velocità, $3N$ accelerazioni per descriverlo. 
     
-    Il moto del sistema è matematicamente descritto dalla posizione del sistema in funzione del tempo, chiamata traiettoria, ciò che geometricamente viene rappresentato da una curva $q^i(t)$ nello spazio delle configurazioni. Conoscendo quest'ultima, siamo a conoscenza della completa evoluzione temporale del sistema. Come possiamo ricavarla? La traiettoria è soluzione di un sistema di equazioni che legano accelerazioni, velocità e posizioni, chiamate equazioni del moto
+    Il sistema cartesiano non è l'unico disponibile. Infatti è possibile utilizzare un generico sistema di assi coordinati purchè siano di numero pari al numero di gradi di libertà $d$, che corrisponde al numero di quantità indipendenti necessarie per definire univocamente la posizione di un sistema fisico. Una particella libera ha $d = 3$, mentre un sistema di N particelle ha $d = 3N$. Chiameremo queste quantità coordinate generalizzate $q^i$ e, analogamente, chiameremo velocità generalizzate $\dot q^i$ e accelerazioni generalizzate $\ddot q^i$ le rispettive derivate prime e seconde. La configurazione istantanea del sistema, cioè ad un tempo fissato, può quindi essere rappresentata da un punto in uno spazio $\mathcal C$, chiamato spazio delle configurazioni, di dimensione pari al numero di gradi di libertà ed i cui assi coordinati sono le coordinate generalizzate. Come precedentemente indicato, nel caso di una particella, lo spazio delle configurazioni è lo spazio tridimensionale euclideo $\mathbb R^3$, mentre per un sistema di N particelle libere sarà il prodotto cartesiano $\mathbb R^{3N}$.
+    
+    Il moto del sistema è matematicamente descritto dalla posizione del sistema in funzione del tempo, chiamata traiettoria, ciò che geometricamente viene rappresentato da una curva $q^i(t)$ nello spazio delle configurazioni. Conoscendo quest'ultima, siamo a conoscenza della completa evoluzione temporale del sistema. Come possiamo ricavarla? La traiettoria è soluzione di equazioni che legano accelerazioni, velocità e posizioni, chiamate equazioni del moto
     \begin{equation} \label{eqmoto}
         f_j(q^i, ~ \dot q^i, ~ \ddot q^i) = 0
     \end{equation}
-    dove $j = 1, ~2, ~\ldots ~d$. Esse sono un sistema formato da $d$ equazioni differenziali, una per ogni grado di libertà, e la presenza delle accelerazioni ci suggerisce che sono al secondo ordine, caratteristica che porta una importante conseguenza: per studiare come il sistema evolve nel tempo, la conoscenza delle sole coordinate in un dato istante non è sufficiente. Infatti, in modo tale che le accelerazioni siano univocamente determinate, è necessario fornire anche le velocità. Ciò deriva da un risultato dell'analisi matematica: conoscendo le condizioni iniziali, ovvero le $d$ posizioni $q^i(0) = q^i_0$ e le $d$ velocità $\dot q^i(0) = v^i_0$, la soluzione del problema di Cauchy delle equazioni del moto è unica. 
+    dove $j = 1, ~2, ~\ldots ~d$. Esse sono un sistema formato da $d$ equazioni differenziali, una per ogni grado di libertà, e la presenza delle accelerazioni ci suggerisce che sono al secondo ordine, caratteristica che porta una importante conseguenza: per studiare come il sistema evolve nel tempo, la conoscenza delle sole coordinate in un dato istante non è sufficiente. Difatti, in modo tale che le accelerazioni siano univocamente determinate, è necessario fornire anche le velocità. Ciò deriva da un risultato dell'analisi matematica: conoscendo le condizioni iniziali, ovvero le $d$ posizioni $q^i(0) = q^i_0$ e le $d$ velocità $\dot q^i(0) = v^i_0$, la soluzione del problema di Cauchy delle equazioni del moto è unica. 
     
     Come possiamo trovare esplicitamente le~\eqref{eqmoto}? In meccanica classica, si distinguono principalmente tre differenti formalismi dovuti a tre importanti figure della storia della fisica: Isaac Newton $(1642-1726)$, Joseph-Louis Lagrange $(1736-1813)$ e William Rowan Hamilton $(1805-1865)$. 
 
@@ -47,21 +49,21 @@
     \end{equation}  
     Non c'è un criterio generale per trovare tale funzione, ma c'è una classe di sistemi meccanici in cui la lagrangiana può essere scritta nella forma $L = T - U$, dove $T$ e $U$ sono rispettivamente l'energia cinetica e l'energia potenziale del sistema. Tale sistema viene chiamato sistema conservativo e richiede che l'energia potenziale $U = U(q^i)$ sia funzione soltanto delle coordinate.
     
-    Attraverso la lagrangiana $\eqref{lagrangiana}$, introduciamo il funzionale di azione $S = S[q^i(t)]$ che associa un numero reale ad ogni curva $q^i(t)$ dello spazio delle configurazioni, definita all'interno di un intervallo temporale fisso $[t_1, ~t_2]$
+    Attraverso la lagrangiana $\eqref{lagrangiana}$, introduciamo il funzionale di azione $S$ che associa un numero reale ad ogni curva $q^i(t)$ dello spazio delle configurazioni, definita all'interno di un intervallo temporale fisso $[t_1, ~t_2]$
     \begin{equation} \label{azione}
         S[q^i(t)] = \integ{t_1}{t_2}{t} L(t, ~q^i, ~\dot q^i)
     \end{equation}
 
 \subsection{Il principio di azione stazionaria e le equazioni di Eulero-Lagrange}
 
-    Enunciamo ora il principio che ci permette di trovare le equazioni del moto a partire dalla Lagrangiana del sistema: il principio di azione stazionaria, chiamato anche principio di minima azione.
+    Enunciamo ora il principio che ci permette di trovare le equazioni del moto a partire dalla lagrangiana del sistema: il principio di azione stazionaria, chiamato anche principio di minima azione.
 
     \begin{principle}[di azione stazionaria]
-        Tra tutte le curve nello spazio delle configurazioni $\mathcal C$ che collegano due estremi fissi $q_1$ e $q_2$ di un intervallo temporale anch'esso fisso $[t_1, ~t_2]$ tale che 
+        Tra tutte le curve nello spazio delle configurazioni $\mathcal C$ che collegano due estremi fissati $q_1$ e $q_2$ di un intervallo temporale anch'esso fissato $[t_1, ~t_2]$ tale che 
     \begin{equation*}
         q^i(t_1) = q^i_1 \qquad q^i(t_2) = q^i_2
     \end{equation*}
-        il sistema meccanico associato alla lagrangiana~\eqref{lagrangiana} percorre la curva $q^i(t)$ che rende stazionaria la sua azione~\eqref{azione}
+        il sistema meccanico associato alla lagrangiana~\eqref{lagrangiana} percorre la curva $q^i(t)$ che rende stazionaria la sua azione~\eqref{azione}, in formule
     \begin{equation} \label{azionestazionaria}
         \delta S [q^i(t)] = 0
     \end{equation}
@@ -69,11 +71,11 @@
 
     Cerchiamo dunque di tradurre questo principio in equazioni che dipenderanno dalla lagrangiana del sistema e delle sue derivate e che siano equivalenti alle equazioni del moto~\eqref{eqmoto}. Siccome l'azione è un funzionale, ovvero una funzione che non dipende da un numero discreto di variabili, ma il cui dominio è in uno spazio di funzioni infinito dimensionale, non possiamo utilizzare direttamente il calcolo differenziale ma è necessario attingere alla branca della matematica, chiamata calcolo delle variazioni, che studia come trovare la funzione nel dominio del funzionale tale che quest'ultimo sia stazionario, ovvero nel nostro caso quella che soddisfa il principio di azione stazionaria. 
     
-    Supponiamo che la curva $q^i(t)$ sia quella cercata, ovvero quella che rende stazionaria l'azione~\eqref{azionestazionaria}, e prendiamo un'altra curva $\delta q^i(t)$, che chiameremo variazione, definita sempre nell'intervallo $[t_1, ~t_2]$, arbitraria tranne che per gli estremi
+    Supponiamo che la curva $q^i(t)$ sia quella cercata, ovvero quella che rende stazionaria l'azione~\eqref{azionestazionaria}, e prendiamo un'altra curva $\delta q^i(t)$, che chiameremo variazione, definita sempre nell'intervallo $[t_1, ~t_2]$, con la proprietà di essere arbitraria tranne che per gli estremi
     \begin{equation} \label{estreminulli}
         \delta q^i(t_1) = \delta q^i(t_2) = 0
     \end{equation}
-    Introduciamo una famiglia di curve $q^i(t, ~\epsilon)$ dipendenti da un parametro $\epsilon$ definita nel seguente modo 
+    Introduciamo una famiglia di curve $q^i(t, ~\epsilon)$ dipendenti da un parametro $\epsilon$, definita nel seguente modo 
     \begin{equation} \label{famigliacurve}
         q^i(t, \epsilon) = q^i(t, ~0) + \epsilon \delta q^i(t)
     \end{equation}
@@ -81,7 +83,7 @@
     \begin{equation*}
         q^i(t, ~ 0) = q^i(t)
     \end{equation*}
-    In questo modo, sostituendo nell'azione~\eqref{azione} la famiglia di curve~\eqref{famigliacurve} possiamo parametrizzarlo con il parametro reale $\epsilon$
+    In questo modo, sostituendo nell'azione~\eqref{azione} la famiglia di curve~\eqref{famigliacurve}, possiamo parametrizzarlo con il parametro reale $\epsilon$
     \begin{equation*}
         S(\epsilon) = \integ{t_1}{t_2}{t} L(t, ~q^i(t, ~\epsilon), ~\dot q^i(t, \epsilon))
     \end{equation*}
@@ -93,7 +95,7 @@
     \begin{equation*}
         \dv{S}{\epsilon} = \integ{t_1}{t_2}{t} \Big (\pdv{L}{q^i} \pdv{q^i}{\epsilon} + \pdv{L}{\dot q^i} \pdv{\dot q^i}{\epsilon} \Big)
     \end{equation*}\label{prova1}
-    Osserviamo che non è presente la derivata rispetto ad t perché quest'ultimo non dipende da $\epsilon$, dunque le loro derivate commutano. L'integrazione per parti del secondo termine nell'integrale ci conduce a
+    Osserviamo che non è presente la derivata rispetto ad t perché quest'ultimo non dipende da $\epsilon$, conseguentemente le loro derivate commutano. L'integrazione per parti del secondo termine nell'integrale ci conduce a
     \begin{equation}\label{prova2}
         \dv{S}{\epsilon} = \integ{t_1}{t_2}{t} \Big (\pdv{L}{q^i} \pdv{q^i}{\epsilon} - \dv{}{t} \Big (\pdv{L}{\dot q^i} \Big) \pdv{q^i}{\epsilon} \Big) + \pdv{L}{\dot q^i} \pdv{q^i}{\epsilon} \Big \vert_{t_1}^{t_2}
     \end{equation}
@@ -127,7 +129,7 @@
     \begin{equation*} 
         \pdv{L}{q^i}  - \pdvd{L}{\dot q^i}{t} - \pdvd{L}{\dot q^i}{q^j} \dot q^j - \pdvd{L}{\dot q^i}{\dot q^j} \ddot q^j = 0
     \end{equation*}
-    Queste sono le equazioni del moto che stavamo cercando, equazioni differenziali al secondo ordine della lagrangiana, chiamate equazioni di Eulero-Lagrange. Una volta trovata la lagrangiana $L$ associata al sistema fisico che stiamo studiando, possiamo ricondurci alle~\eqref{eqmoto} attraverso le~\eqref{eullag}.
+    Queste sono le equazioni del moto che stavamo cercando, equazioni differenziali al secondo ordine della lagrangiana, chiamate equazioni di Eulero-Lagrange. Una volta trovata la lagrangiana associata al sistema fisico che stiamo studiando, possiamo ricondurci alle~\eqref{eqmoto} attraverso le~\eqref{eullag}.
 
     \hfill 
 
@@ -156,17 +158,17 @@
     
     Introduciamo ora il concetto di simmetria dell'azione. Intuitivamente, un oggetto è simmetrico se sotto l'effetto di una trasformazione rimane uguale a se stesso. Esempi sono la rotazione di un arbitrario angolo di un cerchio o la riflessione di un oggetto a simmetria bilaterale rispetto all'asse di simmetria. Deduciamo quindi che una simmetria dell'azione è una speciale classe di trasformazioni delle coordinate che lasciano l'azione invariata. 
     
-    Una trasformazione di coordinate è un cambio di coordinate spaziali e temporali per descrivere il problema, ovvero parametrizzare la nostra azione con differenti coordinate generalizzate $q'^i$. Distinguiamo due modi differenti di interpretare una trasformazione di coordinate: quello passivo e quello attivo. Una trasformazione passiva è un cambio del sistema di riferimento, cioè l'oggetto viene descritto da due differenti osservatori; mentre in una trasformazione attiva si sposta effettivamente il sistema preso in considerazione mantenendo invariato il sistema di riferimento, cioè si sposta l'oggetto mantenendo l'osservatore invariato. 
+    Una trasformazione di coordinate è un cambio di coordinate spaziali per descrivere il problema, ovvero parametrizzare la nostra azione con differenti coordinate generalizzate $q'^i$. Distinguiamo due modi differenti di interpretare una trasformazione di coordinate: quello passivo e quello attivo. Una trasformazione passiva è un cambio del sistema di riferimento, cioè l'oggetto viene descritto da due differenti osservatori; mentre in una trasformazione attiva si sposta effettivamente il sistema preso in considerazione mantenendo invariato il sistema di riferimento, cioè si sposta l'oggetto mantenendo l'osservatore invariato. 
     
-    Possiamo definire l'invarianza dell'azione imponendo che quello espresso con le nuove coordinate $S'$ conduce alle stesse equazioni del moto di quello espresso con le vecchie $S$. Portiamo particolare attenzione al significato di invarianza: non necessariamente significa che la nuova e la vecchia azione siano identiche $S' = S$ ma che siano uguali a meno di un termine al bordo $K$. Ciò è conseguenza del fatto che ad avere valore fisico sono le equazioni del moto e non la lagrangiana~\eqref{lagrangiana}, che in effetti presenta un'ambiguità: aggiungendo la derivata totale rispetto ad un'arbitraria funzione $K(q^i, ~ t)$, il termine al bordo, porta alle stesse equazioni del moto~\eqref{eullag}. Mostriamo quindi che l'azione $S'$ con il termine al bordo
+    Possiamo definire l'invarianza dell'azione imponendo che quello espresso con le nuove coordinate $S'$ conduce alle stesse equazioni del moto di quello espresso con le vecchie $S$. Portiamo particolare attenzione al significato di invarianza: non necessariamente significa che la nuova e la vecchia azione siano identiche $S' = S$ ma che siano uguali a meno di un termine al bordo $K$. Ciò è conseguenza del fatto che ad avere valore fisico sono le equazioni del moto e non la lagrangiana~\eqref{lagrangiana}, che in effetti presenta un'ambiguità: aggiungendo la derivata totale rispetto ad un'arbitraria funzione $K(q^i, ~ t)$, il termine al bordo, porta alle stesse equazioni del moto~\eqref{eullag}. Mostriamo quindi che nell'azione $S'$ con il termine al bordo
     \begin{equation*}
         S' = \integ{t_1}{t_2}{t} \Big ( L(q^i, ~ \dot q^i, ~t) + \dv{}{t} K(q^i, ~t) \Big)
     \end{equation*}
-    ha la varizione nulla
+    la variazione del secondo termine è nulla
     \begin{equation*}
         \delta \integ{t_1}{t_2}{t} \dv{}{t} K(q^i, ~t) = \pdv{K}{q^i} \delta q^i \Big \vert_{t_1}^{t_2} = \pdv{K}{q^i} \delta q^i (t_2) - \pdv{K}{q^i} \delta q^i (t_1) = 0
     \end{equation*} 
-    dove abbiamo usato la usando la~\eqref{estreminulli}. Dunque $\delta S = \delta S'$ e le equazioni del moto non cambiano.
+    dove abbiamo usato la~\eqref{estreminulli}. Dunque $\delta S = \delta S'$ e le equazioni del moto non cambiano.
 
     Formalizziamo il tutto.
 
@@ -184,7 +186,7 @@
 
 \subsection{Trasformazioni temporali come deformazioni delle coordinate}
 
-    Finora non abbiamo considerato trasformazioni riguardanti il tempo perché abbiamo definito simmetrie solo cambi di coordinate spaziali. È possibile tradurre le traslazioni temporali in deformazioni delle coordinate. Consideriamo il caso più semplice unidimensionale dove due curve $q^i(t)$ e $q'^i(t)$ sono collegate da un traslazione temporale $t' = t + \epsilon$ nel seguente modo 
+    Finora non abbiamo considerato trasformazioni riguardanti il tempo; le simmetrie sono solo cambi di coordinate spaziali. È possibile tradurre le traslazioni temporali in deformazioni delle coordinate. Consideriamo il caso più semplice unidimensionale dove due curve $q^i(t)$ e $q'^i(t)$ sono collegate da un traslazione temporale $t' = t + \epsilon$ nel seguente modo 
     \begin{equation*}
         q'(t') = q'(t + \epsilon) = q(t)
     \end{equation*} 
@@ -192,7 +194,7 @@
     \begin{equation*}
         q'(t + \epsilon) \simeq q'(t) + \epsilon \dot q(t) = q(t)
     \end{equation*}     
-    Quindi possiamo scrivere la variazione di simmetria~\eqref{simmazione} come 
+    Quindi possiamo scrivere la variazione di simmetria~\eqref{simmazione} 
     \begin{equation}\label{simmtempo}
         \delta_s q(t) = - \epsilon \dot q(t)
     \end{equation}
@@ -200,7 +202,7 @@
     \begin{equation}\label{commutatore}
         \delta_s \dot q(t) = \delta_s \dv{}{t} q(t) = \dv{}{t} \delta_s q(t) 
     \end{equation}
-    Questa considerazione può essere evidenziata ricordando che nell'azione~\eqref{azione} il tempo è una variabile di integrazione, per definizione è muta: effettuando una sostituzione, l'integrale non ne subisce gli effetti. Questa trasformazione non ha nulla a che vedere con le variazioni di simmetria dell'azione. 
+    Questa considerazione può essere evidenziata ricordando che nell'azione~\eqref{azione} il tempo è una variabile di integrazione, per definizione muta: effettuando una sostituzione, l'integrale non ne subisce gli effetti. Questa trasformazione non ha nulla a che vedere con le variazioni di simmetria dell'azione. 
 
 \subsection{Variazioni on-shell}
 
@@ -213,30 +215,31 @@
         tale che l'azione sia invariante a meno di una derivata temporale, dopo aver applicato le equazioni di Eulero-Lagrange~\eqref{eullag}. 
     \begin{equation} \label{invonshell}
         \delta S[\overline q^i,~\delta q^i] = S[\overline q^i + \delta q^i] - S[\overline q^i] = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
-    \end{equation}
+    \end{equation}  
+        dove la notazione $\overline q^i$ indica che le $q^i$ rispettano le equazioni del moto. 
     \end{definition}     
-    Infatti, variando l'azione
+
+    Infatti, effettuando una variazione dell'azione, otteniamo 
     \begin{equation*}
     \begin{aligned}
         \delta S[q^i,~\delta q^i] & = S[q^i + \delta q^i] - S[q^i] \\ & = \integ{t_1}{t_2}{t} \Big( \pdv{L}{q^i} \delta q^i + \pdv{L}{\dot q^i} \delta \dot q^i \Big) \\ &= \integ{t_1}{t_2}{t} \Big( \pdv{L}{q^i}  \delta q^i - \dv{}{t} \pdv{L}{\dot q^i}  \delta q^i \Big )+ \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big ) \\ & = \integ{t_1}{t_2}{t} \Big( \pdv{L}{q^i}  - \dv{}{t} \pdv{L}{\dot q^i} \Big ) \delta q^i + \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
     \end{aligned}
     \end{equation*}
-    dove abbiamo integrato per parti, usando il fatto che le variazioni commutano con la derivata temporale~\eqref{commutatore} e raccolto un fattore comune $\delta q^i$. 
+    dove abbiamo integrato per parti, usato il fatto che le variazioni commutano con la derivata temporale~\eqref{commutatore} e raccolto un fattore comune $\delta q^i$ nell'ultimo passaggio.
     Notiamo che il primo termine comprende le equazioni di Eulero-Lagrange~\eqref{eullag}, quindi le applichiamo, passando on-shell, e otteniamo 
     \begin{equation*} 
         \delta S[\overline q^i,~\delta q^i] = S[\overline q^i + \delta q^i] - S[\overline q^i] = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
     \end{equation*}
-    dove la notazione $\overline q^i$ indica che le $q^i$ rispettano le equazioni del moto. 
 
     Concettualmente questa variazione è opposta rispetto a quella dell'azione, perchè quella sull'azione pone vincoli su $\delta_s q^i(t)$ e lascia libere le $q^i(t)$ mentre specularmente quella on-shell pone vincoli sulle $\overline q^i$ e lascia libere le $\delta q^i$.
 
 \section{Leggi di conservazione}
     Soffermiamoci ora sulla nozione di quantità conservata. 
     \begin{definition}[Quantità conservata]
-        Definiamo una quantità conservata come una funzione $Q(t, ~q^i)$ tale che il suo valore rimane constante nel tempo lungo ogni traiettoria nello spazio delle configurazioni del sistema
-    \begin{equation*}
+        Definiamo una quantità conservata come una funzione $Q(t, ~q^i)$ tale che il suo valore rimane constante nel tempo
+    \begin{equation} \label{th}
         \dv{}{t} Q(t, ~q^i) = \pdv{Q}{t} + \pdv{Q}{q^i} \dot q^i = 0
-    \end{equation*}
+    \end{equation}
     \end{definition} 
 
     Dallo studio delle equazioni di Eulero-Lagrange, notiamo che possiamo definirne già una: il momento coniugato di una coordinata ciclica. Una coordinata ciclica $q^j$ è una coordinata che non è presente esplicitamente nella lagrangiana
@@ -257,10 +260,10 @@
     \end{equation*}
     Concludiamo quindi che nel caso di una coordinata ciclica, il suo momento coniugato si conserva. 
 
-    Una importante osservazione sulle quantità conservate è che possono essere usate come condizioni iniziali del sistema e dunque per trovare le soluzioni del moto. Considerando per semplicità un sistema unidimensionale, abbiamo bisogno di due condizioni iniziali: invece di usare due posizioni oppure una posizione ed una velocità come solitamente, possiamo sfruttare la conoscenza di due quantità conservate per scrivere le soluzioni del moto in funzione di essere e dunque raggiungere il nostro obiettivo senza neanche aver risolto le equazioni del moto, che potrebbero essere di forma troppo complicata. 
+    Una importante osservazione sulle quantità conservate è che possono essere usate per trovare le soluzioni del moto. Considerando per semplicità un sistema unidimensionale, possiamo sfruttare la conoscenza di due quantità conservate per scrivere le soluzioni del moto in funzione di essere e dunque raggiungere il nostro obiettivo senza neanche aver risolto le equazioni del moto, che potrebbero essere di forma troppo complicata. 
 
 \section{Enunciato e dimostrazione}
-    Enunciamo ora e dimostriamo il teorema che sta al cuore del primo capitolo di questa tesi: il primo teorema di Noether, riguardante sistemi fisici appartenenti al dominio della meccanica classica. Qualitativamente, asserisce che ad ogni simmetria dell'azione è possibile associare una quantità conservata. In questo paragrafo, non presenteremo tuttavia la versione originale, ma una versione più fisica. 
+    Enunciamo ora e dimostriamo il teorema che sta al cuore del primo capitolo di questa tesi: il primo teorema di Noether, per sistemi fisici appartenenti al dominio della meccanica classica. Qualitativamente, asserisce che ad ogni simmetria finita dell'azione è possibile associare una quantità conservata. In questo paragrafo, non presenteremo tuttavia la versione originale, ma una versione più fisica. 
 
     Ricapitoliamo ciò che abbiamo concluso nei precedenti paragrafi: una variazione di simmetria $\delta_s q^i(t)$ porta ad una variazione dell'azione data da~\eqref{invazione} 
     \begin{equation*}
@@ -275,16 +278,16 @@
     \begin{theorem}[Il primo teorema di Noether in meccanica classica]
         Sia $L(q^i,~\dot q^i)$ la lagrangiana di un sistema fisico con $i=1,~2,\ldots d$, dove $d$ indica il numero di gradi di libertà, $S$ l'azione associata al sistema nell'intervallo temporale $[t_1,~t_2]$ definita come
     \begin{equation*}
-        S[q^i(t)] = \integ{t_1}{t_2}{t} L(L(q^i,~\dot q^i))
+        S[q^i(t)] = \integ{t_1}{t_2}{t} L(q^i,~\dot q^i)
     \end{equation*}
         Sia $\delta_s q^i(t)$ una simmetria del sistema~\eqref{simmazione}, ovvero una variazione che lascia invariate le equazioni di Eulero-Lagrange~\eqref{eullag}. Allora esiste una quantità $Q$ definita come
     \begin{equation}\label{carica}
         Q = K - \frac{\partial L}{\partial \dot q^i} \delta_s q^i
     \end{equation}
-        tale che sia conservata lungo le equazioni del moto e quindi soddisfi la legge di conservazione
-    \begin{equation} \label{th}
+        tale che sia conservata lungo le equazioni del moto e quindi soddisfi la legge di conservazione~\eqref{th}
+    \begin{equation*} 
         \frac{d}{dt} Q = 0
-    \end{equation}
+    \end{equation*}
     \end{theorem}
 
     \begin{proof}
@@ -296,7 +299,7 @@
     \begin{equation}\label{prova7}
         \delta S[\overline q^i,~\delta_s q^i] = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
     \end{equation}
-        In questi due passaggi abbiamo sostanzialmente imposto che $delta_s q^i(t)$ sia una variazione di simmetria e dunque necessariamente soddisfi l'equazione~\eqref{simmazione}, mentre che $\overline q^i(t)$ soddisfi le equazioni del moto~\eqref{eullag}. Ricordiamo che prima soltanto uno dei due era soggetto a rispettare un'equazione, mentre l'altra era arbitraria, e inoltre che in questa maniera la variazione debba essere necessariamente infinitesima. Notando che i membri sinistri delle equazioni~\eqref{prova6} e~\eqref{prova7} sono identici, troviamo
+        In questi due passaggi abbiamo sostanzialmente imposto che $\delta_s q^i(t)$ sia una variazione di simmetria e dunque necessariamente soddisfi l'equazione~\eqref{simmazione}, mentre che $\overline q^i(t)$ soddisfi le equazioni del moto~\eqref{eullag}. Ricordiamo che prima soltanto uno dei due era soggetto a rispettare un'equazione, mentre l'altra era arbitraria, e inoltre che in questa maniera la variazione debba essere necessariamente infinitesima. Notando che i membri sinistri delle equazioni~\eqref{prova6} e~\eqref{prova7} sono identici, troviamo
     \begin{equation}
         \delta[\overline q^i(t), ~\delta_s q^i(t)] = \integ{t_1}{t_2}{t} \dv{}{t} K(q^i, ~t) = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
     \end{equation}
@@ -342,7 +345,7 @@
         \delta S & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s (\dot x^2) - \alpha \delta_s \Big (\frac{1}{x^2} \Big) \Big) \\ & = \integ{t_1}{t_2}{t} \Big( - \epsilon m \dot x \ddot x - \epsilon \alpha \frac{2 \dot x}{x^3} \Big) \\ & = \integ{t_1}{t_2}{t} \dv{}{t} \Big( -\epsilon \Big( \frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big) \Big)
     \end{aligned}
     \end{equation*}
-        Quindi abbiamo trovato dalla~\eqref{invazione}, che il termina al bordo $K$ è
+        Dunque abbiamo trovato dalla~\eqref{invazione}, che il termina al bordo $K$ è
     \begin{equation*}
         K = - \epsilon \Big (\frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big)
     \end{equation*}
@@ -368,24 +371,24 @@
     \end{equation*} 
         e quindi l'azione rimane invariante
     \begin{equation*}
-        \integ{t_1}{t_2}{t'} \Big( \frac{m}{2} \dot x'^2 - \frac{\alpha}{x'^2} \Big) = \integ{t_1}{t_2}{t} \lambda \Big( \frac{m}{2} \frac{\dot x^2}{\lambda} - \frac{\alpha}{\lambda x^2} \Big) = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big)
+        S' = \integ{t_1}{t_2}{t'} \Big( \frac{m}{2} \dot x'^2 - \frac{\alpha}{x'^2} \Big) = \integ{t_1}{t_2}{t} \lambda \Big( \frac{m}{2} \frac{\dot x^2}{\lambda} - \frac{\alpha}{\lambda x^2} \Big) = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big) = S
     \end{equation*}
-        Questa trasformazione mostra chiaramente che la simmetria non deve essere infinitesima, tuttavia per applicare il teorema di Noether, è necessario renderla tale. Scriviamo $\lambda$ come $\lambda = 1 + \epsilon$, dove $\epsilon$ è una quantità infinitesima. Espandendo al primo ordine in $\epsilon$, otteniamo la variazione di simmetria
-    \begin{equation*}
+        Questa trasformazione mostra chiaramente che la simmetria non deve essere infinitesima, tuttavia per applicare il teorema di Noether, è necessario renderla tale. Scriviamo $\lambda$ come $\lambda = 1 + \epsilon$, dove $\epsilon \ll 1$ è una quantità infinitesima. Espandendo al primo ordine in $\epsilon$, otteniamo la variazione di simmetria
+    \begin{equation} \label{h1}
         x'(t') = x'((1+\epsilon)t) = x(t) + \frac{\epsilon}{2} x(t)
-    \end{equation*}
+    \end{equation}
         D'altra parte abbiamo che 
-    \begin{equation*}
+    \begin{equation} \label{h2}
         x'(t') = x'((1+\epsilon)t) = x'(t) + \dot x(t) \epsilon t
-    \end{equation*}
-        Mettendo insieme, otteniamo dunque
+    \end{equation}
+        Mettendo insieme~\eqref{h1} e~\eqref{h2}, otteniamo dunque
     \begin{equation*}
         \delta_s x(t) = x'(t) - x(t) = x'(t') - \dot x(t) \epsilon t - x(t) = x(t) + \frac{\epsilon}{2} x(t) - \dot x(t) \epsilon t - x(t) = \frac{\epsilon}{2} x(t) - \dot x(t) \epsilon t 
     \end{equation*}
         Alla luce di questo risultato, calcoliamo la variazione dell'azione
     \begin{equation}
     \begin{aligned}
-        \delta S & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s (\dot x^2) - \alpha \delta_s \Big (\frac{1}{x^2} \Big) \Big) \\ & = \integ{t_1}{t_2}{t} \Big( m \dot x \Big( \frac{\epsilon}{2} \dot x(t) - \ddot x(t) \epsilon t - \dot x(t) \epsilon \Big) + \frac{2 \alpha}{x^3} \Big( \frac{\epsilon}{2} x(t) - \dot x(t) \epsilon t \Big) \Big) \\ & = \integ{t_1}{t_2}{t} \epsilon \Big( \frac{m}{2} \dot x^2 - m t \dot x \ddot x - m \dot x^2 + \frac{\alpha x - 2 \alpha t \dot x}{x^3}\Big) \\ & = \integ{t_1}{t_2}{t} \epsilon \Big( - \frac{m}{2} \dot x^2 - m t \dot x \ddot x + \frac{\alpha x - 2 \alpha t \dot x}{x^3}\Big) \\ & = \integ{t_1}{t_2}{t} \dv{}{t} \Big ( - \frac{\epsilon t m \dot x^2}{2} + \frac{\alpha \epsilon t}{x^2} \Big)
+        \delta S & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s (\dot x^2) - \alpha \delta_s \Big (\frac{1}{x^2} \Big) \Big) \\ & = \integ{t_1}{t_2}{t} \Big( m \dot x \Big( \frac{\epsilon}{2} \dot x(t) - \ddot x \epsilon t - \dot x \epsilon \Big) + \frac{2 \alpha}{x^3} \Big( \frac{\epsilon}{2} x - \dot x \epsilon t \Big) \Big) \\ & = \integ{t_1}{t_2}{t} \epsilon \Big( \frac{m}{2} \dot x^2 - m t \dot x \ddot x - m \dot x^2 + \frac{\alpha x - 2 \alpha t \dot x}{x^3}\Big) \\ & = \integ{t_1}{t_2}{t} \epsilon \Big( - \frac{m}{2} \dot x^2 - m t \dot x \ddot x + \frac{\alpha x - 2 \alpha t \dot x}{x^3}\Big) \\ & = \integ{t_1}{t_2}{t} \dv{}{t} \Big ( - \frac{\epsilon t m \dot x^2}{2} + \frac{\alpha \epsilon t}{x^2} \Big)
     \end{aligned}
     \end{equation}
         e troviamo, dalla~\eqref{invazione}, che il termina al bordo $K$ è 
@@ -395,7 +398,7 @@
         Ora applichiamo il primo teorema di Noether e otteniamo la carica~\eqref{carica} 
     \begin{equation}
     \begin{aligned}
-        Q & = K - \frac{\partial L}{\partial \dot x} \delta_s x = - \epsilon t \Big (\frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big) - m \dot x \Big (\frac{\epsilon}{2} x(t) - \dot x(t) \epsilon t \Big ) \\ & = - \epsilon \Big ( \frac{m x \dot x }{2} + t \frac{m \dot x^2}{2} - t \frac{\alpha}{x^2} \Big) = - \epsilon \Big ( \frac{m x \dot x}{2} - t \Big ( \frac{m}{2} \dot x^2 + \frac{\alpha}{x^2} \Big ) \Big )
+        Q & = K - \frac{\partial L}{\partial \dot x} \delta_s x \\ & = - \epsilon t \Big (\frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big) - m \dot x \Big (\frac{\epsilon}{2} x(t) - \dot x(t) \epsilon t \Big ) \\ & = - \epsilon \Big ( \frac{m x \dot x }{2} + t \frac{m \dot x^2}{2} - t \frac{\alpha}{x^2} \Big) \\ & = - \epsilon \Big ( \frac{m x \dot x}{2} - t \Big ( \frac{m}{2} \dot x^2 + \frac{\alpha}{x^2} \Big ) \Big )
     \end{aligned}
     \end{equation}
         che a meno di un segno meno e di un fattore $\epsilon$ costante, è la carica di Noether associata alla simmetria di Weyl
@@ -414,6 +417,7 @@
     \begin{equation} \label{soleqmoto}
         x = \pm \sqrt{\frac{4Qt + 2Et^2}{m}}
     \end{equation}
+        
         Applicando le equazioni di Eulero-Lagrange~\eqref{eullag} alla nostra Lagrangiana~\eqref{lag1}, abbiamo
     \begin{equation*}
         0 = \pdv{L}{x}  - \dv{}{t} \pdv{L}{\dot x} = \pdv{}{x} \Big(\frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big) - \dv{}{t} \pdv{}{\dot x} \Big(\frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big) = \frac{2 \alpha}{x^3} - \dv{}{t} (m \dot x) = \frac{2 \alpha}{x^3} - m \ddot x 
@@ -426,7 +430,7 @@
     \end{example}
 
 \subsection{La particella libera}
-    Il secondo esempio che studiamo è la particella libera, ovvero senza un potenziale. Ricaviamo le sue dieci quantità conservate: energia, quantità di moto, momento angolare, moto del centro di massa. È possibile vedere ognuna di esse come conseguenza una conseguenza delle simmetrie dello spazio-tempo: rispettivamente omogeneità del tempo, omogeneità e isotropia dello spazio e `galileianità`\footnote{Dato che non esiste un termine specifico, con `galileianità` si intende che rispetti le trasformazioni di Galileo} dello spaziotempo.
+    Il secondo esempio che studiamo è la particella libera, ovvero senza un potenziale. Ricaviamo le sue quantità conservate: energia, quantità di moto (3), momento angolare (3), moto del centro di massa (3). È possibile vedere ognuna di esse come conseguenza una conseguenza delle simmetrie dello spazio-tempo: rispettivamente omogeneità del tempo, omogeneità e isotropia dello spazio e `galileianità`\footnote{Dato che non esiste un termine specifico, con `galileianità` si intende che rispetti le trasformazioni di Galileo} dello spaziotempo.
 
     \begin{example}[Particella libera]
         Consideriamo una particella di massa $m$ libera di spostarsi nello spazio tridimensionale, ovvero in cui non è presente nessun potenziale $U$. In questo caso, la lagrangiana del sistema~\eqref{lagrangiana} coinciderà con l'energia cinetica 
@@ -447,7 +451,7 @@
     \begin{equation}
         \delta S = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s ( \mathbf{\dot r}^2) = \integ{t_1}{t_2}{t} ( - \epsilon m  \mathbf{\dot r} \cdot \mathbf{\ddot r}) = \integ{t_1}{t_2}{t} \dv{}{t} \Big( -\epsilon \frac{m}{2}  \mathbf{\dot r}^2 \Big)
     \end{equation}
-        e quindi abbiamo trovato, dalla~\eqref{invazione}, che il termina al bordo $K$ è 
+        e quindi abbiamo trovato, dalla~\eqref{invazione}, che il termine al bordo $K$ è 
     \begin{equation*}
         K = - \epsilon \frac{m}{2} \mathbf{\dot r}^2
     \end{equation*}
@@ -474,7 +478,7 @@
     \begin{equation}
         \delta S = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s \mathbf{\dot r}^2 = 0
     \end{equation}
-        e quindi abbiamo trovato, dalla~\eqref{invazione}, che il termina al bordo $K$ è nullo
+        e troviamo, dalla~\eqref{invazione}, che il termine al bordo $K$ è nullo
     \begin{equation*}
         K = 0
     \end{equation*}
@@ -482,7 +486,7 @@
     \begin{equation}
         Q = K - \frac{\partial L}{\partial \mathbf{\dot r}} \cdot \delta_s \mathbf r = - m \mathbf{\dot r} \cdot \mathbf a
     \end{equation}
-        che è la quantità di moto del sistema $\mathbf p$ lungo la direzione della traslazione $\mathbf a$ a meno di un fattore costante $\|\mathbf a \|$
+        che è la quantità di moto del sistema $\mathbf p$ lungo la direzione della traslazione $\mathbf a$ a meno di un fattore costante $a = \|\mathbf a \|$
     \begin{equation*}
         \mathbf p = m \mathbf{\dot r}
     \end{equation*}
@@ -493,11 +497,11 @@
     \begin{equation}
         \mathbf r' = R(\theta) \mathbf r
     \end{equation}
-        dove $R(\theta)$ è la matrice di rotazione. L'azione è invariante perchè una rotazione lascia invariata la norma del vettore velocità $\mathbf{\dot r}^2$. A questo punto rendiamo infinitesima la rotazione, introducendo il vettore $\boldsymbol \omega = (\omega_x,~\omega_y,~\omega_z)$
+        dove $R(\theta)$ è la matrice di rotazione. L'azione è invariante perchè una rotazione lascia invariata la norma del vettore velocità e quindi anche il suo quadrato $\mathbf{\dot r}^2$. A questo punto rendiamo infinitesima la rotazione, introducendo il vettore $\boldsymbol \omega = (\omega_x,~\omega_y,~\omega_z)$
     \begin{equation}
         \mathbf r' = \mathbf r + \boldsymbol \omega \times \mathbf r
     \end{equation}
-        La variazione di simmetria 
+        La variazione di simmetria è
     \begin{equation*}
         \delta_s \mathbf r = \boldsymbol \omega \times \mathbf r
     \end{equation*}
@@ -505,7 +509,7 @@
     \begin{equation}
         \delta S = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s \mathbf{\dot r}^2 = \integ{t_1}{t_2}{t} \frac{m}{2} \mathbf{\dot r} \cdot (\omega \times \mathbf{\dot r} ) = 0
     \end{equation}
-        e quindi abbiamo trovato, dalla~\eqref{invazione}, che il termina al bordo $K$ è nullo
+        e troviamo, dalla~\eqref{invazione}, che il termine al bordo $K$ è nullo
     \begin{equation*}
         K = 0
     \end{equation*}
@@ -513,14 +517,14 @@
     \begin{equation}
         Q = K - \frac{\partial L}{\partial \mathbf{\dot r}} \cdot \delta_s \mathbf r = - m \mathbf{\dot r} \cdot \boldsymbol\omega \times \mathbf r 
     \end{equation}
-        che è il momento angolare del sistema $\mathbf L$ lungo la direzione dell'asse di rotazione $\boldsymbol \omega$ a meno di un fattore costante $\|\boldsymbol \omega\|$ e di un segno meno
+        che è il momento angolare del sistema $\mathbf L$ lungo la direzione dell'asse di rotazione $\boldsymbol \omega$ a meno di un fattore costante $\omega = \|\boldsymbol \omega\|$ e di un segno meno
     \begin{equation*}
         \mathbf L = m \mathbf{\dot r} \times \mathbf r
     \end{equation*}
         Dunque abbiamo dimostrato che una simmetria di rotazione spaziale comporta la conservazione del momento angolare $\mathbf L$.
 
     \subsubsection{Moto del centro di massa}
-        La quarta e ultima simmetria che studiamo è un boost di Galielo lungo una direzione
+        La quarta e ultima simmetria che studiamo è un boost di Galileo lungo una direzione
     \begin{equation}
         \mathbf r' = \mathbf r + \mathbf v t
     \end{equation}
@@ -532,7 +536,7 @@
     \begin{equation}
         \delta S = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s (\mathbf{\dot r}^2) = \integ{t_1}{t_2}{t} m \mathbf {\dot r} \cdot \delta_s (\mathbf{\dot r})= \integ{t_1}{t_2}{t} \dv{}{t} \Big( m \mathbf r \cdot \mathbf v \Big) 
     \end{equation}
-        e quindi abbiamo trovato, dalla~\eqref{invazione}, che il termina al bordo $K$ è 
+        e troviamo, dalla~\eqref{invazione}, che il termine al bordo $K$ è 
     \begin{equation*}
         K = m \mathbf r \cdot \mathbf v 
     \end{equation*}
@@ -540,36 +544,36 @@
     \begin{equation}
         Q = K - \frac{\partial L}{\partial \mathbf{\dot r}} \cdot \delta_s \mathbf r =  m \mathbf r \cdot \mathbf v - m \mathbf{\dot r} \cdot \mathbf v t = \mathbf v \cdot (m \mathbf r - m \mathbf{\dot r} t)
     \end{equation}
-        che è la definizione di moto del centro di massa nella direzione di $\mathbf v$ a meno di un fattore costante $\|\mathbf v \|$
+        che è la definizione di moto del centro di massa nella direzione di $\mathbf v$ a meno di un fattore costante $v = \|\mathbf v \|$
     \begin{equation*}
         m \mathbf r - m \mathbf{\dot r} t = const
     \end{equation*}
-        Dunque abbiamo dimostrato che una simmetria di un boost di Galileo comporta la conservazione del moto del centro di massa.
+        Dunque abbiamo dimostrato che una simmetria di boost di Galileo comporta la conservazione del moto del centro di massa.
 
     \end{example}
 
 \subsection{La particella in un campo di background uniforme}
 
-    Il terzo esempio mostra come una particella in un campo di background uniforme non avrà una carica conservata associata ad una simmetria a causa proprio del campo. Tuttavia sarà ugualmente possibile ottenere l'equazione differenziale che l'evoluzione temporale della carica non conservata.
+    Il terzo esempio mostra come una particella in un campo di background uniforme non avrà una carica conservata associata ad una simmetria a causa proprio del campo. Tuttavia sarà ugualmente possibile ottenere l'equazione differenziale che governa l'evoluzione temporale della carica non conservata.
 
     \begin{example}[Particella in campo di background uniforme] 
-        Consideriamo una particella di massa $m$ immersa in un campo uniforme il cui potenziale dipendente dalla coordinata z. 
+        Consideriamo una particella di massa $m$ immersa in un campo uniforme il cui potenziale dipendente dalla coordinata z
     \begin{equation}\label{enpot3}
         U = B z
     \end{equation}
-    dove $B$ è una costante. Scrivendo la Lagrangiana nella forma $T - U$, sostituendo~\eqref{enpot3}, otteniamo 
+        dove $B$ è una costante. Scrivendo la Lagrangiana nella forma $T - U$, sostituendo~\eqref{enpot3}, otteniamo 
     \begin{equation} \label{lag3}
         L = \frac{m}{2} \mathbf{\dot r}^2 - B z
     \end{equation}
         e di conseguenza, usando la definizione~\eqref{azione}, l'azione $S$ del sistema sarà
     \begin{equation}
-        S = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \mathbf{\dot x} - B z \Big)
+        S = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \mathbf{\dot r} - B z \Big)
     \end{equation}
         Riscriviamo il potenziale in modo differente, introducendo il vettore $\mathbf B = (0,~0,~B)$ e riscrivendo l'azione come
     \begin{equation}
         S = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \mathbf{\dot r}^2 - \mathbf B \cdot \mathbf r \Big)
     \end{equation}
-        Notiamo che questo applicando una rotazione, sia il primo termine che il secondo termine sono invarianti, mostrando quindi una simmetria rotazionale. Infatti essendo entrambi prodotti scalari, il primo tra $\mathbf{\dot r}$ e $\mathbf{\dot r}$ mentre il secondo tra $\mathbf B$ e $\mathbf r$, sono scalari e dunque invarianti per trasformazione di coordinate. Tuttavia ciò non implica che la carica di Noether associata a questa simmetria, ovvero il momento angolare, si conservi. Ciò è dovuto alla presenza di un campo in background. Per vederelo, consideriamo una rotazione infinitesima come variazione di simmetria sia delle coordinate 
+        Notiamo che applicando una rotazione, sia il primo termine che il secondo termine sono invarianti, mostrando quindi una simmetria rotazionale. Infatti essendo entrambi prodotti scalari, il primo tra $\mathbf{\dot r}$ e $\mathbf{\dot r}$ mentre il secondo tra $\mathbf B$ e $\mathbf r$, sono invarianti per trasformazione di coordinate. Tuttavia ciò non implica che la carica di Noether associata a questa simmetria, ovvero il momento angolare, si conservi. Ciò è dovuto alla presenza di un campo in background. Per vederlo, consideriamo una rotazione infinitesima come variazione di simmetria sia delle coordinate 
     \begin{equation}
         \delta_s \mathbf r = \boldsymbol \omega \times \mathbf r
     \end{equation}
@@ -577,21 +581,21 @@
     \begin{equation}
         \delta_s \mathbf B = \boldsymbol \omega \times \mathbf B
     \end{equation}
-        il cui vettore $\boldsymbol \omega$ è lo stesso introdotto precedentemente. Derivando la variazione delle coordinate, abbiamo
+        il cui vettore $\boldsymbol \omega$ è lo stesso introdotto nell'esempio precedente. Derivando la variazione delle coordinate, abbiamo
     \begin{equation}
         \delta_s \mathbf{\dot r} = \boldsymbol \omega \times \mathbf{\dot r}
     \end{equation}
         Alla luce di questo risultato, calcoliamo il termine al bordo $K$ 
-    \begin{equation}
+    \begin{equation*}
     \begin{aligned}
-        \delta S & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s \mathbf{\dot r}^2 - \delta_s (\mathbf B \cdot \mathbf r ) \Big ) \\ & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \mathbf{\dot r} \cdot (\boldsymbol \omega \times \mathbf{\dot r} ) - \mathbf B \cdot \boldsymbol \omega \times \mathbf r - \boldsymbol \omega \times \mathbf B \cdot \mathbf r \Big ) = 0
+        \delta S & = \delta \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \mathbf{\dot r}^2 - \mathbf B \cdot \mathbf r \Big) \\ & \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s (\mathbf{\dot r}^2) - \delta_s (\mathbf B \cdot \mathbf r ) \Big ) \\ & = \integ{t_1}{t_2}{t} (m \mathbf{\dot r} \cdot (\boldsymbol \omega \times \mathbf{\dot r} ) - \mathbf B \cdot \boldsymbol \omega \times \mathbf r - \boldsymbol \omega \times \mathbf B \cdot \mathbf r ) = 0
     \end{aligned}
-    \end{equation}
+    \end{equation*}
         che risulta essere nullo essendo tutti prodotti scalari tra vettori perpendicolari
     \begin{equation*}
         K = 0
     \end{equation*}
-        Calcoliamo ora l'equazione del moto applicando le equazioni di Eulero-Lagrange~\eqref{eullag} alla nostra lagrangiana~\eqref{lag3}, abbiamo
+        Calcoliamo ora l'equazione del moto applicando le equazioni di Eulero-Lagrange~\eqref{eullag} alla nostra lagrangiana~\eqref{lag3}
     \begin{equation*}
         0 = \pdv{L}{\mathbf x} - \dv{}{t} \pdv{L}{\mathbf{\dot x}} = \pdv{}{\mathbf x} \Big(\frac{m}{2} \mathbf{\dot x} - \mathbf B \cdot \mathbf x \Big) - \dv{}{t} \pdv{}{\mathbf{\dot x}} \Big(\frac{m}{2} \mathbf{\dot x} - \mathbf B \cdot \mathbf x \Big) = \mathbf B - m \mathbf{\ddot x}
     \end{equation*}
@@ -602,13 +606,13 @@
         Effettuiamo dunque la variazione on-shell, utilizzando le equazioni del moto
     \begin{equation*}
     \begin{aligned}
-        \delta S & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta \mathbf{\dot r}^2 - \delta (\mathbf B \cdot \mathbf r ) \Big ) \\ & = \integ{t_1}{t_2}{t} \Big( m \mathbf{\ddot r } \cdot \delta \mathbf{\dot r} - \delta \mathbf B \cdot \mathbf r - \mathbf B \cdot \delta \mathbf r \Big )  \\ & = \integ{t_1}{t_2}{t} \Big( \dv{}{t} (m \mathbf{\dot r} \cdot \delta \mathbf r) - m \mathbf{\dot r} \cdot \delta \mathbf{\dot r} - \delta \mathbf B \cdot \mathbf r - \mathbf B \cdot \delta \mathbf r \Big )  \\ & = \integ{t_1}{t_2}{t} \Big( \dv{}{t} (m \mathbf{\dot r} \cdot \boldsymbol \omega \times \mathbf r) - m \mathbf{\dot r} \cdot \boldsymbol \omega \times \mathbf{\dot r} - \boldsymbol \omega \times \mathbf B \cdot \mathbf r - \mathbf B \cdot \boldsymbol \omega \times \mathbf r \Big ) 
+        \delta S & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta \mathbf{\dot r}^2 - \delta (\mathbf B \cdot \mathbf r ) \Big ) \\ & = \integ{t_1}{t_2}{t} \Big( m \mathbf{\ddot r } \cdot \delta \mathbf{\dot r} - \delta \mathbf B \cdot \mathbf r - \mathbf B \cdot \delta \mathbf r \Big )  \\ & = \integ{t_1}{t_2}{t} \Big( \dv{}{t} (m \mathbf{\dot r} \cdot \delta \mathbf r) - m \mathbf{\dot r} \cdot \delta \mathbf{\dot r} - \delta \mathbf B \cdot \mathbf r - \mathbf B \cdot \delta \mathbf r \Big )  \\ & = \integ{t_1}{t_2}{t} \Big( \dv{}{t} (m \mathbf{\dot r} \cdot \boldsymbol \omega \times \mathbf r) - m \mathbf{\dot r} \cdot \boldsymbol \omega \times \mathbf{\dot r} - \boldsymbol \omega \times \mathbf B \cdot \mathbf r - \mathbf B \cdot \boldsymbol \omega \times \mathbf r \Big ) \\ & = \integ{t_1}{t_2}{t} \boldsymbol \omega \cdot \Big( \dv{\mathbf L}{t} - \mathbf r \times \mathbf B \Big)
     \end{aligned}
     \end{equation*} 
         dove abbiamo usato l'identità
     \begin{equation*}
-        m \mathbf{\ddot r} \cdot \delta \mathbf r = \dv{}{t} (m \mathbf{\dot r} \cdot \delta \mathbf r) - m \mathbf{\dot r} \cdot \delta \mathbf{\dot r} = \integ{t_1}{t_2}{t} \boldsymbol \omega \cdot \Big( \dv{\mathbf L}{t} - \mathbf r \times \mathbf B \Big)
-    \end{equation*}
+        m \mathbf{\ddot r} \cdot \delta \mathbf r = \dv{}{t} (m \mathbf{\dot r} \cdot \delta \mathbf r) - m \mathbf{\dot r} \cdot \delta \mathbf{\dot r} 
+    \end{equation*} 
         sostituito le variazioni, eliminato i termini nulli, e riconosciuto la definizione di momento angolare $\mathbf L$. Dunque, ponendo la simmetria uguale a zero, otteniamo l'equazione differenziale che governa come varia il momento angolare, che quindi non si conserva 
     \begin{equation*}
         \dv{\mathbf L}{t} = \mathbf r \times \mathbf B 
@@ -633,7 +637,7 @@
 \begin{equation}
     \mathbf r'_1 = \mathbf r_1 + \mathbf a
 \end{equation}
-    dove $\mathbf a$ è una costante. Essendo questa una traslazione spaziale, dunque possiamo concludere che la quantità di moto $\mathbf p_1$ della prima particella non si conserva. Tuttavia, aggiungendo anche l'energia cinetica della seconda particella e quindi la sua possibilità di muoversi, otteniamo una Lagrangiana  
+    dove $\mathbf a$ è una costante. Essendo questa una traslazione spaziale, dunque possiamo concludere che la quantità di moto $\mathbf p_1$ della prima particella non si conserva. Tuttavia, aggiungendo anche l'energia cinetica della seconda particella e quindi la sua possibilità di muoversi, otteniamo la lagrangiana  
 \begin{equation}
     L = \frac{m_1}{2} \mathbf{\dot r_1^2} + \frac{m_2}{2} \mathbf{\dot r_2^2} - \frac{qQ}{|\mathbf r_1 - \mathbf r_2|}
 \end{equation}
@@ -662,7 +666,7 @@
     \begin{equation} \label{hamiltoniana}
         H(q^i, ~p_j, ~t) = p_i \dot q^i - L
     \end{equation} 
-    Invertendo quest'ultima equazione, definziamo l'azione nello spazio delle fasi o azione hamiltoniana nel seguente modo 
+    Invertendo quest'ultima equazione, definiamo l'azione nello spazio delle fasi o azione hamiltoniana nel seguente modo 
     \begin{equation*}
         S[q^i, ~p_i] = \integ{t_1}{t_2}{t} (p_i \dot q^i - H(q^i, ~p_j, ~t))
     \end{equation*}
@@ -672,7 +676,7 @@
         \delta S & = \delta \integ{t_1}{t_2}{t} (p_i \dot q^i - H) \\ & = \integ{t_1}{t_2}{t} \Big ( \delta p_i \dot q^i + p_i \delta \dot q^i - \pdv{H}{q^i} \delta q^i - \pdv{H}{p_i} \delta p_i \Big ) \\ & = \integ{t_1}{t_2}{t} \Big ( \delta p_i \dot q^i - \dot p^i \delta q^i - \pdv{H}{q^i} \delta q^i - \pdv{H}{p_i} \delta p_i \Big) \\ & = \integ{t_1}{t_2}{t} \Big ( \delta p_i \Big( \dot q^i - \pdv{H}{p_i} \Big ) - \delta q^i \Big(\dot p_i + \pdv{H}{q^i} \Big ) \Big) = 0
     \end{aligned}
     \end{equation*}
-    dove abbiamo integrato per parti, ponendo gli estremi nulli~\eqref{estreminulli}, e nell'ultimo passaggio abbiamo raccolto un termine $\delta q^i$ comune. Per il lemma fondamentale del calcolo delle variazioni, dato che le $\delta q^i$ sono arbitrarie, l'integranda si annulla e le equazioni del moto, chiamate equazioni di Hamilton, diventano 
+    dove abbiamo integrato per parti, posto gli estremi nulli~\eqref{estreminulli}, e nell'ultimo passaggio abbiamo raccolto un termine $\delta q^i$ comune. Per il lemma fondamentale del calcolo delle variazioni, dato che le $\delta q^i$ sono arbitrarie, l'integranda si annulla e le equazioni del moto, chiamate equazioni di Hamilton, diventano 
     \begin{equation} \label{ham1}
         \dot q^i = \pdv{H}{p_i}
     \end{equation}
@@ -681,31 +685,34 @@
     \end{equation}
     
     Completiamo le equazioni introducendo la dipendenza sia della Lagrangiana che dell'Hamiltoniana dal tempo e vedendo che le derivate temporali sono uguali tra loro a meno di un segno negativo. Calcoliamo prima il differenziale della lagrangiana
-    \begin{equation*}
+    \begin{equation} \label{h3}
         dL = \pdv{L}{q^i} dq^i + \pdv{L}{\dot q^i} d\dot q^i + \pdv{L}{t} dt = \dot p_i dq^i + p_i d\dot q^i + \pdv{L}{t} dt 
-    \end{equation*}
+    \end{equation}
     dove abbiamo usato le equazioni~\eqref{coniugato} e~\eqref{eullag}, poi il differenziale dell'hamiltoniana
-    \begin{equation*}
+    \begin{equation*} \label{h4}
     \begin{aligned}
         dH & = \dot q^i dp_i - d \dot q^i p_i - dL \\ & = \dot q^i dp_i + d \dot q^i p_i - \dot p_i dq^i - p_i d\dot q^i - \pdv{L}{t} dt \\ & = \dot q^i dp_i - \dot p_i dq^i - \pdv{L}{t} dt \\ & = \pdv{H}{q^i} dq^i + \pdv{H}{p_i} dp_i + \pdv{H}{t} dt
     \end{aligned}
     \end{equation*}
-    Sostituendo un differenziale nell'altro, otteniamo 
+    dove abbiamo usato le equazioni~\eqref{hamiltoniana},~\eqref{ham1} e~\eqref{ham2}. Dalle ultime due uguaglianze, ricaviamo  
     \begin{equation*}
         \pdv{L}{t} = - \pdv{H}{t}
     \end{equation*}
 
 \hfill 
 
-    Solitamente, si usa esprimere la meccanica hamiltoniana introducendo le parentesi di Poisson. Date due funzioni $f(q, ~p)$ e $g(q, ~p)$ nello spazio delle fasi, definiamo le parentesi di Poisson come
+    Solitamente, si usa esprimere la meccanica hamiltoniana introducendo le parentesi di Poisson. 
+    \begin{definition}[Parentesi di Poisson]
+        Date due funzioni $f(q, ~p)$ e $g(q, ~p)$ nello spazio delle fasi, definiamo le parentesi di Poisson come
     \begin{equation} \label{poisson}
         \poi{f}{g} = \pdv{f}{q^i} \pdv{g}{p_i} - \pdv{g}{q^i} \pdv{f}{p_i}
     \end{equation}
+    \end{definition}
     Dalla definizione è possibile dimostrare le seguenti proprietà, dove $h(q, ~p)$ è un'altra funzione nello spazio delle fasi e $c, ~c_1, ~c_2$ sono costanti
     \begin{enumerate}
         \item Antisimmetria
     \begin{equation*}
-        \poi{f}{g} = \poi{g}{f}
+        \poi{f}{g} = - \poi{g}{f}
     \end{equation*}
         \item Bilinearità di entrambi gli argomenti
     \begin{equation*}
@@ -726,7 +733,7 @@
         \poi{f}{\poi{g}{h}} + \poi{g}{\poi{h}{f}} + \poi{h}{\poi{f}{g}} = 0
     \end{equation}
     \end{enumerate}
-    Importanti relazioni emergono quando si sostituisconi le coordinate o i momenti al posto delle funzioni $f$ e $g$, Queste parentesi di Poisson vengono chiamate parentesi canoniche ed esplicitamente sono 
+    Importanti relazioni emergono quando si sostituisconi le coordinate o i momenti al posto delle funzioni $f$ e $g$. Queste parentesi di Poisson vengono chiamate parentesi canoniche ed esplicitamente sono 
     \begin{equation} \label{canq}
         \poi{q^i}{q_j} = 0
     \end{equation}
@@ -762,19 +769,19 @@
     Il primo teorema che dimostriamo è il teorema inverso: invece che derivare una carica conservata da una simmetria, compiano l'azione inversa, ovvero definita una carica conservata deriviamo una simmetria dell'azione.
     \begin{theorem}
         Sia $Q$ una carica di Noether, allora la seguente trasformazione 
-    \begin{equation}
+    \begin{equation*}
         \delta_s q^i = [q^i, \epsilon Q] = \epsilon \frac{\partial Q}{\partial p_i} \qquad \delta_s p_i = [q_i, \epsilon Q] = - \epsilon \frac{\partial Q}{\partial q^i}
-    \end{equation}
+    \end{equation*}
         è una simmetria dell'azione, dove $\epsilon$ è un parametro infinitesimo.
     \end{theorem}
 
     \begin{proof}
         Calcoliamo la variazione dell'azione
-    \begin{equation}
+    \begin{equation*}
     \begin{aligned}
         \delta S & = \delta \int dt ~ (p \dot q^i - H) \\ & = \int dt ~  (\delta_s p \dot q + p \frac{d}{dt} \delta_s q - \frac{\partial H}{\partial p} \delta_s p - \frac{\partial H}{\partial q} \delta_s q) \\ & = \int dt ~ (- \epsilon \frac{\partial Q}{\partial q} \dot q + \frac{d}{dt} (p \delta_s q) - \epsilon \dot p \frac{\partial Q}{\partial p} + \epsilon \frac{\partial H}{\partial p} \frac{\partial Q}{\partial q} - \epsilon \frac{\partial H}{\partial q}\frac{\partial Q}{\partial p}) \\ & = \int dt ~ (\epsilon (- \frac{dQ}{dt} + \frac{\partial Q}{\partial t} + [Q, H] ) + \frac{d}{dt} (p \delta_s q)) \\ & = \int dt ~ \frac{d}{dt}(-\epsilon Q + p \delta_s q)
     \end{aligned}
-    \end{equation}
+    \end{equation*}
         che essendo una derivata totale, completa la dimostrazione.
     \end{proof}
 
@@ -789,7 +796,7 @@
     \end{theorem}
 
     \begin{proof}
-        La derivata temporale delle parentesi di Poisson di due cariche conservate $Q_1$ e $Q_2$ è nulla
+        La derivata temporale delle parentesi di Poisson di due cariche conservate $Q_1$ e $Q_2$ è
     \begin{equation*}
         \dv{}{t} [Q_1, Q_2] = [[Q_1, Q_2], H] + \pdv{}{t} [Q_1, Q_2] = - \poi{\poi{Q_2}{H}}{Q_1} - \poi{\poi{H}{Q_1}}{Q_2} + \pdv{}{t} [Q_1, Q_2] = 0
     \end{equation*} 
@@ -809,11 +816,11 @@
 \begin{equation*}
     H = p \dot x - L = \frac{p^2}{2m} + \frac{\alpha}{x^2}
 \end{equation*}
-    e inoltre l'azione hamiltoniana è
+    L'azione hamiltoniana è
 \begin{equation*}
     S = \int dt~ \Big (\frac{p^2}{2m} - \frac{\alpha}{x^2} \Big)
 \end{equation*}
-    Il sistema presenta tre differenti cariche conservate: la prima è l'energia dato che non c'è dipendenza dal tempo
+    Il sistema presenta tre differenti cariche conservate: la prima è l'energia, dato che non c'è dipendenza dal tempo
 \begin{equation*}
     H = \frac{p^2}{2m} + \frac{\alpha}{x^2}
 \end{equation*}
@@ -825,21 +832,21 @@
 \begin{equation*}
     K = t^2H + 2 t Q^2 - \frac{m}{2} x^2
 \end{equation*}  
-    Non tutte le cariche sono indipendenti, infatti notiamo che esiste una relazione fra le cariche 
+    Tuttavia non tutte le cariche sono indipendenti, infatti notiamo che esiste una relazione fra le cariche 
 \begin{equation*}
     2KH + 2Q^2 + m\alpha = 0
 \end{equation*}
 
     Infine ci soffermiamo sull'algebra delle cariche: come ci dice il teorema del precedente paragrafo, le parentesi di Poisson fra le cariche sono anch'esse stesse delle cariche
-\begin{equation}
+\begin{equation*}
     [Q, ~H] = H
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
     [Q, ~K] = -K
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
     [K, ~H] = 2Q
-\end{equation}
+\end{equation*}
 
 \subsubsection{Riferimenti bibliografici}
     I riferimenti bibliografici per questo capitolo sono~\cite{landaumecc},~\cite{goldstein},~\cite{banados},~\cite{hill} e~\cite{bastianelli}.

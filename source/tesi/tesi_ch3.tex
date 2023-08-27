@@ -5,7 +5,7 @@
     Questo è il contenuto del cosidetto secondo teorema di Noether. In questo capitolo non enunceremo né dimostreremo questo teorema, ma studieremo come esso sia strettamente collegato alle teorie di gauge. L'importanza di tali teorie risiede nello sviluppo della fisica moderna: tre delle quattro interazioni fondamentali (forte, debole ed elettromagnetica) sono descritte da teorie di gauge.
 
 \section{Teoria di gauge}
-    Prima di studiare in dettaglio la struttura matematica di una teoria di gauge, presentiamo brevemente quali caratteristiche possiede. Consideriamo un sistema fisico descritto da una lagrangiana nell'ambito della teoria relativistica dei campi. Definiamo una simmetria di gauge come una simmetria locale, ovvero una trasformazione contenente un'arbitraria funzione delle coordinate spaziotemporali che lascia invariata l'azione del sistema. Ne consegue che ci saranno relazioni che legano le equazioni del moto: fissando arbitrariamente la nostra funzione, i gradi di libertà del sistema diminuiscono. Inoltre, passando alla descrizione hamiltoniana, emerge la presenza di vincoli generati dalla simmetria, a differenza delle cariche conservate nel caso di simmetrie globali. Particolare attenzione è posta su quanto possa essere fisica una teoria formulata in questo modo, che a prima vista potrebbe non sembrarlo affatto. Tuttavia possiamo introdurre il concetto di classi di equivalenza di configurazioni, ovvero campi, che differiscono matematicamente solamente per una simmetria di gauge, descrivono fisicamente la stessa realtà. Nel prossimo paragrafo mostreremo quantitativamente tutte queste caratteristiche attraverso un semplice esempio di un sistema meccanico motivato dall'elettrodinamica di Maxwell.
+    Prima di studiare in dettaglio la struttura matematica di una teoria di gauge, presentiamo brevemente quali caratteristiche possiede. Consideriamo un sistema fisico descritto da una lagrangiana nell'ambito della teoria classica dei campi. Definiamo una simmetria di gauge come una simmetria locale, ovvero una trasformazione contenente un'arbitraria funzione delle coordinate spaziotemporali che lascia invariata l'azione del sistema. Ne consegue che ci saranno relazioni che legano le equazioni del moto: fissando arbitrariamente la nostra funzione, i gradi di libertà del sistema diminuiscono. Inoltre, passando alla descrizione hamiltoniana, emerge la presenza di vincoli generati dalla simmetria, a differenza delle cariche conservate nel caso di simmetrie globali. Particolare attenzione è posta su quanto possa essere fisica una teoria formulata in questo modo, che a prima vista potrebbe non sembrarlo affatto. Tuttavia possiamo introdurre il concetto di classi di equivalenza di configurazioni, ovvero campi che differiscono matematicamente solamente per una simmetria di gauge descrivono fisicamente la stessa realtà. Nel prossimo paragrafo mostreremo quantitativamente tutte queste caratteristiche attraverso un semplice esempio di un sistema meccanico motivato dall'elettrodinamica di Maxwell.
     
 \subsection{Un esempio motivato dall'elettrodinamica}
 
@@ -43,7 +43,7 @@
     dove $\epsilon(t)$ è un'arbitraria funzione del tempo. Infatti calcolando la variazione sotto tale trasformazione otteniamo 
     \begin{equation*}
     \begin{aligned}
-        S[A'(t),~\psi'(t)] & = \frac{1}{2} \int dt ~ {(\dot \psi' - A')}^2 = \frac{1}{2} \int dt ~ {(\dot \psi + \dot \epsilon - A - \dot \epsilon )}^2 \\ & = \frac{1}{2} \int dt ~ {(\dot \psi - A)}^2 = S[A(t),\psi(t)]
+        S[A'(t),~\psi'(t)] & = \frac{1}{2} \int dt ~ {(\dot \psi' - A')}^2 \\ & = \frac{1}{2} \int dt ~ {(\dot \psi + \dot \epsilon - A - \dot \epsilon )}^2 \\ & = \frac{1}{2} \int dt ~ {(\dot \psi - A)}^2 \\ & = S[A(t),\psi(t)]
     \end{aligned}
     \end{equation*}
     
@@ -95,7 +95,7 @@
     Successivamente applichiamo la trasformazione di Legendre~\eqref{hamiltoniana} per ottenere l'hamiltoniana del sistema in funzione dei campi $\psi$ e $A$ e del momento coniugato $p_\psi$ 
     \begin{equation*}
     \begin{aligned}
-        H(\psi,~A,~p_\psi) & = p_\psi \dot \psi - L = p_\psi \dot \psi - \frac{1}{2} {(\dot \psi - A)}^2 \\ & = p_\psi (p_\psi + A) - \frac{1}{2} {(p_\psi + A - A)}^2 = \frac{1}{2} p^2_\psi  + A p_\psi
+        H(\psi,~A,~p_\psi) & = p_\psi \dot \psi - L \\ & = p_\psi \dot \psi - \frac{1}{2} {(\dot \psi - A)}^2 \\ & = p_\psi (p_\psi + A) - \frac{1}{2} {(p_\psi + A - A)}^2 \\ &  = \frac{1}{2} p^2_\psi  + A p_\psi
     \end{aligned}
     \end{equation*}
     dove abbiamo utilizzato la~\eqref{derpsi}. Nel formalismo hamiltoniano, le equazioni del moto sono le equazioni di Hamilton~\eqref{ham1} e~\eqref{ham2}. Per il campo $A$ abbiamo
@@ -134,13 +134,17 @@
 
 \subsection{Struttura generale delle teorie di gauge} 
 
-    Presentiamo in questo paragrafo la struttura matematica di una teoria di gauge nella sua formulazione hamiltoniana. Il vantaggio di studiare tale teoria in questa formulazione risiede nella possibilità di analizzare in generale caratteristiche valide per molti esempi. In presenza di vincoli, il metodo più generale per passare dalla descrizione lagrangiana a quella hamiltoniana è il metodo sviluppato da P. A. M. Dirac $(1902- 1984)$. Tuttavia salteremo quella procedura e partiremo direttamente dalla conoscenza dell'hamiltoniana e dal suo funzionale di azione. 
+    Presentiamo in questo paragrafo la struttura matematica di una teoria di gauge nella sua formulazione hamiltoniana. Il vantaggio di studiare tale teoria in questa formulazione risiede nella possibilità di analizzare in generale caratteristiche valide per molti esempi. In presenza di vincoli, il metodo più generale per passare dalla descrizione lagrangiana a quella hamiltoniana è il metodo sviluppato da P. A. M. Dirac $(1902- 1984)$. Tuttavia salteremo quella procedura e partiremo direttamente dalla conoscenza dell'hamiltoniana e dell'azione. 
     
     Consideriamo dunque un funzionale di azione hamiltoniano nella forma generica
     \begin{equation} \label{azionevincolo}
-        S[q^i,~p_i,~\lambda^a] = \int dt (p_i \dot q^i - H_0(q^i, ~p_i) + \lambda^a \phi_a (q^i, ~p_i))
+        S[q^i,~p_i,~\lambda^a] = \int dt ~ (p_i \dot q^i - H_0(q^i, ~p_i) + \lambda^a \phi_a (q^i, ~p_i))
     \end{equation}
-    dove le variabili indipendenti sono $p_i$, $q^i$ e $\lambda^a$, rispettivamente i momenti coniugati, le coordinate e i moltiplicatori di Lagrange. L'hamiltoniana totale è definita come $H = H_0 - \lambda^a \phi_a$ ed è composta da una parte che non contiene vincoli $H_0$ e da una parte che contribuisce ad aggiungerli, dove le equazioni dei vincoli sono in funzione delle $\phi_a$. Le corrispondenti equazioni del moto, variando le tre variabili, sono
+    dove le variabili indipendenti sono $p_i$, $q^i$ e $\lambda^a$, rispettivamente i momenti coniugati, le coordinate e i moltiplicatori di Lagrange. L'hamiltoniana totale è definita come 
+    \begin{equation*}
+        H = H_0 - \lambda^a \phi_a
+    \end{equation*} 
+    ed è composta da una parte che non contiene vincoli $H_0$ e da una parte che contribuisce ad aggiungerli, dove le equazioni dei vincoli sono in funzione delle $\phi_a$. Le corrispondenti equazioni del moto, variando le tre variabili, sono
     \begin{equation} \label{hamvinc1}
         \dot q^i = \pdv{H}{p_i} = \pdv{H_0}{p_i} - \lambda^a \pdv{\phi_a}{p_i}
     \end{equation}
@@ -153,7 +157,7 @@
     Le prime due equazioni determinano la dinamica del sistema, ovvero come evolvono $q$ e $p$ date le condizioni iniziali $q_0$ e $p_0$. Tuttavia le condizioni iniziali non possono essere del tutto arbitrarie ma devono soddisfare la terza equazione. Inoltre come scelgo le $\lambda$? Con l'utilizzo delle parentesi di Poisson~\eqref{poisson} e delle equazioni di Hamilton~\eqref{hamvinc1} e~\eqref{hamvinc2}, calcoliamo la derivata temporale dei vincoli 
     \begin{equation} \label{dervinc}
     \begin{aligned}
-        \dv{}{t} \phi_a(q^i, ~p_i) & = \pdv{\phi_a}{q^i} \dot q^i + \pdv{\phi_a}{p_i} \dot p_i = \pdv{\phi_a}{q^i} \pdv{H_0}{p_i} - \lambda^b \pdv{\phi_a}{q^i} \pdv{\phi_b}{p_i} - \pdv{\phi_a}{p_i} \pdv{H_0}{q^i} + \lambda^b \pdv{\phi_a}{p_i} \pdv{\phi_b}{p_i} \\ & = \pdv{\phi_a}{q^i} \pdv{H_0}{p_i} - \pdv{H_0}{q^i} \pdv{\phi_a}{p_i} - \lambda^b \Big ( \pdv{\phi_a}{q^i} \pdv{\phi_b}{p_i} -  \pdv{\phi_b}{p_i} \pdv{\phi_a}{p_i} \Big) \\ & = \poi{\phi_a}{H_0} - \lambda^b \poi{\phi_a}{\phi_b} = \poi{\phi_a}{H_0} - \lambda^b C_{ab}
+        \dv{}{t} \phi_a(q^i, ~p_i) & = \pdv{\phi_a}{q^i} \dot q^i + \pdv{\phi_a}{p_i} \dot p_i = \pdv{\phi_a}{q^i} \pdv{H_0}{p_i} - \lambda^b \pdv{\phi_a}{q^i} \pdv{\phi_b}{p_i} - \pdv{\phi_a}{p_i} \pdv{H_0}{q^i} + \lambda^b \pdv{\phi_a}{p_i} \pdv{\phi_b}{p_i} \\ & = \pdv{\phi_a}{q^i} \pdv{H_0}{p_i} - \pdv{H_0}{q^i} \pdv{\phi_a}{p_i} - \lambda^b \Big ( \pdv{\phi_a}{q^i} \pdv{\phi_b}{p_i} -  \pdv{\phi_b}{p_i} \pdv{\phi_a}{p_i} \Big) \\ & = \poi{\phi_a}{H_0} - \lambda^b \poi{\phi_a}{\phi_b} \\ & = \poi{\phi_a}{H_0} - \lambda^b C_{ab}
     \end{aligned}
     \end{equation}
     dove abbiamo chiamato la matrice $C_{ab} = \poi{\phi_a}{\phi_b}$. Dato che la condizione vincolante è $\phi_a = 0$, non ci restringiamo a porre la derivata del vincolo nulla ma introduciamo il concetto di debolmente nulla, ovvero nulla soltanto quando $\phi_a = 0$
@@ -183,7 +187,7 @@
     \begin{equation*}
         S = \int dt ~(p_i q^i - H_0 - \lambda^a \phi_a)
     \end{equation*}
-    con $a=1,~2, ldots, V$, possiedono anch'essi 2N costanti di integrazione ma ci sono $V$ vincoli dovuti a simmetrie di gauge che implicano la non necessità di conoscerle tutte: il numero di gradi di libertà è $\frac{1}{2} (2N - 2V) = N - V$.
+    con $a=1,~2, \ldots, V$, possiedono anch'essi 2N costanti di integrazione ma ci sono $V$ vincoli dovuti a simmetrie di gauge che implicano la non necessità di conoscerle tutte: il numero di gradi di libertà è $\frac{1}{2} (2N - 2V) = N - V$.
 
 \subsection{Il teorema di Noether inverso}
     La presenza di vincoli di prima classe e dunque di teorie di gauge, porta come conseguenza il fatto che l'azione è invariante per trasformazioni del tipo
@@ -230,7 +234,7 @@
        \delta S & = \int dt ~ \dv{}{t} (q^i p_i + \epsilon^a \phi_a)
     \end{aligned}
     \end{equation}
-    che essendo un termine al bordo, non influenza le equazioni del moto, chiudendo la dimostrazione che è in effetti una trasformazione di simmetria di gauge.
+    che essendo un termine al bordo, non influenza le equazioni del moto, chiudendo la dimostrazione, mostrando che è in effetti una trasformazione di simmetria di gauge.
     \end{proof}
 
     Un'altra caratteristica di una simmetria di gauge è che la carica di Noether associata ad essa è nulla.
@@ -260,7 +264,7 @@
     \begin{equation*}
         \delta S = - m ~ \delta \int d\tau ~ \sqrt{- \dot x^2} = \int d\tau ~ \frac{- \dot x^\mu \delta \dot x_\mu}{\sqrt{- \dot x^2}} = - m \int d\tau \dv{}{\tau} \Big ( \epsilon(\tau) \sqrt{- \dot x^2} \Big)
     \end{equation*}
-    e dunque il termine al bordo $K$ è 
+    e dunque il termine al bordo è 
     \begin{equation*}
         K = - m \epsilon(\tau) \sqrt{- \dot x^2}
     \end{equation*}
@@ -268,7 +272,7 @@
     Calcoliamo ora attraverso il teorema di Noether, la carica associata~\eqref{carica}
     \begin{equation*}
     \begin{aligned}
-        Q & = K - \pdv{L}{\dot x^\mu} \delta_s x^\mu =  - m \epsilon(\tau) \sqrt{- \dot x^2} - \pdv{}{\dot x^\mu} (- m \sqrt{- \dot x^2} ) (- \epsilon(\tau) \dot x^\mu) \\ & = - m \epsilon(\tau) \sqrt{- \dot x^2} + m \epsilon(\tau) \frac{- \dot x^2}{\sqrt{- \dot x^2}} = - m \epsilon(\tau) \sqrt{- \dot x^2} + m \epsilon(\tau) \sqrt{- \dot x^2} = 0
+        Q & = K - \pdv{L}{\dot x^\mu} \delta_s x^\mu \\ & =  - m \epsilon(\tau) \sqrt{- \dot x^2} - \pdv{}{\dot x^\mu} (- m \sqrt{- \dot x^2} ) (- \epsilon(\tau) \dot x^\mu) \\ & = - m \epsilon(\tau) \sqrt{- \dot x^2} + m \epsilon(\tau) \frac{- \dot x^2}{\sqrt{- \dot x^2}} \\ & = - m \epsilon(\tau) \sqrt{- \dot x^2} + m \epsilon(\tau) \sqrt{- \dot x^2} = 0
     \end{aligned}
     \end{equation*}
     Dunque risulta che la carica associata è nulla, dato che è una simmetria di gauge. 
@@ -283,7 +287,7 @@
 \end{equation*}
 
 \subsection{L'azione di Polyakov}
-    A questo punto entrerebbe in gioco il metodo di Dirac per risolvere questa problematica. Noi ci soffermeremo invece su sulla definizione di un'altra azione del tutto equivalente, dovuta a Polyakov. Introduciamo una variabile ausiliaria chiamata einbein $e(\tau)$ che avrà il ruolo di moltiplicatore di Lagrange. Il nuovo funzionale di azione è
+    A questo punto entrerebbe in gioco il metodo di Dirac per risolvere questa problematica. Noi ci soffermeremo invece sulla definizione di un'altra azione del tutto equivalente, dovuta a Polyakov. Introduciamo una variabile ausiliaria chiamata einbein $e(\tau)$ che avrà il ruolo di moltiplicatore di Lagrange. Il nuovo funzionale di azione è
 \begin{equation} \label{poly}
     S[x^\mu(\tau), ~ e(\tau)] = \frac{1}{2} \int d\tau \Big( \frac{1}{e} \dot x^\mu \dot x_\mu - e m^2 \Big)
 \end{equation}
@@ -310,10 +314,10 @@
     \delta x^\mu(\tau) = - \epsilon(\tau) \dot x^\mu \qquad \delta e(\tau) = - \dv{}{\tau} (\epsilon(\tau) e)
 \end{equation}
 
-    Calcoliamo ora la variazione del funzionale di azione con l'aiuto~\eqref{varcamp}
+    Calcoliamo ora la variazione del funzionale di azione con l'aiuto della~\eqref{varcamp}
 \begin{equation*}
 \begin{aligned}
-    \delta S & = \frac{1}{2} ~ \delta \int d\tau ~ \Big( \frac{1}{e} \dot x^\mu \dot x_\mu - e m^2 \Big) = \frac{1}{2} \int d\tau \Big ( \frac{2 e \dot x^\mu \delta x_\mu - \dot x^2 \delta e}{e^2} - m^2 \delta e \Big) \\ & = -\frac{1}{2} \int d\tau \dv{}{\tau} \Big(\epsilon \Big (\frac{\dot x^2}{e} - m^2 e \Big )\Big)
+    \delta S & = \frac{1}{2} ~ \delta \int d\tau ~ \Big( \frac{1}{e} \dot x^\mu \dot x_\mu - e m^2 \Big) \\ & = \frac{1}{2} \int d\tau ~ \Big ( \frac{2 e \dot x^\mu \delta x_\mu - \dot x^2 \delta e}{e^2} - m^2 \delta e \Big) \\ & = -\frac{1}{2} \int d\tau ~ \dv{}{\tau} \Big(\epsilon \Big (\frac{\dot x^2}{e} - m^2 e \Big )\Big)
 \end{aligned}
 \end{equation*}
     e troviamo dunque il termine al bordo  
@@ -332,7 +336,7 @@
 \begin{equation*}
     S[p_\mu, ~x^\mu, ~e] = \int d\tau \Big(p_\mu \dot x^\mu - \frac{1}{2} e (p_\mu p^\mu + m^2) \Big)
 \end{equation*}
-    Osserviamo che ha la stessa identica forma di~\eqref{azionevincolo}, con $H_0 = 0$ dato che per riparametrizzazioni l'hamiltoniana non è collegata ad alcun tempo. Dunque il vincolo è proprio $\phi = \frac{1}{2} (p^2 = m^2)$ ed $e$ sono i moltiplicatori di Lagrange. 
+    Osserviamo che ha la stessa identica forma di~\eqref{azionevincolo}, con $H_0 = 0$ dato che per riparametrizzazioni l'hamiltoniana non è collegata ad alcun tempo. Dunque il vincolo è proprio $\phi = \frac{1}{2} (p^2 + m^2)$ ed $e$ sono i moltiplicatori di Lagrange. 
 
     Siccome è presente un solo vincolo, sarà di prima classe e $C_{ab} = 0$. Quindi la trasformazione di gauge è
 \begin{equation}
@@ -351,14 +355,14 @@
 
 \section{Elettrodinamica} 
 
-    Consideriamo il funzionale di azione associato all'elettrodinamica di Maxwell\footnote{In questo caso useremo il sistema di unità di misura di Heaviside, dove $4\pi$ viene sostituito con $4$ nell'azione ma compare nella legge di Coulomb}
+    Consideriamo l'azione associata all'elettrodinamica di Maxwell\footnote{In questo caso useremo il sistema di unità di misura di Heaviside, dove $4\pi$ viene sostituito con $4$ nell'azione ma compare nella legge di Coulomb}
     \begin{equation*}
         S = - \frac{1}{4} \int d^4 x ~ F^{\mu\nu} F_{\mu\nu}
     \end{equation*}
     e lo separiamo in componenti spaziali e temporali\footnote{Ricordiamo che gli indici derivanti dall'alfabeto greco corrispondono a $\mu = 0, ~1, ~2, ~3$, mentre quelli derivanti dall'alfabeto latino corrispondono a $i = 1, ~2, ~3$}
     \begin{equation*}
     \begin{aligned}
-        S & = \int d^4 x ~ \Big ( -\frac{1}{4} F^{0i}F_{0i} - \frac{1}{4} F^{i0}F_{i0} - \frac{1}{4} F^{ij} F{ij} \Big) = \int d^4 x ~ \Big ( -\frac{1}{2} F^{0i}F_{0i} - \frac{1}{4} F^{ij} F{ij} \Big) \\ & = \int d^4 x ~ \Big( \frac{1}{2} (\dot A_i - \partial_i A_0) (\dot A^i - \partial^i A_0) - \frac{1}{4} F^{ij} F{ij} \Big ) \\ & = \int d^4 x ~ \Big (\frac{1}{2} \dot A_i \dot A^i - \dot A_i \partial^i A_0 + \frac{1}{2} \partial_i A_0 \partial^i A_0 - \frac{1}{4} F^{ij} F{ij} \Big )
+        S & = \int d^4 x ~ \Big ( -\frac{1}{4} F^{0i}F_{0i} - \frac{1}{4} F^{i0}F_{i0} - \frac{1}{4} F^{ij} F{ij} \Big) \\ & = \int d^4 x ~ \Big ( -\frac{1}{2} F^{0i}F_{0i} - \frac{1}{4} F^{ij} F{ij} \Big) \\ & = \int d^4 x ~ \Big( \frac{1}{2} (\dot A_i - \partial_i A_0) (\dot A^i - \partial^i A_0) - \frac{1}{4} F^{ij} F{ij} \Big ) \\ & = \int d^4 x ~ \Big (\frac{1}{2} \dot A_i \dot A^i - \dot A_i \partial^i A_0 + \frac{1}{2} \partial_i A_0 \partial^i A_0 - \frac{1}{4} F^{ij} F{ij} \Big )
     \end{aligned}
     \end{equation*}
     dove abbiamo usato la proprietà di antisimmetria del tensore elettromagnetico $F^{\mu\nu}$ e la sua definizione in termini del quadripotenziale $A_\mu$.
@@ -367,7 +371,7 @@
     \begin{equation} \label{momele}
         \pi_i = \pdv{\mathcal L}{\dot A_i} = \dot A_i - \partial_i A_0
     \end{equation}
-    ed usando la definizione di quadripotenziale $A^\mu = (\phi, ~ \mathbf A)$ e l'esperessione del campo elettrico in termini dei potenziali scalare e vettor, mostriamo che lo possiamo intepretare fisicamente come il campo elettrico
+    ed usando la definizione di quadripotenziale $A^\mu = (\phi, ~ \mathbf A)$ e l'espressione del campo elettrico in termini dei potenziali scalare e vettore, mostriamo che lo possiamo intepretare fisicamente come il campo elettrico
     \begin{equation*}
         \mathbf \pi = - \pdv{\mathbf A}{t} - \nabla \phi = \mathbf E
     \end{equation*}
@@ -408,7 +412,7 @@
 \begin{equation*}
     \dv{}{t} \phi = [\phi(x), ~H(x')] = 2 \partial_k \partial'_i [\pi_k(x), ~A_j(x')] F^{ij(x')} = -2(\partial_k \partial'_i \delta^3(x - x')) F^{ij} (x') = 0
 \end{equation*}
-    a causa della cancellazione dei termini dovuta alla simmetria delle derivate parziali e all'anti simmetria del tensore elettromagnetico. Conseguentemente quindi il vincolo si conserva sulle equazioni del moto e genera una simmetria di gauge.
+    a causa della cancellazione dei termini dovuta alla simmetria delle derivate parziali e all'antisimmetria del tensore elettromagnetico. Conseguentemente quindi il vincolo si conserva sulle equazioni del moto e genera una simmetria di gauge.
     
     A questo punto mostriamo il gauge, attraverso il seguente espediente: consideriamo come vincolo un funzionale $\Phi[\Lambda(x)]$ dipendente dalla funzione di gauge $\Lambda(x)$ definito come
 \begin{equation*}
