@@ -1,6 +1,6 @@
 \chapter{Il primo teorema in teoria classica dei campi}
 
-    Il secondo sistema fisico che prendiamo in considerazione è un sistema continuo che presenta un'infinità di gradi di libertà, a differenza dai sistemi studiati nel precedente capitolo. Il nostro oggetto di indagine sarà quindi un'entità estesa nello spazio che rappresenteremo da una funzione delle coordinate e del tempo, appartenente alla teoria classica\footnote{In questo caso classica ha l'accezione di relativistica e non quantistica} dei campi. I campi scalari sono semplici funzioni che forniscono un numero per ogni punto, come ad esempio la temperatura, la pressione o la densità. Campi vettoriali (o tensoriali) invece associano vettori (o tensori) ad ogni punto, come ad esempio il campo elettrico o quello gravitazionale.
+    Il secondo sistema fisico che prendiamo in considerazione è un sistema continuo che presenta un'infinità di gradi di libertà, a differenza dei sistemi studiati nel precedente capitolo. Il nostro oggetto di indagine sarà quindi un'entità estesa nello spazio che rappresentiamo con una funzione delle coordinate e del tempo, appartenente alla teoria classica\footnote{In questo caso classica ha l'accezione di relativistica e non quantistica} dei campi. I campi scalari sono semplici funzioni che forniscono un numero per ogni punto, come ad esempio la temperatura, la pressione o la densità. Campi vettoriali (o tensoriali) invece associano vettori (o tensori) ad ogni punto, come ad esempio il campo elettrico o quello gravitazionale.
 
 \section{Cenni di relatività speciale}
     In questo capitolo, non ci limiteremo all'ambito della fisica newtoniana, ma useremo la formulazione relativistica einsteniana. I principi su cui si basa sono il principio di relatività, ovvero che le leggi della fisica sono le stesse in tutti i sistemi di riferimento inerziali, e la costanza della velocità della luce, ovvero che le onde elettromagnetiche viaggiano ad una velocità costante che nessun corpo massivo può superare. Lo spazio matematico che utilizzeremo è lo spaziotempo di Minkowski $\mathcal M$, ovvero uno spazio euclideo con l'aggiunta della coordinata temporale, in cui però è stata definita una metrica differente: non sarà più valido il teorema di Pitagora 
@@ -28,9 +28,9 @@
 \section{Formalismo lagrangiano}    
 
     Il formalismo lagrangiano si basa sulla densità di lagrangiana $\mathcal L$, funzione del campo $\phi$, delle sue derivate $\phi,_\mu$ ed eventualmente delle coordinate $x^\mu$
-    \begin{equation} \label{lagrangianacampi}
+    \begin{equation*} 
         \mathcal L = \mathcal L (\phi,~\phi_{, \mu},~x^\mu)
-    \end{equation}
+    \end{equation*}
     che integrata sullo spazio tridimensionale permette di ottenere la lagrangiana associata al sistema
     \begin{equation*}
         L = \int d^3 x ~ \mathcal L
@@ -43,7 +43,7 @@
 
 \subsection{Equazioni di Eulero-Lagrange}
 
-    Seguendo le stesse linee guida che abbiamo utilizzato per sistemi discreti, è intuitivo pensare che il principio di azione stazionaria ci permetterà di trovare le equazioni del moto per la configurazione del campo che rende stazionario il suo funzionale di azione~\eqref{azionecampi}
+    Seguendo le stesse linee guida che abbiamo utilizzato per sistemi discreti, è intuitivo pensare che il principio di azione stazionaria ci permetterà di trovare le equazioni del moto per la configurazione del campo che rende stazionaria la sua azione~\eqref{azionecampi}
     \begin{equation} \label{azionestazionariacampi}
         \delta S [\phi(x^\mu)] = 0
     \end{equation}
@@ -138,9 +138,9 @@
         V'^\mu(x) + \xi^\nu(x) \partial_\nu V^\mu (x) = V^\mu(x) + \partial_\nu \xi^\mu(x) V^\nu(x)
     \end{equation*}
         e otteniamo la variazione
-    \begin{equation}\label{variazionevett}
+    \begin{equation*}
         \delta V^\mu(x) = V'^\mu(x) - V^\mu(x) = \partial_\nu \xi^\mu(x) V^\nu(x) - \xi^\nu (x)\partial_\nu V^\mu(x)
-    \end{equation}
+    \end{equation*}
         \item Per campi tensoriali di rango $(0,~1)$, espandiamo entrambi i membri 
     \begin{equation*}
         A'_\mu(x) + \xi^\nu(x) \partial_\nu A_\mu (x) = A_\mu(x) - A_\nu(x) \partial_\mu \xi^\nu(x)
@@ -154,7 +154,7 @@
 \section{Enunciato e dimostrazione}
     Enunciamo ora la trasposizione del primo teorema di Noether nell'ambito della teoria classica dei campi. Il teorema è del tutto analogo alla versione discreta, con l'unica differenza che la legge di conservazione è espressa tramite un'equazione di continuità.
 
-    \begin{theorem}[Primo teorema di Noether in teoria dei campi]
+    \begin{theorem}[Il primo teorema di Noether in teoria dei campi]
         Sia $\mathcal L(\phi)$ la densità di lagrangiana di un sistema fisico con relativa azione
     \begin{equation*}
         S[\phi] = \int d^4 x ~ \mathcal L(\phi,~\phi,_\mu)
@@ -196,9 +196,9 @@
 
 \subsection{Equazione di continuità}
     Soffermiamoci ora sulla nozione di legge di conservazione. L'equazione di continuità esprime la conservazione di una quantità fisica asserendo che la variazione di questa quantità sarà uguale al suo flusso uscente da una superficia chiusa. Per vedere ciò, scriviamo esplicitamente la~\eqref{thcampi}
-    \begin{equation}
+    \begin{equation*}
         0 = \partial_\mu J^\mu = \partial_0 J^0 + \partial_i J^i = \partial_0 J^0 + \boldsymbol \nabla \cdot \mathbf J
-    \end{equation}
+    \end{equation*}
     Troviamo che l'equazione di continuità può essere riscritta come 
     \begin{equation*}
         \pdv{J^0}{t} = - \boldsymbol \nabla \cdot \mathbf J
@@ -215,7 +215,7 @@
     \begin{equation*}
         Q = \int_V d^3 x ~ J^0(x)
     \end{equation*} 
-    che soddisfa la legge di conservazione
+    ovvero che soddisfi la legge di conservazione
     \begin{equation*}
         \dv{}{t} Q = 0 
     \end{equation*}
@@ -243,7 +243,7 @@
 
 \section{Campo scalare}
 
-    In questo e nel prossimo paragrafo, proponiamo due esempi di campi; un generico campo scalare e un campo tensoriale, ovvero quello elettromagnetico.
+    In questo e nel prossimo paragrafo, proponiamo due esempi di campi: un generico campo scalare e un campo tensoriale, ovvero quello elettromagnetico.
 
     \hfill
 
@@ -298,6 +298,10 @@
 \begin{equation}\label{eqmax}
     \partial_\mu F^{\mu\nu} = 0
 \end{equation}
+    oppure scritte in funzione del quadripotenziale
+\begin{equation}\label{gauge1}
+    \partial_\nu \partial^\nu A_\mu - \partial_\mu (\partial^\nu A_\nu) = 0
+\end{equation}
 
     Indaghiamo ora le simmetrie che l'elettrodinamica presenta.
 
@@ -340,7 +344,7 @@
 \begin{equation*}
     T^\mu_{\phantom \mu \sigma} = - F^{\mu\rho} F_{\sigma\rho} + \frac{1}{4} \delta^\mu_{\phantom \mu \sigma} F^{\alpha \beta} F_{\alpha \beta}
 \end{equation*}
-    Notiamo che $T$ è gauge invariante dato che $F$ lo è. A questo punto mostriamo che è veramente una carica che si conserva
+    Notiamo che $T$ è invariante di gauge dato che $F$ lo è. A questo punto mostriamo che è veramente una carica che si conserva
 \begin{equation*}
     \partial_\mu T^\mu_{\phantom \mu \sigma} = - \partial_\mu F^{\mu\rho} F_{\sigma\rho} + \frac{1}{4} \partial_\mu \delta^\mu_{\phantom \mu \sigma} F^{\alpha \beta} F_{\alpha \beta} = 0
 \end{equation*} 
@@ -359,13 +363,13 @@
 \begin{equation*}
     \delta A_\mu = - \xi^\nu \partial_\nu A_\mu - \partial_\mu \xi^\nu A_\nu + \partial_\mu(\xi^\nu A_\nu)
 \end{equation*}
-    Potrebbe sembrare che l'aggiunta di un termine dovuto ad una trasformazione di gauge, porti ad una corrente di Noether differente e dunque ad una sbagliata legge di conservazione. Ciò non avviebne perche associate alle trasformazioni di gauge, non sono presenti cariche come nel caso di simmetrie incontrate finora, ma bensì vincoli. Nel prossimo capitolo, tratteremo più in dettaglio questa differenza. 
+    Potrebbe sembrare che l'aggiunta di un termine dovuto ad una trasformazione di gauge, porti ad una corrente di Noether differente e dunque ad una sbagliata legge di conservazione. Ciò non avviene perchè associate alle trasformazioni di gauge, non sono presenti cariche come nel caso di simmetrie incontrate finora, ma bensì vincoli. Nel prossimo capitolo, tratteremo più in dettaglio questa differenza. 
 
-    Il funzionale di azione~\eqref{azionemaxwell}, non è invariante per arbitrarie scelte di $\xi^\mu$, ma soltanto per trasformazioni appartenenti al gruppo conforme, cioè tali che soddisfi l'equazione
+    L'azione~\eqref{azionemaxwell}, non è invariante per arbitrarie scelte di $\xi^\mu$, ma soltanto per trasformazioni appartenenti al gruppo conforme, cioè tali che soddisfi l'equazione
 \begin{equation}\label{conforme}
     \xi_{\mu,\nu} + \xi_{\nu,\mu} = \frac{1}{2} g_{\mu\nu} \xi^\alpha_{\phantom \alpha ,\alpha}
 \end{equation} 
-    Dunque qualsiasi soluzione di questa equazioni ci fornisce una simmetria a cui possiamo associare una corrente di Noether. È possibile separare le soluzioni in quattro differenti categorie 
+    Dunque qualsiasi soluzione di questa equazione ci fornisce una simmetria a cui possiamo associare una corrente di Noether. È possibile separare le soluzioni in quattro differenti categorie 
 \begin{enumerate}
     \item Traslazioni, già incontrate nel paragrafo precedente, in cui
 \begin{equation*}
@@ -407,7 +411,7 @@
 
 \section{Campo di Schroedinger}
 
-    Concludiamo il capitolo, trattando brevemente un altro esempio di campo: la funzione d'onda $\psi$ della meccanica quantistica. L'equazione cge governa tale oggetto è l'equazione di Schoedinger
+    Concludiamo il capitolo, trattando brevemente un altro esempio di campo: la funzione d'onda $\psi$ della meccanica quantistica. L'equazione che governa tale oggetto è l'equazione di Schoedinger
     \begin{equation} \label{schro}
         i \hbar \dot \psi = - \frac{\hbar^2}{2m} \nabla^2 \psi + V \psi = H \psi
     \end{equation}
@@ -442,3 +446,4 @@
     Q = \int d^3 r ~ \psi^* \psi
 \end{equation*}
     Secondo l'intepretazione di Copenaghen, questa quantità è proprio la probabilità di trovare una particella in una data regione dello spazio, quantità che necessariamente si deve conservare. Normalmente si pone $Q = 1$ per avere la condizione di normalizzazione. 
+
