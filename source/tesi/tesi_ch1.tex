@@ -342,7 +342,7 @@
         e poi calcoliamo la variazione dell'azione
     \begin{equation*}
     \begin{aligned}
-        \delta S & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s (\dot x^2) - \alpha \delta_s \Big (\frac{1}{x^2} \Big) \Big) \\ & = \integ{t_1}{t_2}{t} \Big( - \epsilon m \dot x \ddot x - \epsilon \alpha \frac{2 \dot x}{x^3} \Big) \\ & = \integ{t_1}{t_2}{t} \dv{}{t} \Big( -\epsilon \Big( \frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big) \Big)
+        \delta S & = \delta \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big) \\ & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s (\dot x^2) - \alpha \delta_s \Big (\frac{1}{x^2} \Big) \Big) \\ & = \integ{t_1}{t_2}{t} \Big( - \epsilon m \dot x \ddot x - \epsilon \alpha \frac{2 \dot x}{x^3} \Big) \\ & = \integ{t_1}{t_2}{t} \dv{}{t} \Big( -\epsilon \Big( \frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big) \Big)
     \end{aligned}
     \end{equation*}
         Dunque abbiamo trovato dalla~\eqref{invazione}, che il termina al bordo $K$ è
@@ -388,7 +388,7 @@
         Alla luce di questo risultato, calcoliamo la variazione dell'azione
     \begin{equation}
     \begin{aligned}
-        \delta S & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s (\dot x^2) - \alpha \delta_s \Big (\frac{1}{x^2} \Big) \Big) \\ & = \integ{t_1}{t_2}{t} \Big( m \dot x \Big( \frac{\epsilon}{2} \dot x(t) - \ddot x \epsilon t - \dot x \epsilon \Big) + \frac{2 \alpha}{x^3} \Big( \frac{\epsilon}{2} x - \dot x \epsilon t \Big) \Big) \\ & = \integ{t_1}{t_2}{t} \epsilon \Big( \frac{m}{2} \dot x^2 - m t \dot x \ddot x - m \dot x^2 + \frac{\alpha x - 2 \alpha t \dot x}{x^3}\Big) \\ & = \integ{t_1}{t_2}{t} \epsilon \Big( - \frac{m}{2} \dot x^2 - m t \dot x \ddot x + \frac{\alpha x - 2 \alpha t \dot x}{x^3}\Big) \\ & = \integ{t_1}{t_2}{t} \dv{}{t} \Big ( - \frac{\epsilon t m \dot x^2}{2} + \frac{\alpha \epsilon t}{x^2} \Big)
+        \delta S & = \delta \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \dot x^2 - \frac{\alpha}{x^2} \Big) \\ & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s (\dot x^2) - \alpha \delta_s \Big (\frac{1}{x^2} \Big) \Big) \\ & = \integ{t_1}{t_2}{t} \Big( m \dot x \Big( \frac{\epsilon}{2} \dot x(t) - \ddot x \epsilon t - \dot x \epsilon \Big) + \frac{2 \alpha}{x^3} \Big( \frac{\epsilon}{2} x - \dot x \epsilon t \Big) \Big) \\ & = \integ{t_1}{t_2}{t} \epsilon \Big( \frac{m}{2} \dot x^2 - m t \dot x \ddot x - m \dot x^2 + \frac{\alpha x - 2 \alpha t \dot x}{x^3}\Big) \\ & = \integ{t_1}{t_2}{t} \epsilon \Big( - \frac{m}{2} \dot x^2 - m t \dot x \ddot x + \frac{\alpha x - 2 \alpha t \dot x}{x^3}\Big) \\ & = \integ{t_1}{t_2}{t} \dv{}{t} \Big ( - \frac{\epsilon t m \dot x^2}{2} + \frac{\alpha \epsilon t}{x^2} \Big)
     \end{aligned}
     \end{equation}
         e troviamo, dalla~\eqref{invazione}, che il termina al bordo $K$ è 
@@ -449,7 +449,7 @@
     \end{equation}
         dove $\epsilon$ è una costante. L'azione è invariante perchè la lagrangiana non dipende esplicitamente dal tempo $t$. Recuperando la variazione di simmetria~\eqref{simmtempo}, calcoliamo la variazione dell'azione
     \begin{equation}
-        \delta S = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s ( \mathbf{\dot r}^2) = \integ{t_1}{t_2}{t} ( - \epsilon m  \mathbf{\dot r} \cdot \mathbf{\ddot r}) = \integ{t_1}{t_2}{t} \dv{}{t} \Big( -\epsilon \frac{m}{2}  \mathbf{\dot r}^2 \Big)
+        \delta S = \delta \integ{t_1}{t_2}{t} \frac{m}{2} \mathbf{\dot r}^2 = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s ( \mathbf{\dot r}^2) = \integ{t_1}{t_2}{t} ( - \epsilon m  \mathbf{\dot r} \cdot \mathbf{\ddot r}) = \integ{t_1}{t_2}{t} \dv{}{t} \Big( -\epsilon \frac{m}{2}  \mathbf{\dot r}^2 \Big)
     \end{equation}
         e quindi abbiamo trovato, dalla~\eqref{invazione}, che il termine al bordo $K$ è 
     \begin{equation*}
@@ -476,7 +476,7 @@
     \end{equation*}
         Calcoliamo la variazione dell'azione
     \begin{equation}
-        \delta S = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s \mathbf{\dot r}^2 = 0
+        \delta S = \delta \integ{t_1}{t_2}{t} \frac{m}{2} \mathbf{\dot r}^2 = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s (\mathbf{\dot r}^2) = 0
     \end{equation}
         e troviamo, dalla~\eqref{invazione}, che il termine al bordo $K$ è nullo
     \begin{equation*}
@@ -507,7 +507,7 @@
     \end{equation*}
         Calcoliamo la variazione dell'azione
     \begin{equation}
-        \delta S = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s \mathbf{\dot r}^2 = \integ{t_1}{t_2}{t} \frac{m}{2} \mathbf{\dot r} \cdot (\omega \times \mathbf{\dot r} ) = 0
+        \delta S = \delta \integ{t_1}{t_2}{t} \frac{m}{2} \mathbf{\dot r}^2 = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s (\mathbf{\dot r}^2) = \integ{t_1}{t_2}{t} \frac{m}{2} \mathbf{\dot r} \cdot (\omega \times \mathbf{\dot r} ) = 0
     \end{equation}
         e troviamo, dalla~\eqref{invazione}, che il termine al bordo $K$ è nullo
     \begin{equation*}
@@ -534,7 +534,7 @@
     \end{equation*}
         Calcoliamo la variazione dell'azione
     \begin{equation}
-        \delta S = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s (\mathbf{\dot r}^2) = \integ{t_1}{t_2}{t} m \mathbf {\dot r} \cdot \delta_s (\mathbf{\dot r})= \integ{t_1}{t_2}{t} \dv{}{t} \Big( m \mathbf r \cdot \mathbf v \Big) 
+        \delta S = \delta \integ{t_1}{t_2}{t} \frac{m}{2} \mathbf{\dot r}^2 = \integ{t_1}{t_2}{t} \frac{m}{2} \delta_s (\mathbf{\dot r}^2) = \integ{t_1}{t_2}{t} m \mathbf {\dot r} \cdot \delta_s (\mathbf{\dot r})= \integ{t_1}{t_2}{t} \dv{}{t} \Big( m \mathbf r \cdot \mathbf v \Big) 
     \end{equation}
         e troviamo, dalla~\eqref{invazione}, che il termine al bordo $K$ è 
     \begin{equation*}
@@ -588,7 +588,7 @@
         Alla luce di questo risultato, calcoliamo il termine al bordo $K$ 
     \begin{equation*}
     \begin{aligned}
-        \delta S & = \delta \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \mathbf{\dot r}^2 - \mathbf B \cdot \mathbf r \Big) \\ & \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s (\mathbf{\dot r}^2) - \delta_s (\mathbf B \cdot \mathbf r ) \Big ) \\ & = \integ{t_1}{t_2}{t} (m \mathbf{\dot r} \cdot (\boldsymbol \omega \times \mathbf{\dot r} ) - \mathbf B \cdot \boldsymbol \omega \times \mathbf r - \boldsymbol \omega \times \mathbf B \cdot \mathbf r ) = 0
+        \delta S & = \delta \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \mathbf{\dot r}^2 - \mathbf B \cdot \mathbf r \Big) \\ & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s (\mathbf{\dot r}^2) - \delta_s (\mathbf B \cdot \mathbf r ) \Big ) \\ & = \integ{t_1}{t_2}{t} (m \mathbf{\dot r} \cdot (\boldsymbol \omega \times \mathbf{\dot r} ) - \mathbf B \cdot \boldsymbol \omega \times \mathbf r - \boldsymbol \omega \times \mathbf B \cdot \mathbf r ) = 0
     \end{aligned}
     \end{equation*}
         che risulta essere nullo essendo tutti prodotti scalari tra vettori perpendicolari
@@ -606,7 +606,7 @@
         Effettuiamo dunque la variazione on-shell, utilizzando le equazioni del moto
     \begin{equation*}
     \begin{aligned}
-        \delta S & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta \mathbf{\dot r}^2 - \delta (\mathbf B \cdot \mathbf r ) \Big ) \\ & = \integ{t_1}{t_2}{t} \Big( m \mathbf{\ddot r } \cdot \delta \mathbf{\dot r} - \delta \mathbf B \cdot \mathbf r - \mathbf B \cdot \delta \mathbf r \Big )  \\ & = \integ{t_1}{t_2}{t} \Big( \dv{}{t} (m \mathbf{\dot r} \cdot \delta \mathbf r) - m \mathbf{\dot r} \cdot \delta \mathbf{\dot r} - \delta \mathbf B \cdot \mathbf r - \mathbf B \cdot \delta \mathbf r \Big )  \\ & = \integ{t_1}{t_2}{t} \Big( \dv{}{t} (m \mathbf{\dot r} \cdot \boldsymbol \omega \times \mathbf r) - m \mathbf{\dot r} \cdot \boldsymbol \omega \times \mathbf{\dot r} - \boldsymbol \omega \times \mathbf B \cdot \mathbf r - \mathbf B \cdot \boldsymbol \omega \times \mathbf r \Big ) \\ & = \integ{t_1}{t_2}{t} \boldsymbol \omega \cdot \Big( \dv{\mathbf L}{t} - \mathbf r \times \mathbf B \Big)
+        \delta S & = \delta \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \mathbf{\dot r}^2 - \mathbf B \cdot \mathbf r \Big) \\ & = \integ{t_1}{t_2}{t} \Big( \frac{m}{2} \delta_s (\mathbf{\dot r}^2) - \delta_s (\mathbf B \cdot \mathbf r ) \Big ) \\ & = \integ{t_1}{t_2}{t} \Big( m \mathbf{\ddot r } \cdot \delta \mathbf{\dot r} - \delta \mathbf B \cdot \mathbf r - \mathbf B \cdot \delta \mathbf r \Big )  \\ & = \integ{t_1}{t_2}{t} \Big( \dv{}{t} (m \mathbf{\dot r} \cdot \delta \mathbf r) - m \mathbf{\dot r} \cdot \delta \mathbf{\dot r} - \delta \mathbf B \cdot \mathbf r - \mathbf B \cdot \delta \mathbf r \Big )  \\ & = \integ{t_1}{t_2}{t} \Big( \dv{}{t} (m \mathbf{\dot r} \cdot \boldsymbol \omega \times \mathbf r) - m \mathbf{\dot r} \cdot \boldsymbol \omega \times \mathbf{\dot r} - \boldsymbol \omega \times \mathbf B \cdot \mathbf r - \mathbf B \cdot \boldsymbol \omega \times \mathbf r \Big ) \\ & = \integ{t_1}{t_2}{t} \boldsymbol \omega \cdot \Big( \dv{\mathbf L}{t} - \mathbf r \times \mathbf B \Big)
     \end{aligned}
     \end{equation*} 
         dove abbiamo usato l'identità
@@ -826,7 +826,7 @@
 \end{equation*}
     la seconda è quella che abbiamo trovato nel formalismo lagrangiano
 \begin{equation*}
-    Q = -tH + \frac{pq}{2}
+    Q = -tH + \frac{px}{2}
 \end{equation*}
     e infine è possibile calcolarne un'ultima
 \begin{equation*}
@@ -848,5 +848,9 @@
     [K, ~H] = 2Q
 \end{equation*}
 
-\subsubsection{Riferimenti bibliografici}
-    I riferimenti bibliografici per questo capitolo sono~\cite{landaumecc},~\cite{goldstein},~\cite{banados},~\cite{hill} e~\cite{bastianelli}.
+    Dimostriamo di seguito la prima delle precedenti relazioni per mostrare il teorema dell'algebra di Lie delle cariche in azione
+    \begin{equation*}
+    \begin{aligned}
+    \poi{Q}{H} & = \pdv{Q}{x}\pdv{H}{p}-\pdv{H}{x}\pdv{Q}{p} \\ & = \Big (-t \pdv{H}{x}+ \frac{p}{2} \Big) \Big( \frac{p}{m} \Big) -  \Big (- \frac{2 \alpha}{x^3} \Big) \Big (-t \pdv{H}{p}+ \frac{x}{2} \Big) \\ & = \Big ( \frac{2 \alpha t}{x^3} + \frac{p}{2} \Big) \Big( \frac{p}{m} \Big) - \Big (- \frac{2 \alpha}{x^3} \Big) \Big (- \frac{pt}{m} + \frac{x}{2} \Big) \\ & = \frac{2 p \alpha t}{m x^3} + \frac{p^2}{2m} - \frac{2 p \alpha t}{m x^3} + \frac{\alpha}{x^2} \\ & = \frac{p^2}{2m} + \frac{\alpha}{x^2} = H
+    \end{aligned}
+    \end{equation*}
