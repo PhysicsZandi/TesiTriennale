@@ -160,13 +160,13 @@
     
     Una trasformazione di coordinate è un cambio di coordinate spaziali per descrivere il problema, ovvero parametrizzare la nostra azione con differenti coordinate generalizzate $q'^i$. Distinguiamo due modi differenti di interpretare una trasformazione di coordinate: quello passivo e quello attivo. Una trasformazione passiva è un cambio del sistema di riferimento, cioè l'oggetto viene descritto da due differenti osservatori; mentre in una trasformazione attiva si sposta effettivamente il sistema preso in considerazione mantenendo invariato il sistema di riferimento, cioè si sposta l'oggetto mantenendo l'osservatore invariato. 
     
-    Possiamo definire l'invarianza dell'azione imponendo che quello espresso con le nuove coordinate $S'$ conduce alle stesse equazioni del moto di quello espresso con le vecchie $S$. Portiamo particolare attenzione al significato di invarianza: non necessariamente significa che la nuova e la vecchia azione siano identiche $S' = S$ ma che siano uguali a meno di un termine al bordo $K$. Ciò è conseguenza del fatto che ad avere valore fisico sono le equazioni del moto e non la lagrangiana~\eqref{lagrangiana}, che in effetti presenta un'ambiguità: aggiungendo la derivata totale rispetto ad un'arbitraria funzione $K(q^i, ~ t)$, il termine al bordo, porta alle stesse equazioni del moto~\eqref{eullag}. Mostriamo quindi che nell'azione $S'$ con il termine al bordo
+    Possiamo definire l'invarianza dell'azione imponendo che quello espresso con le nuove coordinate $S'$ conduce alle stesse equazioni del moto di quello espresso con le vecchie $S$. Portiamo particolare attenzione al significato di invarianza: non necessariamente significa che la nuova e la vecchia azione siano identiche $S' = S$ ma che siano uguali a meno di un termine al bordo $K$. Ciò è conseguenza del fatto che ad avere valore fisico sono le equazioni del moto e non la lagrangiana~\eqref{lagrangiana}, che in effetti presenta un'ambiguità: aggiungendo la derivata totale rispetto ad un'arbitraria funzione $K$, il termine al bordo, porta alle stesse equazioni del moto~\eqref{eullag}. Mostriamo quindi che nell'azione $S'$ con il termine al bordo
     \begin{equation*}
-        S' = \integ{t_1}{t_2}{t} \Big ( L(q^i, ~ \dot q^i, ~t) + \dv{}{t} K(q^i, ~t) \Big)
+        S' = \integ{t_1}{t_2}{t} \Big ( L(q^i, ~ \dot q^i, ~t) + \dv{}{t} K \Big)
     \end{equation*}
     la variazione del secondo termine è nulla
     \begin{equation*}
-        \delta \integ{t_1}{t_2}{t} \dv{}{t} K(q^i, ~t) = \pdv{K}{q^i} \delta q^i \Big \vert_{t_1}^{t_2} = \pdv{K}{q^i} \delta q^i (t_2) - \pdv{K}{q^i} \delta q^i (t_1) = 0
+        \delta \integ{t_1}{t_2}{t} \dv{}{t} K = \pdv{K}{q^i} \delta q^i \Big \vert_{t_1}^{t_2} = \pdv{K}{q^i} \delta q^i (t_2) - \pdv{K}{q^i} \delta q^i (t_1) = 0
     \end{equation*} 
     dove abbiamo usato la~\eqref{estreminulli}. Dunque $\delta S = \delta S'$ e le equazioni del moto non cambiano.
 
@@ -267,7 +267,7 @@
 
     Ricapitoliamo ciò che abbiamo concluso nei precedenti paragrafi: una variazione di simmetria $\delta_s q^i(t)$ porta ad una variazione dell'azione data da~\eqref{invazione} 
     \begin{equation*}
-        \delta S[q^i(t), ~\delta_s q^i(t)] = S[q^i(t) + ~\delta_s q^i(t)] - S[q^i(t)] = \integ{t_1}{t_2}{t} \dv{}{t} K(q^i, ~t)
+        \delta S[q^i(t), ~\delta_s q^i(t)] = S[q^i(t) + ~\delta_s q^i(t)] - S[q^i(t)] = \integ{t_1}{t_2}{t} \dv{}{t} K
     \end{equation*}
     mentre una variazione on-shell porta ad una variazione dell'azione data da~\eqref{invonshell} 
     \begin{equation*}
@@ -293,7 +293,7 @@
     \begin{proof}
         Inserendo $q^i(t) = \overline q^i(t)$ nella~\eqref{invazione}, ovvero vincolando che le $q^i(t)$ soddisfino le equazioni del moto, otteniamo 
     \begin{equation}\label{prova6}
-        \delta[\overline q^i(t), ~\delta_s q^i(t)] = \integ{t_1}{t_2}{t} \dv{}{t} K(q^i, ~t)
+        \delta[\overline q^i(t), ~\delta_s q^i(t)] = \integ{t_1}{t_2}{t} \dv{}{t} K
     \end{equation}
         Dall'altra parte, inserendo $\delta q^i(t) = \delta_s q^i(t)$ in~\eqref{invonshell}, ovvero vincolando le le variazioni on-shell siano anche di simmetria, abbiamo
     \begin{equation}\label{prova7}
@@ -301,7 +301,7 @@
     \end{equation}
         In questi due passaggi abbiamo sostanzialmente imposto che $\delta_s q^i(t)$ sia una variazione di simmetria e dunque necessariamente soddisfi l'equazione~\eqref{simmazione}, mentre che $\overline q^i(t)$ soddisfi le equazioni del moto~\eqref{eullag}. Ricordiamo che prima soltanto uno dei due era soggetto a rispettare un'equazione, mentre l'altra era arbitraria, e inoltre che in questa maniera la variazione debba essere necessariamente infinitesima. Notando che i membri sinistri delle equazioni~\eqref{prova6} e~\eqref{prova7} sono identici, troviamo
     \begin{equation*}
-        \delta[\overline q^i(t), ~\delta_s q^i(t)] = \integ{t_1}{t_2}{t} \dv{}{t} K(q^i, ~t) = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
+        \delta[\overline q^i(t), ~\delta_s q^i(t)] = \integ{t_1}{t_2}{t} \dv{}{t} K = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
     \end{equation*}
         A questo punto sottraiamo il secondo con il terzo membro
     \begin{equation*}
