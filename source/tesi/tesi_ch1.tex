@@ -19,9 +19,9 @@
         \ddot r^i = \dvd{r^i}{t} = (\ddot x, ~\ddot y, ~\ddot z)
     \end{equation*}
     
-    Se per una singola particella definiamo $3$ coordinate, per un sistema di N particelle libere sono necessarie $3N$ coordinate, $3N$ velocità, $3N$ accelerazioni per descriverlo. 
+    Se per una singola particella definiamo $3$ coordinate, per un sistema di $N$ particelle libere sono necessarie $3N$ coordinate, $3N$ velocità, $3N$ accelerazioni per descriverlo. 
     
-    Il sistema cartesiano non è l'unico disponibile. Infatti è possibile utilizzare un generico sistema di assi coordinati purchè siano di numero pari al numero di gradi di libertà $d$, che corrisponde al numero di quantità indipendenti necessarie per definire univocamente la posizione di un sistema fisico. Una particella libera ha $d = 3$, mentre un sistema di N particelle ha $d = 3N$. Chiameremo queste quantità coordinate generalizzate $q^i$ e, analogamente, chiameremo velocità generalizzate $\dot q^i$ e accelerazioni generalizzate $\ddot q^i$ le rispettive derivate prime e seconde. La configurazione istantanea del sistema, cioè ad un tempo fissato, può quindi essere rappresentata da un punto in uno spazio $\mathcal C$, chiamato spazio delle configurazioni, di dimensione pari al numero di gradi di libertà ed i cui assi coordinati sono le coordinate generalizzate. Come precedentemente indicato, nel caso di una particella, lo spazio delle configurazioni è lo spazio tridimensionale euclideo $\mathbb R^3$, mentre per un sistema di N particelle libere sarà il prodotto cartesiano $\mathbb R^{3N}$.
+    Il sistema cartesiano non è l'unico disponibile. Infatti è possibile utilizzare un generico sistema di assi coordinati purchè siano di numero pari al numero di gradi di libertà $d$, che corrisponde al numero di quantità indipendenti necessarie per definire univocamente la posizione di un sistema fisico. Una particella libera ha $d = 3$, mentre un sistema di $N$ particelle ha $d = 3N$. Chiameremo queste quantità coordinate generalizzate $q^i$ e, analogamente, chiameremo velocità generalizzate $\dot q^i$ e accelerazioni generalizzate $\ddot q^i$ le rispettive derivate prime e seconde. La configurazione istantanea del sistema, cioè ad un tempo fissato, può quindi essere rappresentata da un punto in uno spazio $\mathcal C$, chiamato spazio delle configurazioni, di dimensione pari al numero di gradi di libertà ed i cui assi coordinati sono le coordinate generalizzate. Come precedentemente indicato, nel caso di una particella, lo spazio delle configurazioni è lo spazio tridimensionale euclideo $\mathbb R^3$, mentre per un sistema di $N$ particelle libere sarà il prodotto cartesiano $\mathbb R^{3N}$.
     
     Il moto del sistema è matematicamente descritto dalla posizione del sistema in funzione del tempo, chiamata traiettoria, ciò che geometricamente viene rappresentato da una curva $q^i(t)$ nello spazio delle configurazioni. Conoscendo quest'ultima, siamo a conoscenza della completa evoluzione temporale del sistema. Come possiamo ricavarla? La traiettoria è soluzione di equazioni che legano accelerazioni, velocità e posizioni, chiamate equazioni del moto
     \begin{equation} \label{eqmoto}
@@ -156,7 +156,7 @@
 
 \section{Simmetrie}
     
-    Introduciamo ora il concetto di simmetria dell'azione. The fundamental importance in physics of symmetries are summed up by Hermann Weyl, who said that ``As far as I can see, all a priori statements in physics have their origin in symmetry''. Intuitivamente, un oggetto è simmetrico se sotto l'effetto di una trasformazione rimane uguale a se stesso. Esempi sono la rotazione di un arbitrario angolo di un cerchio o la riflessione di un oggetto a simmetria bilaterale rispetto all'asse di simmetria. Deduciamo quindi che una simmetria dell'azione è una speciale classe di trasformazioni delle coordinate che lasciano l'azione invariata. 
+    Introduciamo ora il concetto di simmetria dell'azione. Intuitivamente, un oggetto è simmetrico se sotto l'effetto di una trasformazione rimane uguale a se stesso. Esempi sono la rotazione di un arbitrario angolo di un cerchio o la riflessione di un oggetto a simmetria bilaterale rispetto all'asse di simmetria. Deduciamo quindi che una simmetria dell'azione è una speciale classe di trasformazioni delle coordinate che lasciano l'azione invariata. 
     
     Una trasformazione di coordinate è un cambio di coordinate spaziali per descrivere il problema, ovvero parametrizzare la nostra azione con differenti coordinate generalizzate $q'^i$. Distinguiamo due modi differenti di interpretare una trasformazione di coordinate: quello passivo e quello attivo. Una trasformazione passiva è un cambio del sistema di riferimento, cioè l'oggetto viene descritto da due differenti osservatori; mentre in una trasformazione attiva si sposta effettivamente il sistema preso in considerazione mantenendo invariato il sistema di riferimento, cioè si sposta l'oggetto mantenendo l'osservatore invariato. 
     
@@ -231,7 +231,7 @@
         \delta S[\overline q^i,~\delta q^i] = S[\overline q^i + \delta q^i] - S[\overline q^i] = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
     \end{equation*}
 
-    Concettualmente questa variazione è opposta rispetto a quella dell'azione, perchè quella sull'azione pone vincoli su $\delta_s q^i(t)$ e lascia libere le $q^i(t)$ mentre specularmente quella on-shell pone vincoli sulle $\overline q^i$ e lascia libere le $\delta q^i$.
+    Concettualmente questa variazione è opposta rispetto a quella di simmetria dell'azione, perchè quella sull'azione pone vincoli su $\delta_s q^i(t)$ e lascia libere le $q^i(t)$ mentre specularmente quella on-shell pone vincoli sulle $\overline q^i$ e lascia libere le $\delta q^i$.
 
 \section{Leggi di conservazione}
     Soffermiamoci ora sulla nozione di quantità conservata. 
@@ -293,15 +293,15 @@
     \begin{proof}
         Inserendo $q^i(t) = \overline q^i(t)$ nella~\eqref{invazione}, ovvero vincolando che le $q^i(t)$ soddisfino le equazioni del moto, otteniamo 
     \begin{equation}\label{prova6}
-        \delta[\overline q^i(t), ~\delta_s q^i(t)] = \integ{t_1}{t_2}{t} \dv{}{t} K
+        \delta S[\overline q^i(t), ~\delta_s q^i(t)] = \integ{t_1}{t_2}{t} \dv{}{t} K
     \end{equation}
-        Dall'altra parte, inserendo $\delta q^i(t) = \delta_s q^i(t)$ in~\eqref{invonshell}, ovvero vincolando le le variazioni on-shell siano anche di simmetria, abbiamo
+        Dall'altra parte, inserendo $\delta q^i(t) = \delta_s q^i(t)$ in~\eqref{invonshell}, ovvero vincolando le variazioni on-shell siano anche di simmetria, abbiamo
     \begin{equation}\label{prova7}
         \delta S[\overline q^i,~\delta_s q^i] = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
     \end{equation}
         In questi due passaggi abbiamo sostanzialmente imposto che $\delta_s q^i(t)$ sia una variazione di simmetria e dunque necessariamente soddisfi l'equazione~\eqref{simmazione}, mentre che $\overline q^i(t)$ soddisfi le equazioni del moto~\eqref{eullag}. Ricordiamo che prima soltanto uno dei due era soggetto a rispettare un'equazione, mentre l'altra era arbitraria, e inoltre che in questa maniera la variazione debba essere necessariamente infinitesima. Notando che i membri sinistri delle equazioni~\eqref{prova6} e~\eqref{prova7} sono identici, troviamo
     \begin{equation*}
-        \delta[\overline q^i(t), ~\delta_s q^i(t)] = \integ{t_1}{t_2}{t} \dv{}{t} K = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
+        \delta S[\overline q^i(t), ~\delta_s q^i(t)] = \integ{t_1}{t_2}{t} \dv{}{t} K = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
     \end{equation*}
         A questo punto sottraiamo il secondo con il terzo membro
     \begin{equation*}
@@ -658,7 +658,7 @@
 
 \section{Meccanica hamiltoniana}
 
-    Il formalismo lagrangiano non è l'unico che possiamo utilizzare per descrivere un sistema fisico. Ricordiamo che le equazioni di Eulero-Lagrange sono un sistema di equazioni differenziali al secondo ordine, la cui soluzione è una traiettoia nello spazio delle configurazioni generato da $d$ variabili indipendenti. Diversamente la meccanica hamiltoniana fornisce un sistema di $2d$ equazioni differenziali del primo ordine, la cui soluzione è una traiettoria in un nuovo spazio, lo spazio delle fasi, formato dalle coordinate e dai momenti associati ad esse, definiti nella~\eqref{coniugato}, e quindi generato da 2N variabili indipendenti. I due formalismi sono equivalenti, la scelta di uno o dell'altro dipende da tanti fattori, tra cui la facilità di soluzione in uno delle due descrizioni rispetto all'altra.
+    Il formalismo lagrangiano non è l'unico che possiamo utilizzare per descrivere un sistema fisico. Ricordiamo che le equazioni di Eulero-Lagrange sono un sistema di equazioni differenziali al secondo ordine, la cui soluzione è una traiettoia nello spazio delle configurazioni generato da $d$ variabili indipendenti. Diversamente la meccanica hamiltoniana fornisce un sistema di $2d$ equazioni differenziali del primo ordine, la cui soluzione è una traiettoria in un nuovo spazio, lo spazio delle fasi, formato dalle coordinate e dai momenti associati ad esse, definiti nella~\eqref{coniugato}, e quindi generato da $2N$ variabili indipendenti. I due formalismi sono equivalenti, la scelta di uno o dell'altro dipende da tanti fattori, tra cui la facilità di soluzione in uno delle due descrizioni rispetto all'altra.
     
 \subsection{Le equazioni di Hamilton e le parentesi di Poisson}
 
