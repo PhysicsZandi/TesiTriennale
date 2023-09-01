@@ -1,0 +1,113 @@
+\documentclass{beamer}
+\usepackage{ctex, hyperref}
+
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+
+\author{Matteo Zandi}
+\title{I teoremi di Noether: simmetrie, leggi di conservazione e teorie di gauge}
+\date{15 settembre 2023}
+
+\mode<presentation>
+
+\ProcessOptionsBeamer
+
+\useoutertheme[footline=authorinstitutetitle,subsection=false]{smoothbars}
+\makeatletter
+
+\beamertemplatenavigationsymbolsempty
+
+\newcommand{\dv}[2]{\frac{d#1}{d#2}}
+\newcommand{\dvd}[2]{\frac{d^2#1}{d#2^2}}
+\newcommand{\dvf}[2]{\frac{\delta #1}{\delta #2}}
+\newcommand{\pdv}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\pdvd}[3]{\frac{\partial^2 #1}{\partial#2 \partial#3}}
+\newcommand{\integ}[3]{\int_{#1}^{#2}d#3~}
+\newcommand{\poi}[2]{[#1, ~#2]}
+\newcommand{\poiexp}[2]{\pdv{#1}{q^i} \pdv{#2}{p_i} - \pdv{#2}{q^i} \pdv{#1}{p_i}}
+
+
+\newcommand{\frameofframes}{/}
+\newcommand{\setframeofframes}[1]{\renewcommand{\frameofframes}{#1}}
+\setbeamertemplate{footline} 
+  {%
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}
+      {\usebeamerfont{title in head/foot}\insertshorttitle}
+      \hfill%
+      {\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}\insertshortauthor}
+      \hfill%
+      {\usebeamerfont{frame number}\usebeamercolor[fg]{frame number}\insertframenumber~\frameofframes~\inserttotalframenumber}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+  }
+\makeatother
+
+\useinnertheme{rounded}
+\useinnertheme{circles}
+%\useoutertheme{default}
+
+\xdefinecolor{njfu}{RGB}{0,175,179}  
+\setbeamercolor{footline}{bg=njfu}
+\setbeamercolor{frametitle}{bg=njfu,fg=white}
+\setbeamercolor{title}{bg=njfu}
+\setbeamerfont{frametitle}{size=\large}
+%\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{caption}[numbered]
+
+
+\setbeamercolor{palette primary}{fg=white,bg=njfu}
+\setbeamercolor{palette secondary}{fg=white,bg=njfu}
+\setbeamercolor{palette tertiary}{fg=white,bg=njfu}
+\setbeamercolor{palette quaternary}{fg=white,bg=njfu}
+%\setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+\setbeamercolor{titlelike}{parent=palette primary}
+
+
+%% try
+\setbeamercolor{block title}{fg=white,bg=njfu}
+\setbeamercolor*{block title example}{fg=white,bg=njfu}
+\setbeamercolor{fine separation line}{}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{palette sidebar primary}{fg=white,bg=njfu}
+\setbeamercolor{palette sidebar quaternary}{fg=white,bg=njfu}
+\setbeamercolor{palette sidebar secondary}{fg=white,bg=njfu}
+\setbeamercolor{palette sidebar tertiary}{fg=white,bg=njfu}
+%\setbeamercolor{palette sidebar quaternary}{fg=white}
+\setbeamercolor{section in sidebar}{fg=white}
+\setbeamercolor{section in sidebar shaded}{fg=grey}
+\setbeamercolor{separation line}{fg=white}
+\setbeamercolor{sidebar}{bg=njfu}
+\setbeamercolor{sidebar}{parent=palette primary}
+\setbeamercolor{structure}{fg=njfu}
+\setbeamercolor{subsection in sidebar}{fg=white}
+\setbeamercolor{subsection in sidebar shaded}{fg=grey}
+
+\AtBeginSection[]{
+	\begin{frame}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+	\end{frame}
+}
+\AtBeginSubsection[]{
+	\begin{frame}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+	\end{frame}
+}
+
+\mode
+<all>
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage[
+    left = \flqq{},% 
+    right = \frqq{},% 
+    leftsub = \flq{},% 
+    rightsub = \frq{} %
+]{dirtytalk}
+
+\input{ppt_chs.tex}

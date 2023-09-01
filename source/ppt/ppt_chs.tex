@@ -1,0 +1,200 @@
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%\begin{frame}
+%\tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+%\end{frame}
+
+\section{Introduzione}
+
+\begin{frame}{I teoremi di Noether}
+    Contenuti nell'articolo\say{Invariante Variationsprobleme} del $1918$ della matematica tedesca Emmy Noether $(1882-1935)$. 
+
+    \hfill 
+
+    \pause Possiamo riassumerli nel seguente modo:
+\begin{itemize}
+    \item simmetria globale $\iff$ legge di conservazione;
+    \item simmetria locale $\iff$ identità tra le equazioni del moto.
+\end{itemize}
+
+    \hfill 
+
+    \pause Che cosa vuol dire simmetria? Che cosa vuol dire che una quantità fisica si conserva? Che cosa vuol dire che è presente un'identità tra le equazioni del moto? 
+\end{frame}
+
+\section{Il primo teorema}
+
+\begin{frame}{Formalismo lagrangiano}
+    
+    Un generico sistema fisico è descritto dal funzionale di azione
+
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+       \begin{equation*}
+            S[q^i(t)] = \integ{t_1}{t_2}{t} L(t, ~q^i, ~\dot q^i)
+       \end{equation*} 
+    \end{column}
+    \begin{column}{0.5\textwidth}
+       \begin{equation*}
+            S[\phi] = \int d^4 x ~ \mathcal L (x^\mu,~\phi,~\phi_{, \mu})
+       \end{equation*}
+    \end{column}
+    \end{columns}
+
+    Attraverso il principio di azione stazionaria,
+
+    \begin{equation*}
+        \delta S = 0
+   \end{equation*}
+
+    si ricavano le equazioni del moto 
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+           \begin{equation*}
+                \pdv{L}{q^i} - \dv{}{t} \pdv{L}{\dot q^i} = 0
+           \end{equation*} 
+        \end{column}
+        \begin{column}{0.5\textwidth}
+           \begin{equation*}
+                \pdv{\mathcal L}{\phi} - \partial_\mu \pdv{\mathcal L}{\phi,_\mu} = 0
+           \end{equation*}
+        \end{column}
+        \end{columns}
+\end{frame}
+
+\begin{frame}{Simmetrie}
+    
+    Una simmetria è una classe speciale di trasformazioni che lascia le equazioni del moto invariate, delle coordinate
+    \begin{equation*}
+         \delta_s q^i \colon \delta S[q^i, ~\delta_s q^i] = \integ{t_1}{t_2}{t} \dv{}{t} K \quad \forall q^i
+    \end{equation*} 
+    o dei campi
+    \begin{equation*}
+         \delta_s \phi \colon \delta S[\phi, ~\delta_s \phi] = \int d^4 x ~ \partial_\mu K^\mu \quad \forall \phi
+    \end{equation*}
+
+    Una variazione on-shell è una arbitraria trasformazione che usa le equazioni del moto, delle coordinate
+    \begin{equation*}
+        \delta q^i \colon \delta S[\overline q^i,~\delta q^i] = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
+    \end{equation*} 
+    o dei campi
+    \begin{equation*}
+        \delta \phi \colon \delta S[\overline \phi, ~\delta_s \phi] = \int d^4 x ~ \partial_\mu \Big ( \pdv{\mathcal L}{\phi,_\mu}  \delta \phi \Big) 
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}{Deformazioni}
+    
+    Non abbiamo tuttavia considerato trasformazioni temporali perché producono deformazioni delle coordinate.
+    \begin{equation*}
+        t' = t + \epsilon \Rightarrow \delta q(t) = - \epsilon \dot q(t)
+    \end{equation*}
+    Analogamente per campi 
+    \begin{equation*}
+        x'^\mu = x^\mu + \xi^\mu(x) \Rightarrow \delta \phi(x) = - \xi^\mu(x) \partial_\mu \phi(x)
+    \end{equation*}
+    o in particolare per campi tensoriali $(0,~1)$ 
+    \begin{equation*}
+        \delta A_\mu(x) = - \xi^\nu(x) \partial_\nu A_\mu (x) - A_\nu(x) \partial_\mu \xi^\nu(x)
+    \end{equation*}
+    dove un campo tensoriale $(0, ~1)$ viene definito dalla sua trasformazione
+    \begin{equation*}
+        A'_\mu(x') = \pdv{x^\nu}{x'^\mu} A_\nu(x)
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}{Legge di conservazione (ed equazione di continuità)}
+    
+    Una quantità fisica si conserva se la sua derivata temporale è nulla
+    \begin{equation*}
+        \dv{}{t} Q = 0
+    \end{equation*} 
+    che può essere anche espressa tramite l'equazioni di continuità 
+    \begin{equation*}
+        \partial_\mu J^\mu = \partial_0 J^0 + \partial_i J^i = \partial_0 J^0 + \boldsymbol \nabla \cdot \mathbf J = 0
+    \end{equation*}
+    in cui a conservarsi è 
+    \begin{equation*}
+        Q = \int_V d^3 x ~ J^0(x)
+    \end{equation*}
+    
+\end{frame}
+
+\begin{frame}{Il primo teorema}
+    
+    \begin{block}{Il primo teorema di Noether (in meccanica classica)} 
+        Sia $\delta_s q^i$ una simmetria del sistema. Allora esiste una carica di Noether $Q$ definita come
+        \begin{equation*}
+            Q = K - \frac{\partial L}{\partial \dot q^i} \delta_s q^i
+        \end{equation*}
+            tale che sia conservata lungo le equazioni del moto e quindi soddisfi la legge di conservazione
+        \begin{equation*} 
+            \frac{d}{dt} Q = 0
+        \end{equation*}
+    \end{block}
+
+\end{frame}
+\begin{frame}
+
+    \begin{block}{Il primo teorema di Noether (in teoria classica dei campi)} 
+        Sia $\delta_s \phi$ una simmetria del sistema. Allora esiste una corrente di Noether $J^\mu$ definita come
+        \begin{equation*}
+            J^\mu = \pdv{\mathcal L}{\phi,_\mu} \delta \phi - K^\mu
+        \end{equation*}
+            tale che sia conservata lungo le equazioni del moto e quindi soddisfi l'equazione di continuità
+        \begin{equation*} 
+            \partial_\mu J^\mu = 0
+        \end{equation*}
+    \end{block}
+    
+\end{frame}
+
+\begin{frame}
+
+    \begin{block}{Dimostrazione} 
+        \begin{equation*}
+            \delta S[\overline q^i, ~\delta_s q^i] = \integ{t_1}{t_2}{t} \dv{}{t} K = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
+        \end{equation*}
+        \begin{equation*}
+            \integ{t_1}{t_2}{t} \dv{}{t} \Big (K - \pdv{L}{\dot q^i} \delta q^i \Big ) = 0
+        \end{equation*}
+        \begin{equation*}
+            \dv{}{t} \Big (K - \pdv{L}{\dot q^i} \delta q^i \Big ) = \dv{}{t} Q = 0
+        \end{equation*}
+    \end{block}
+
+\end{frame}
+
+\section{La particella libera}
+
+\section{Elettrodinamica}
+
+\section{Il secondo teorema e teorie di gauge}
+
+\begin{frame}
+    \begin{itemize}
+        \item C
+        \item I
+        \item A
+        \item O
+    \end{itemize}
+\end{frame}
+
+\section{Conclusioni}
+
+\begin{frame}
+    \begin{center}
+        Grazie per l'attenzione
+    \end{center}
+\end{frame}
+
+
+
+\end{document}
