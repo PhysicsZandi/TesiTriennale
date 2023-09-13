@@ -8,8 +8,8 @@
 %\tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
 %\end{frame}
 
-\begin{frame}{Introduzione}
-    Contenuti nell'articolo~\say{Invariante Variationsprobleme} del $1918$ della matematica tedesca Emmy Noether. 
+\begin{frame}{I teoremi di Noether}
+    Enunciati e dimostrati della matematica tedesca Emmy Noether nell'articolo del $1918$. 
 
     \hfill
 
@@ -34,11 +34,11 @@
 \end{frame}
 
 \begin{frame}{Che cos'è una simmetria?}
-    Una simmetria è una classe speciale di trasformazioni delle coordinate che lascia l'azione invariata a meno di un termine al bordo
+    Una simmetria è una trasformazione delle coordinate che lascia l'azione invariata a meno di un termine al bordo
     \begin{equation*}
         \delta S[q^i, ~\delta_s q^i] = \integ{t_1}{t_2}{t} \dv{}{t} K
     \end{equation*}
-      Una variazione on-shell è una arbitraria trasformazione delle coordinate che usa le equazioni del moto
+    Una variazione on-shell è una arbitraria trasformazione infinitesima delle coordinate che usa le equazioni del moto
     \begin{equation*}
         \delta S[\overline q^i, ~\delta q^i] = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
     \end{equation*}
@@ -77,7 +77,7 @@
 
 \end{frame}
 
-\begin{frame}{La particella libera}
+\begin{frame}{Esempio: la particella libera}
     L'azione di una particella libera è
     \begin{equation*}
         S = \integ{t_1}{t_2}{t} \frac{m}{2} \mathbf{\dot r}^2 = \integ{t_1}{t_2}{t} \frac{m}{2} (\dot x^2 + \dot y^2 + \dot z^2)
@@ -121,11 +121,11 @@
 \end{frame}
 
 \begin{frame}{Che cos'è una simmetria?}
-    Una simmetria è una classe speciale di trasformazioni dei campi che lascia l'azione invariata a meno di un termine al bordo
+    Una simmetria è una trasformazione dei campi che lascia l'azione invariata a meno di un termine al bordo
     \begin{equation*}
         \delta S[\phi, ~\delta_s \phi] = \int d^4 x ~ \partial_\mu K^\mu
     \end{equation*}
-      Una variazione on-shell è una arbitraria trasformazione dei campi che usa le equazioni del moto
+      Una variazione on-shell è una arbitraria trasformazione infinitesima dei campi che usa le equazioni del moto
     \begin{equation*}
         \delta S[\overline \phi, ~\delta \phi] = \int d^4 x ~ \partial_\mu \Big ( \pdv{\mathcal L}{\phi,_\mu}  \delta \phi \Big) 
     \end{equation*} 
@@ -155,7 +155,7 @@
     \end{equation*}
 \end{frame}
 
-\begin{frame}{Esempio: elettrodinamica}
+\begin{frame}{Esempio: l'elettrodinamica}
     L'azione dell'elettrodinamica in assenza di sorgenti è
     \begin{equation*}
         S[A_\mu] = - \frac{1}{4} \int d^4 x ~ F_{\mu\nu} F^{\mu\nu}
@@ -197,7 +197,7 @@
     \end{equation*}
 \end{frame}
 
-\begin{frame}{Teoria di gauge}
+\begin{frame}{Che cos'è una teoria di gauge?}
 
     Definiamo una simmetria di gauge come una trasformazione contenente un'arbitraria funzione delle coordinate spaziotemporali che lascia invariata l'azione del sistema. 
 
@@ -227,7 +227,7 @@
     \end{block}
 \end{frame}
 
-\begin{frame} {Esempio: elettrodinamica}
+\begin{frame} {Esempio: l'elettrodinamica}
     Consideriamo l'azione associata all'elettrodinamica di Maxwell
     \begin{equation*}
         S = \int d^4 x ~ \Big (\frac{1}{2} \dot A_i \dot A^i - \dot A_i \partial^i A_0 + \frac{1}{2} \partial_i A_0 \partial^i A_0 - \frac{1}{4} F^{ij} F{ij} \Big )
