@@ -11,14 +11,13 @@
 \begin{frame}{Introduzione}
     Contenuti nell'articolo~\say{Invariante Variationsprobleme} del $1918$ della matematica tedesca Emmy Noether. 
 
-    \hfill 
+    \hfill
 
-    Possiamo riassumerli nel seguente modo:
-\begin{itemize}
-    \item simmetria continua globale $\iff$ legge di conservazione,
-    \item simmetria continua locale $\iff$ identità tra le equazioni del moto.
-\end{itemize}
-
+      Possiamo riassumerli nel seguente modo:
+    \begin{itemize}
+        \item simmetria globale $\iff$ legge di conservazione,
+        \item simmetria locale $\iff$ identità tra le equazioni del moto.
+    \end{itemize}
 \end{frame}
 
 \section{Il primo teorema in meccanica classica}
@@ -28,36 +27,21 @@
     \begin{equation*}
          S[q^i(t)] = \integ{t_1}{t_2}{t} L(t, ~q^i, ~\dot q^i)
     \end{equation*} 
-    Attraverso il principio di azione stazionaria,
+      Attraverso il principio di azione stazionaria, si ricavano le equazioni del moto
     \begin{equation*}
-        \delta S = 0
+        \delta S = 0 \quad \Rightarrow \quad \pdv{L}{q^i} - \dv{}{t} \pdv{L}{\dot q^i} = 0
     \end{equation*}
-    si ricavano le equazioni del moto 
-    \begin{equation*}
-        \pdv{L}{q^i} - \dv{}{t} \pdv{L}{\dot q^i} = 0
-    \end{equation*} 
 \end{frame}
 
 \begin{frame}{Che cos'è una simmetria?}
-    Una simmetria è una classe speciale di trasformazioni delle coordinate che lascia le equazioni del moto invariate
+    Una simmetria è una classe speciale di trasformazioni delle coordinate che lascia l'azione invariata a meno di un termine al bordo
     \begin{equation*}
-         \delta_s q^i \colon \delta S[q^i, ~\delta_s q^i] = \integ{t_1}{t_2}{t} \dv{}{t} K
-    \end{equation*} 
-    Una variazione on-shell è una arbitraria trasformazione delle coordinate che usa le equazioni del moto
-    \begin{equation*}
-        \delta q^i \colon \delta S[\overline q^i, ~\delta q^i] = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
-    \end{equation*} 
-    Non abbiamo tuttavia considerato trasformazioni temporali perché producono deformazioni delle coordinate
-    \begin{equation*}
-        t' = t + \epsilon \quad \Rightarrow \quad \delta q(t) = - \epsilon \dot q(t)
+        \delta S[q^i, ~\delta_s q^i] = \integ{t_1}{t_2}{t} \dv{}{t} K
     \end{equation*}
-\end{frame}
-
-\begin{frame}{Che cosa vuol dire che una quantità si conservi?}
-    Una quantità fisica si conserva se la sua derivata temporale è nulla
+      Una variazione on-shell è una arbitraria trasformazione delle coordinate che usa le equazioni del moto
     \begin{equation*}
-        \dv{}{t} Q = 0
-    \end{equation*}    
+        \delta S[\overline q^i, ~\delta q^i] = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
+    \end{equation*}
 \end{frame}
 
 \begin{frame}{Il primo teorema di Noether}
@@ -76,176 +60,75 @@
 \begin{frame}
 
     \begin{block}{Dimostrazione}
-            Vincolando che le $\overline q^i$ soddisfino le equazioni del moto e che le $~\delta_s q^i$ siano una simmetria dell'azione, troviamo
+        Vincolando che le $\overline q^i$ soddisfino le equazioni del moto e che le $~\delta_s q^i$ siano una simmetria dell'azione, troviamo
         \begin{equation*}
             \delta S[\overline q^i, ~\delta_s q^i] = \integ{t_1}{t_2}{t} \dv{}{t} K = \integ{t_1}{t_2}{t} \dv{}{t} \Big( \pdv{L}{\dot q^i} \delta q^i \Big )
         \end{equation*}
-        Sottraendo il terzo dal secondo
+          Sottraendo il terzo dal secondo
         \begin{equation*}
             \integ{t_1}{t_2}{t} \dv{}{t} \Big (K - \pdv{L}{\dot q^i} \delta q^i \Big ) = 0
         \end{equation*}
-        otteniamo la tesi ricercata
+          otteniamo la tesi ricercata
         \begin{equation*}
             \dv{}{t} \Big (K - \pdv{L}{\dot q^i} \delta q^i \Big ) = \dv{}{t} Q = 0
         \end{equation*}
-        $\qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad q.e.d.$
+        $\qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \quad q.e.d.$
     \end{block}
 
 \end{frame}
 
 \begin{frame}{La particella libera}
-
     L'azione di una particella libera è
     \begin{equation*}
         S = \integ{t_1}{t_2}{t} \frac{m}{2} \mathbf{\dot r}^2 = \integ{t_1}{t_2}{t} \frac{m}{2} (\dot x^2 + \dot y^2 + \dot z^2)
     \end{equation*} 
-
 \end{frame}
 
 \begin{frame}  
-
-    La prima simmetria è quella di una traslazione temporale
+    La carica di una traslazione temporale è l'energia
     \begin{equation*}
-        t' = t + \epsilon
+        \delta_s t = \epsilon \quad \Rightarrow \quad \delta S = \integ{t_1}{t_2}{t} \dv{}{t} \Big( -\epsilon \frac{m}{2} \mathbf{\dot r}^2 \Big) \quad \Rightarrow \quad  Q = \epsilon \frac{m}{2} \mathbf{\dot r}^2 
     \end{equation*}
-    che porta ad una variazione dell'azione
+      La carica di una traslazione spaziale è la quantità di moto
     \begin{equation*}
-        \delta S = \integ{t_1}{t_2}{t} \dv{}{t} \Big( -\epsilon \frac{m}{2} \mathbf{\dot r}^2 \Big)
+        \delta_s \mathbf r = \mathbf a \quad \Rightarrow \quad \delta S = 0 \quad \Rightarrow \quad  Q = - m \mathbf{\dot r} \cdot \mathbf a
     \end{equation*}
-    con termine al bordo 
+      La carica di una rotazione spaziale è il momento angolare
     \begin{equation*}
-        K = - \epsilon \frac{m}{2} \mathbf{\dot r}^2
+        \delta_s \mathbf r = \boldsymbol \omega \times \mathbf r \quad \Rightarrow \quad \delta S = 0 \quad \Rightarrow \quad  Q = \boldsymbol \omega \cdot \mathbf r \times m \mathbf{\dot r} 
     \end{equation*}
-    
-    La carica di Noether è quindi l'energia, a meno di un fattore costante
+      La carica di un boost di Galileo è il moto del centro di massa
     \begin{equation*}
-        Q = K - \frac{\partial L}{\partial \mathbf{\dot r}} \cdot \delta_s \mathbf r = - \epsilon \frac{m}{2} \mathbf{\dot r}^2 
+        \delta_s \mathbf r = \mathbf v t \quad \Rightarrow \quad \delta S = \integ{t_1}{t_2}{t} \dv{}{t} \Big( m \mathbf r \cdot \mathbf v \Big)  \quad \Rightarrow \quad  Q = \mathbf v \cdot (m \mathbf r - m \mathbf{\dot r} t)
     \end{equation*}
-
-\end{frame}
-
-\begin{frame}  
-
-    La seconda simmetria è quella di una traslazione spaziale 
-    \begin{equation*}
-        \mathbf r' = \mathbf r + \mathbf a
-    \end{equation*}
-    che porta ad una variazione dell'azione
-    \begin{equation*}
-        \delta S = 0
-    \end{equation*}
-    con termine al bordo 
-    \begin{equation*}
-        K = 0
-    \end{equation*}
-    
-    La carica di Noether è quindi la quantità di moto, a meno di un fattore costante
-    \begin{equation*}
-        Q = K - \frac{\partial L}{\partial \mathbf{\dot r}} \cdot \delta_s \mathbf r = - \mathbf a \cdot m \mathbf{\dot r} 
-    \end{equation*}
-
-\end{frame}
-
-\begin{frame}  
-
-    La terza simmetria è quella di una rotazione spaziale 
-    \begin{equation*}
-        \mathbf r' = \mathbf r + \boldsymbol \omega \times \mathbf r
-    \end{equation*}
-    che porta ad una variazione dell'azione
-    \begin{equation*}
-        \delta S = 0
-    \end{equation*}
-    con termine al bordo 
-    \begin{equation*}
-        K = 0
-    \end{equation*}
-    
-    La carica di Noether è quindi il momento angolare, a meno di un fattore costante
-    \begin{equation*}
-        Q = K - \frac{\partial L}{\partial \mathbf{\dot r}} \cdot \delta_s \mathbf r = \boldsymbol \omega \cdot \mathbf r \times m \mathbf{\dot r} 
-    \end{equation*}
-
-\end{frame}
-
-\begin{frame}  
-
-    La quarta simmetria è quella di un boost di Galileo
-    \begin{equation*}
-        \mathbf r' = \mathbf r + \mathbf v t
-    \end{equation*}
-    che porta ad una variazione dell'azione
-    \begin{equation*}
-        \delta S = \integ{t_1}{t_2}{t} \dv{}{t} \Big( m \mathbf r \cdot \mathbf v \Big) 
-    \end{equation*}
-    con termine al bordo 
-    \begin{equation*}
-        K = m \mathbf r \cdot \mathbf v 
-    \end{equation*}
-    
-    La carica di Noether è quindi il moto del centro di massa, a meno di un fattore costante
-    \begin{equation*}
-        Q = K - \frac{\partial L}{\partial  \mathbf{\dot r}} \cdot \delta_s \mathbf r = \mathbf v \cdot (m \mathbf r - m \mathbf{\dot r} t)
-    \end{equation*}
-
 \end{frame}
 
 \section{Il primo teorema in teoria classica dei campi}
 
 \begin{frame}{Formalismo lagrangiano}
-    In teoria classica\footnote{In questo caso classica ha l'accezione di relativistica con metrica $g_{\mu\nu} = diag(1,~-1,~-1,~-1)$ e non quantistica} dei campi, un generico sistema fisico è descritto dal funzionale di azione
+    In teoria classica\footnote{In questo caso classica ha l'accezione di relativistica e non quantistica} dei campi, un generico sistema fisico è descritto dal funzionale di azione
     \begin{equation*}
         S[\phi] = \int d^4 x ~ \mathcal L (x^\mu,~\phi,~\phi_{, \mu})
     \end{equation*} 
-    Attraverso il principio di azione stazionaria,
+    dove la densità di lagrangiana è definita come
     \begin{equation*}
-        \delta S = 0
+        L = \int d^3 x ~ \mathcal L
+    \end{equation*}  
+      Attraverso il principio di azione stazionaria, si ricavano le equazioni del moto 
+    \begin{equation*}
+        \delta S = 0 \quad \Rightarrow \quad \pdv{\mathcal L}{\phi} - \partial_\mu \pdv{\mathcal L}{\phi,_\mu} = 0
     \end{equation*}
-    si ricavano le equazioni del moto 
-    \begin{equation*}
-        \pdv{\mathcal L}{\phi} - \partial_\mu \pdv{\mathcal L}{\phi,_\mu} = 0
-    \end{equation*} 
-    dove il quadrigradiente è definito come
-    \begin{equation*}
-        \phi_{, \mu} = \partial_\mu \phi = \dv{\phi}{x^\mu} = (\frac{1}{c} \pdv{\phi}{t}, ~ \nabla \phi)
-    \end{equation*} 
 \end{frame}
 
 \begin{frame}{Che cos'è una simmetria?}
-    Una simmetria è una classe speciale di trasformazioni dei campi che lascia le equazioni del moto invariate
+    Una simmetria è una classe speciale di trasformazioni dei campi che lascia l'azione invariata a meno di un termine al bordo
     \begin{equation*}
-        \delta_s \phi \colon \delta S[\phi, ~\delta_s \phi] = \int d^4 x ~ \partial_\mu K^\mu \quad \forall \phi
+        \delta S[\phi, ~\delta_s \phi] = \int d^4 x ~ \partial_\mu K^\mu
     \end{equation*}
-    Una variazione on-shell è una arbitraria trasformazione dei campi che usa le equazioni del moto
+      Una variazione on-shell è una arbitraria trasformazione dei campi che usa le equazioni del moto
     \begin{equation*}
-        \delta \phi \colon \delta S[\overline \phi, ~\delta \phi] = \int d^4 x ~ \partial_\mu \Big ( \pdv{\mathcal L}{\phi,_\mu}  \delta \phi \Big) 
+        \delta S[\overline \phi, ~\delta \phi] = \int d^4 x ~ \partial_\mu \Big ( \pdv{\mathcal L}{\phi,_\mu}  \delta \phi \Big) 
     \end{equation*} 
-\end{frame}
-
-\begin{frame}
-    Non abbiamo tuttavia considerato trasformazioni delle coordinate perché producono deformazioni dei campi
-    \begin{equation*}
-        x'^\mu = x^\mu + \xi^\mu(x) \Rightarrow \delta \phi(x) = - \xi^\mu(x) \partial_\mu \phi(x)
-    \end{equation*}
-    o in particolare per campi tensoriali $(0,~1)$ 
-    \begin{equation*}
-        \delta A_\mu(x) = - \xi^\nu(x) \partial_\nu A_\mu (x) - A_\nu(x) \partial_\mu \xi^\nu(x)
-    \end{equation*}
-    dove un campo tensoriale $(0, ~1)$ viene definito dalla sua trasformazione
-    \begin{equation*}
-        A'_\mu(x') = \pdv{x^\nu}{x'^\mu} A_\nu(x)
-    \end{equation*}
-\end{frame}
-
-\begin{frame}{Che cosa vuol dire che una corrente si conservi?}
-    Una corrente si conserva se la sua quadridivergenza è nulla, che può essere espressa tramite l'equazione di continuità 
-    \begin{equation*}
-        \partial_\mu J^\mu = \partial_0 J^0 + \partial_i J^i = \partial_0 J^0 + \boldsymbol \nabla \cdot \mathbf J = 0
-    \end{equation*}
-    in cui a conservarsi è 
-    \begin{equation*}
-        Q = \int_V d^3 x ~ J^0(x)
-    \end{equation*}  
 \end{frame}
 
 \begin{frame}{Il primo teorema di Noether}
@@ -259,8 +142,6 @@
             \partial_\mu J^\mu = 0
         \end{equation*}
     \end{block}
-
-    La dimostrazione è analoga al caso precedente.
 \end{frame}
 
 \begin{frame}{Il tensore energia-impulso}
@@ -272,25 +153,18 @@
     \begin{equation*} 
         J^\mu = T^\mu_{\phantom \mu \nu} \epsilon^\nu
     \end{equation*}
-    il cui significato fisico delle componenti è 
-    \begin{enumerate}
-        \item $T^{00}$ è la densità di energia,
-        \item $T^{0j}$ è il flusso di energia lungo la j-esima direzione,
-        \item $T^{i0}$ è la densità di quantità di moto lungo la i-esima direzione,
-        \item $T^{ij}$ è il tensore degli sforzi.
-    \end{enumerate}
 \end{frame}
 
-\begin{frame}{Elettrodinamica}
+\begin{frame}{Esempio: elettrodinamica}
     L'azione dell'elettrodinamica in assenza di sorgenti è
-    \begin{equation}
+    \begin{equation*}
         S[A_\mu] = - \frac{1}{4} \int d^4 x ~ F_{\mu\nu} F^{\mu\nu}
-    \end{equation}
+    \end{equation*}
     dove il tensore elettromagnetico è definito come 
     \begin{equation*}
-        F^{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
+        F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
     \end{equation*}
-    che conduce alla formulazione covariante delle equazioni di Maxwell
+      Le equazioni del moto sono le equazioni di Maxwell
     \begin{equation*}
         \partial_\mu F^{\mu\nu} = 0
     \end{equation*}
@@ -298,148 +172,85 @@
 \end{frame}
 
 \begin{frame}
-    La variazione compatibile con la simmetria di gauge è 
-\begin{equation*}
-    \delta A_\mu = F_{\mu\nu} \epsilon^\nu
-\end{equation*}
-    che conduce ad una variazione dell'azione
-\begin{equation*}
-    \delta S = \int d^4 x ~\partial_\sigma (-\epsilon^\sigma F^{\mu\nu} F_{\mu\nu})
-\end{equation*}
-    ed al termine al bordo
-\begin{equation*}
-    K^\sigma = -\epsilon^\sigma \mathcal L
-\end{equation*}
-    La corrente di Noether è
-\begin{equation*}
-    J^\mu = - \epsilon^\sigma \Big ( F^{\mu\rho} F_{\rho\sigma} + \frac{1}{4} \delta^\mu_{\phantom \mu \sigma} F^{\alpha \beta} F_{\alpha \beta} \Big)
-\end{equation*}
-    ed il tensore energia-impulso è
-\begin{equation*}
-    T^\mu_{\phantom \mu \sigma} = - F^{\mu\rho} F_{\sigma\rho} + \frac{1}{4} \delta^\mu_{\phantom \mu \sigma} F^{\alpha \beta} F_{\alpha \beta}
-\end{equation*}
-
+    La corrente di una traslazione spaziotemporale, compatibile con l'invarianza di gauge, è 
+    \begin{equation*}
+    \begin{aligned}
+        & \delta A_\mu = F_{\mu\nu} \epsilon^\nu \quad \Rightarrow \quad \delta S = \int d^4 x ~\partial_\sigma (-\epsilon^\sigma F^{\mu\nu} F_{\mu\nu}) \\ & \Rightarrow \quad J^\mu = - \epsilon^\sigma \Big ( F^{\mu\rho} F_{\rho\sigma} + \frac{1}{4} \delta^\mu_{\phantom \mu \sigma} F^{\alpha \beta} F_{\alpha \beta} \Big)
+    \end{aligned}
+    \end{equation*}
+      ed il tensore energia-impulso è
+    \begin{equation*}
+        T^\mu_{\phantom \mu \sigma} = - F^{\mu\rho} F_{\sigma\rho} + \frac{1}{4} \delta^\mu_{\phantom \mu \sigma} F^{\alpha \beta} F_{\alpha \beta}
+    \end{equation*}
 \end{frame}
 
 \section{Secondo teorema e teorie di gauge}
 
 \begin{frame}{Formalismo hamiltoniano}
-    Definiamo l'hamiltoniana attraverso una trasformazione di Legendre 
+    Definiamo l'hamiltoniana attraverso la trasformazione di Legendre 
     \begin{equation*}
         H(q^i, ~p_j, ~t) = p_i \dot q^i - L
     \end{equation*}
-    che attraverso il principio di azione stazionaria porta alle equazioni del moto
+    che, per il principio di azione stazionaria, porta alle equazioni del moto
     \begin{equation*}
         \dot q^i = \pdv{H}{p_i} \qquad \qquad \dot p_j = - \pdv{H}{q^j}
     \end{equation*}
-    
-    \hfill
+\end{frame}
 
-    È possibile riformulare con l'uso delle parentesi di Poisson
+\begin{frame}{Teoria di gauge}
+
+    Definiamo una simmetria di gauge come una trasformazione contenente un'arbitraria funzione delle coordinate spaziotemporali che lascia invariata l'azione del sistema. 
+
+    \hfill
+    
+    L'elettrodinamica è una teoria di gauge, infatti prendendo 
     \begin{equation*}
-        \poi{f}{g} = \pdv{f}{q^i} \pdv{g}{p_i} - \pdv{g}{q^i} \pdv{f}{p_i}
+        \delta A_\mu = - \partial_\mu \Lambda
     \end{equation*}
-    diventando 
+    e mettendolo nelle equazioni di Maxwell, otteniamo
     \begin{equation*}
-        \dot q^i = \poi{q^i}{H} \qquad \qquad \dot p_j = - \poi{p_j}{H}
+        \partial_\nu \partial^\nu A_\mu - \partial_\mu (\partial^\nu A_\nu) = 0 \quad \Rightarrow \quad \partial_\nu \partial^\nu A'_\mu - \partial_\mu (\partial^\nu A'_\nu) = 0
     \end{equation*}
 \end{frame}
 
-\begin{frame} {Teoria di gauge}
-    Consideriamo dunque un'azione hamiltoniana nella forma
+\begin{frame}{Il secondo teorema inverso}
+    \begin{block}{Teorema}
+        Un'azione hamiltoniana nella forma
     \begin{equation*} 
         S[q^i,~p_i,~\lambda^a] = \int dt ~ (p_i \dot q^i - H_0(q^i, ~p_i) + \lambda^a \phi_a (q^i, ~p_i))
-    \end{equation*}
-    dove l'hamiltoniana totale è definita come 
+    \end{equation*} 
+        dove l'hamiltoniana totale è 
     \begin{equation*}
         H = H_0 - \lambda^a \phi_a
     \end{equation*} 
-    Le equazioni del moto sono 
-    \begin{equation*}
-        \dot q^i = \pdv{H}{p_i} = \pdv{H_0}{p_i} - \lambda^a \pdv{\phi_a}{p_i}
-    \end{equation*}
-    \begin{equation*}
-        \dot p_i = - \pdv{H}{q^i} = - \pdv{H_0}{q^i} + \lambda^a \pdv{\phi_a}{q^i}
-    \end{equation*} 
-    \begin{equation*} 
-        \phi_a(q^i, ~p_i) = 0
-    \end{equation*}
+        tale che presenti vincoli (di seconda classe) è invariante per trasformazioni di gauge.
+    \end{block}
 \end{frame}
 
-\begin{frame}
-    Calcoliamo la derivata temporale dei vincoli 
-    \begin{equation*}
-        \dv{}{t} \phi_a(q^i, ~p_i) = \poi{\phi_a}{H_0} - \lambda^b \poi{\phi_a}{\phi_b} = \poi{\phi_a}{H_0} - \lambda^b C_{ab}
-    \end{equation*}
-    e la poniamo debolmente nulla
-    \begin{equation*} 
-        \poi{\phi_a}{H_0} - \lambda^b C_{ab} \approx 0
-    \end{equation*}
-
-    \begin{itemize}
-        \item Vincoli di prima classe, i moltiplicatori di Lagrange $\lambda^a$ sono fissati dall'equazione
-        \begin{equation*}
-            \lambda^b (t) = C^{-1}_{ab} \poi{\phi_a}{H_0}
-        \end{equation*}
-        dove il loro ruolo è quello di mantenere il vincolo nullo $\phi = 0$ nel tempo.
-        \item Vincoli di seconda classe, i moltiplicatori di Lagrange non impongono alcuna condizione e le equazioni del moto rimangono non determinate univocamente 
-        \begin{equation*} 
-            \poi{\phi_a}{H_0} = C_a^{\phantom a b} \phi_b \approx 0 \qquad \poi{\phi_a}{\phi_b} = C_{ab}^{\phantom{ab} c} \phi_c \approx 0
-        \end{equation*}
-            Siamo in presenza di teorie di gauge.
-        \end{itemize}
-
-\end{frame}
-
-\begin{frame}{Il secondo teorema}
-    L'azione è invariante per trasformazioni di gauge
-    \begin{equation} \label{gaugee1}
-        \delta q^i = \poi{q^i}{\phi_a} \epsilon^a (t)
-    \end{equation}
-    \begin{equation}\label{gaugee2}
-        \delta p_i = \poi{p_i}{\phi_a} \epsilon^a (t)
-    \end{equation}
-    \begin{equation}\label{gaugee3}
-        \delta \lambda^c = \dot \epsilon^c (t) + \epsilon^a(t) C_a^{\phantom a c} - \lambda^a \epsilon^b(t) C_{ab}^{\phantom{ab} c}
-    \end{equation}  
-
-\end{frame}
-
-\begin{frame} {Elettrodinamica}
-    L'elettrodinamica è una teoria di gauge, infatti prendendo 
-    \begin{equation*}
-        A'_\mu = A_\mu - \partial_\mu \Lambda
-    \end{equation*}
-    e mettendolo nelle equazioni di Maxwell in assenza di sorgenti
-    \begin{equation*}
-        \partial_\nu \partial^\nu A_\mu - \partial_\mu (\partial^\nu A_\nu) = 0
-    \end{equation*}
-    otteniamo 
-    \begin{equation*}
-        \partial_\nu \partial^\nu A'_\mu - \partial_\mu (\partial^\nu A'_\nu) = 0
-    \end{equation*}
-
-\end{frame}
-
-\begin{frame}
+\begin{frame} {Esempio: elettrodinamica}
     Consideriamo l'azione associata all'elettrodinamica di Maxwell
     \begin{equation*}
         S = \int d^4 x ~ \Big (\frac{1}{2} \dot A_i \dot A^i - \dot A_i \partial^i A_0 + \frac{1}{2} \partial_i A_0 \partial^i A_0 - \frac{1}{4} F^{ij} F{ij} \Big )
-    \end{equation*} 
-    che  nella descrizione hamiltoniana per l'elettrodinamica diventa
+    \end{equation*}
+    che nella descrizione hamiltoniana diventa
     \begin{equation*}
         S[A_i, ~\pi_i, ~A_0] = \int d^4 x ~ \Big ( \pi_i \dot A^i - \Big ( \frac{1}{2} \pi_i \pi^i + \frac{1}{4} F_{ij} F^{ij} \Big) + A_0 \partial_i \pi^i \Big)
     \end{equation*}
+    dove il momento coniugato ad $A_i$ è 
+    \begin{equation*}
+        \pi_i = \pdv{\mathcal L}{\dot A_i} = \dot A_i + \partial_i A_0 = - E_i
+    \end{equation*}
+\end{frame}
 
+\begin{frame}
     Attraverso il teorema inverso, il vincolo
     \begin{equation*}
-        \phi = \partial_i \pi^i = \nabla \cdot E = 0
+        \phi = \partial_i \pi^i = \boldsymbol \nabla \cdot \mathbf E = 0
     \end{equation*}
     genera la simmetria di gauge
     \begin{equation*}
         \delta A_\mu = - \partial_\mu \Lambda(x)
     \end{equation*}
-
 \end{frame}
 
 \begin{frame}
